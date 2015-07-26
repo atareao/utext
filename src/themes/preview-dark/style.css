@@ -1,0 +1,121 @@
+html { padding:0 10px; }
+
+body {
+  margin:0;
+  padding:10px 0;
+  background:#000;
+}
+
+#wrapper h1,
+#wrapper h2,
+#wrapper h3,
+#wrapper h4,
+#wrapper h5,
+#wrapper h6,
+#wrapper p,
+#wrapper blockquote {
+    margin: 0;
+    padding: 0;
+}
+#wrapper {
+    background:#000;
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 18px;
+    line-height: 18px;
+    color: #ccc;
+}
+#wrapper a {
+    color: #fff;
+}
+#wrapper a:hover {
+    color: #00ff00;
+    text-decoration: none;
+}
+#wrapper a img {
+    border: none;
+}
+#wrapper p {
+    margin-bottom: 9px;
+}
+#wrapper h1,
+#wrapper h2,
+#wrapper h3,
+#wrapper h4,
+#wrapper h5,
+#wrapper h6 {
+    color: #cdcdcd;
+    line-height: 36px;
+}
+#wrapper h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+#wrapper h2 {
+    font-size: 24px;
+}
+#wrapper h3 {
+    font-size: 18px;
+}
+#wrapper h4 {
+    font-size: 16px;
+}
+#wrapper h5 {
+    font-size: 14px;
+}
+#wrapper h6 {
+    font-size: 13px;
+}
+#wrapper hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+#wrapper blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+#wrapper blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+#wrapper blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+#wrapper code, #wrapper pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+#wrapper code {
+    background-color: #000;
+    color: #f92672;
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+#wrapper pre {
+    display: block;
+    padding: 14px;
+    color:#66d9ef;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+#wrapper pre code {
+    background-color: #000;
+    color:#ccc;
+    font-size: 11px;
+    padding: 0;
+}

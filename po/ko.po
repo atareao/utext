@@ -1,0 +1,504 @@
+# Korean translation for utext
+# Copyright (c) 2013 Rosetta Contributors and Canonical Ltd 2013
+# This file is distributed under the same license as the utext package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2013.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: utext\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-03-28 09:16+0100\n"
+"PO-Revision-Date: 2013-12-20 23:27+0000\n"
+"Last-Translator: Litty <Unknown>\n"
+"Language-Team: Korean <ko@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-06-15 20:00+0000\n"
+"X-Generator: Launchpad (build 17557)\n"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:812
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:815
+msgid "Search"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:827
+msgid "Search and replace"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:55
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:55
+msgid "Replace with"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:34
+msgid "Intert Image"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:50
+msgid "Alt text"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:56
+msgid "Title"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:62
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:56
+msgid "Url"
+msgstr "URL"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/filename_dialog.py:34
+msgid "set filename for Dropbox"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/filename_dialog.py:50
+msgid "Filename"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/files_in_dropbox_dialog.py:34
+msgid "select file from Dropbox"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/files_in_dropbox_dialog.py:49
+msgid "Select file"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:52
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:764
+msgid "Preferences"
+msgstr "환경 설정"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:133
+msgid "Markdown editor"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:139
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:180
+msgid "Show line numbers"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:144
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:185
+msgid "Show line marks"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:149
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:190
+msgid "Insert spaces instead of tabs"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:154
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:195
+msgid "Set tab width"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:161
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:202
+msgid "Set auto indent"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:166
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:207
+msgid "Highlight current line"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:174
+msgid "Html viewer"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:215
+msgid "General options"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:221
+msgid "Autosave"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:226
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:967
+msgid "Spell check"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:218
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:791
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1415
+msgid "Hide Toolbar"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:221
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1412
+msgid "Show Toolbar"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:224
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:787
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1408
+msgid "Hide status bar"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:227
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1405
+msgid "Show status bar"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:260
+#, python-brace-format
+msgid "Lines: {0}, Words: {1}, Characters: {2}"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:477
+msgid "Select a file to save markdown"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:485
+msgid "Markdown files"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:512
+msgid "Untitled"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:525
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:625
+msgid "New file"
+msgstr "새 파일"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:530
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:632
+msgid "Open"
+msgstr "열기"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:535
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:669
+msgid "Save"
+msgstr "저장하기"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:540
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:675
+msgid "Save as"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:547
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:700
+msgid "Undo"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:552
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:705
+msgid "Redo"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:559
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:839
+msgid "Bold"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:564
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:844
+msgid "Italic"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:569
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:849
+msgid "Underline"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:574
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:854
+msgid "Strikethrough"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:581
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:717
+msgid "Copy"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:586
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:722
+msgid "Paste"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:591
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:712
+msgid "Cut"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:598
+msgid "Zoom in"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:603
+msgid "Zoom out"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:608
+msgid "Zoom 100%"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:620
+msgid "File"
+msgstr "파일"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:638
+msgid "Recent files..."
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:662
+msgid "Open from Dropbox"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:682
+msgid "Save in Dropbox"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:688
+msgid "Exit"
+msgstr "끝내기"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:697
+msgid "Edit"
+msgstr "편집"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:727
+msgid "Remove"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:733
+msgid "Select All"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:740
+msgid "Convert selection to lowercase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:744
+msgid "Convert selection to titlecase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:748
+msgid "Convert selection to uppercase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:754
+msgid "Copy selection to html"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:758
+msgid "Copy all to html"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:773
+msgid "View"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:776
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:982
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:986
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1166
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1515
+msgid "Preview"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:783
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1101
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1282
+msgid "Hide preview"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:797
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1302
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1306
+msgid "Night mode"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:803
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1289
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1294
+msgid "Full screen"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:820
+msgid "Remove highlight"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:836
+msgid "Format"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:859
+msgid "Highlight"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:864
+msgid "Subscript"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:869
+msgid "Superscript"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:876
+msgid "Bullet List"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:880
+msgid "Numbered List"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:886
+msgid "Bloque Quote"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:890
+msgid "Code"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:896
+msgid "Heading One"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:901
+msgid "Heading Two"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:906
+msgid "Heading Three"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:911
+msgid "Heading Four"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:916
+msgid "Heading Five"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:921
+msgid "Heading Sex"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:930
+msgid "Insert"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:933
+msgid "Insert Horizontal Rule"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:938
+msgid "Insert Timestamp"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:943
+msgid "Insert more"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:950
+msgid "Insert Image"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:955
+msgid "Insert Url"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:964
+msgid "Tools"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:975
+msgid "Help"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:983
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1162
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1163
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1509
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1511
+msgid "Html"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:992
+msgid "Web..."
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:993
+msgid "Get help online..."
+msgstr "온라인애서 도움 얻기..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:994
+msgid "Translate this application..."
+msgstr "이 프로그램 번역하기..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:995
+msgid "Report a bug..."
+msgstr "버그 보고하기..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:997
+msgid "Homepage"
+msgstr "홈페이지"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:998
+msgid "Follow us in Twitter"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:999
+msgid "Follow us in Google+"
+msgstr "구글플러스에서 팔로우 하세요"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1000
+msgid "Follow us in Facebook"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1002
+msgid "About"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1124
+msgid "An application to work with markdown"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1149
+msgid "File modified"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1150
+msgid "Save file?"
+msgstr "파일을 저장하시겠습니까?"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1281
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1285
+msgid "Show preview"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1291
+msgid "Normal screen"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1303
+msgid "Day mode"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:34
+msgid "Intert Url"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:15
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:16
+msgid "utext"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:17
+msgid "An application to work with markdown files"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:23
+msgid "Open new window"
+msgstr ""

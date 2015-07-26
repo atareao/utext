@@ -1,0 +1,123 @@
+utext (0.3.6-0extras15.04.1) vivid; urgency=medium
+
+  * Some changes in extension
+  * Fixed a simple bug
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 19 Jul 2015 22:20:47 +0200
+
+utext (0.3.5-0extras15.04.6) vivid; urgency=medium
+
+  * Improved render preview
+  * Added preview themes
+  * Option to add user preview themes
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 24 May 2015 10:00:06 +0200
+
+utext (0.3.4-0extras15.04.0) vivid; urgency=medium
+
+  * Fixed some bugs
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 03 May 2015 12:07:46 +0200
+
+utext (0.3.3-0extras14.04.0) trusty; urgency=medium
+
+  * Added gir1.2-gtksource-3.0 dependency
+  * Added python3-bs4 dependency
+  * Improved word count
+  * Fixed Launcher name
+  * Save as PDF
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 28 Mar 2015 21:19:23 +0100
+
+utext (0.3.1-0extras14.04.2) trusty; urgency=medium
+
+  * Added mime types
+  * Added new option in unity laucher
+  * Added icon form mime types
+  * Added option to open from terminal
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 14 Mar 2015 19:20:06 +0100
+
+utext (0.3.0-0extras14.04.0) trusty; urgency=medium
+
+  * A First released version without bugs
+  * Forgotten buffer bugs... :)
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Tue, 10 Mar 2015 21:57:09 +0100
+
+utext (0.2.5-0extras14.04.5) trusty; urgency=medium
+
+  * Added search dialog
+  * Added search and replace dialog
+  * Added autosave option
+  * Added spell check option
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 09 Mar 2015 08:03:47 +0100
+
+utext (0.2.4-0extras14.04.0) trusty; urgency=medium
+
+  * Improved rendering performance
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 07 Mar 2015 10:34:52 +0100
+
+utext (0.2.1-0extras14.04.1) trusty; urgency=medium
+
+  * Improve rendering performance
+  * Solved translations
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 01 Mar 2015 11:56:57 +0100
+
+utext (0.2.0-0extras14.04.2) trusty; urgency=medium
+
+  * A lot of changes
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 01 Mar 2015 09:49:38 +0100
+
+utext (0.1.2-0extras13.04.0) raring; urgency=low
+
+  * Using Ctrl+
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 27 May 2013 02:16:52 +0200
+
+utext (0.1.0-0extras13.04.9ubuntu1) raring; urgency=low
+
+  * sync scroll
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Fri, 24 May 2013 21:43:17 +0200
+
+utext (0.1.0-0extras13.04.8) raring; urgency=low
+
+  * updated
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Thu, 23 May 2013 22:01:19 +0200
+
+utext (0.1.0-0extras13.04.7) raring; urgency=low
+
+  * Insert []
+  * Improved working of uText. Follow the cursor...
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Fri, 17 May 2013 00:07:01 +0200
+
+utext (0.1.0-0extras13.04.4) raring; urgency=low
+
+  * added some conveniences
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 13 May 2013 07:50:51 +0200
+
+utext (0.1.0-0extras13.04.3) raring; urgency=low
+
+  * Vertical panes
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 12 May 2013 23:49:20 +0200
+
+utext (0.1.0-0extras13.04.2) raring; urgency=low
+
+  * Added spelling
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 12 May 2013 22:46:58 +0200
+
+utext (0.1.0-0extras13.04.1) raring; urgency=low
+
+  * First release
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 12 May 2013 20:30:01 +0200

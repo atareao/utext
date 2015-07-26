@@ -1,0 +1,504 @@
+# Greek translation for utext
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the utext package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: utext\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2015-03-28 09:16+0100\n"
+"PO-Revision-Date: 2015-06-11 22:39+0000\n"
+"Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
+"Language-Team: Greek <el@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2015-06-15 20:00+0000\n"
+"X-Generator: Launchpad (build 17557)\n"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:812
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:815
+msgid "Search"
+msgstr "Αναζήτηση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:34
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:827
+msgid "Search and replace"
+msgstr "Αναζήτηση και αντικατάσταση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_dialog_and_replace.py:55
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/search_and_replace_dialog.py:55
+msgid "Replace with"
+msgstr "Αντικατάσταση με"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:34
+msgid "Intert Image"
+msgstr "Εισαγωγή εικόνας"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:50
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:50
+msgid "Alt text"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:56
+msgid "Title"
+msgstr "Τίτλος"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_image_dialog.py:62
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:56
+msgid "Url"
+msgstr "Url"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/filename_dialog.py:34
+msgid "set filename for Dropbox"
+msgstr "ορισμός ονόματος αρχείου για Dropbox"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/filename_dialog.py:50
+msgid "Filename"
+msgstr "'Ονομα αρχείου"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/files_in_dropbox_dialog.py:34
+msgid "select file from Dropbox"
+msgstr "επιλογή αρχείου από Dropbox"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/files_in_dropbox_dialog.py:49
+msgid "Select file"
+msgstr "Επιλογή αρχείου"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:52
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:764
+msgid "Preferences"
+msgstr "Προτιμήσεις"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:133
+msgid "Markdown editor"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:139
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:180
+msgid "Show line numbers"
+msgstr "Εμφάνιση αριθμών γραμμών"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:144
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:185
+msgid "Show line marks"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:149
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:190
+msgid "Insert spaces instead of tabs"
+msgstr "Εισαγωγή κενών αντί στηλοθετών"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:154
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:195
+msgid "Set tab width"
+msgstr "Ορισμός πλάτους στηλοθέτη"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:161
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:202
+msgid "Set auto indent"
+msgstr "Ορισμός αυτόματης εσοχής"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:166
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:207
+msgid "Highlight current line"
+msgstr "Επισήμανση τρέχουσας γραμμής"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:174
+msgid "Html viewer"
+msgstr "Προβολέας html"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:215
+msgid "General options"
+msgstr "Γενικές επιλογές"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:221
+msgid "Autosave"
+msgstr "Αυτόματη αποθήκευση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/preferences_dialog.py:226
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:967
+msgid "Spell check"
+msgstr "Ορθογραφικός έλεγχος"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:218
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:791
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1415
+msgid "Hide Toolbar"
+msgstr "Απόκρυψη γραμμής εργαλείων"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:221
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1412
+msgid "Show Toolbar"
+msgstr "Εμφάνιση γραμμής εργαλείων"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:224
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:787
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1408
+msgid "Hide status bar"
+msgstr "Απόκρυψη γραμμής κατάστασης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:227
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1405
+msgid "Show status bar"
+msgstr "Εμφάνιση γραμμής κατάστασης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:260
+#, python-brace-format
+msgid "Lines: {0}, Words: {1}, Characters: {2}"
+msgstr "Γραμμές: {0}, Λέξεις: {1}, Χαρακτήρες: {2}"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:477
+msgid "Select a file to save markdown"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:485
+msgid "Markdown files"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:512
+msgid "Untitled"
+msgstr "Χωρίς τίτλο"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:525
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:625
+msgid "New file"
+msgstr "Νέο αρχείο"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:530
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:632
+msgid "Open"
+msgstr "Άνοιγμα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:535
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:669
+msgid "Save"
+msgstr "Αποθήκευση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:540
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:675
+msgid "Save as"
+msgstr "Αποθήκευση ως"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:547
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:700
+msgid "Undo"
+msgstr "Αναίρεση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:552
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:705
+msgid "Redo"
+msgstr "Επανάληψη"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:559
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:839
+msgid "Bold"
+msgstr "Έντονα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:564
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:844
+msgid "Italic"
+msgstr "Πλάγια"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:569
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:849
+msgid "Underline"
+msgstr "Υπογράμμιση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:574
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:854
+msgid "Strikethrough"
+msgstr "Διακριτή διαγραφή"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:581
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:717
+msgid "Copy"
+msgstr "Αντιγραφή"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:586
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:722
+msgid "Paste"
+msgstr "Επικόλληση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:591
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:712
+msgid "Cut"
+msgstr "Αποκοπή"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:598
+msgid "Zoom in"
+msgstr "Μεγέθυνση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:603
+msgid "Zoom out"
+msgstr "Σμίκρυνση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:608
+msgid "Zoom 100%"
+msgstr "Εστίαση 100%"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:620
+msgid "File"
+msgstr "Αρχείο"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:638
+msgid "Recent files..."
+msgstr "Πρόσφατα αρχεία"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:662
+msgid "Open from Dropbox"
+msgstr "Άνοιγμα από Dropbox"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:682
+msgid "Save in Dropbox"
+msgstr "Αποθήκευση στο Dropbox"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:688
+msgid "Exit"
+msgstr "Έξοδος"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:697
+msgid "Edit"
+msgstr "Επεξεργασία"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:727
+msgid "Remove"
+msgstr "Αφαίρεση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:733
+msgid "Select All"
+msgstr "Επιλογή όλων"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:740
+msgid "Convert selection to lowercase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:744
+msgid "Convert selection to titlecase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:748
+msgid "Convert selection to uppercase"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:754
+msgid "Copy selection to html"
+msgstr "Αντιγραφή επιλογής σε html"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:758
+msgid "Copy all to html"
+msgstr "Αντιγραφή όλων σε html"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:773
+msgid "View"
+msgstr "Προβολή"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:776
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:982
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:986
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1166
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1515
+msgid "Preview"
+msgstr "Προεπισκόπηση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:783
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1101
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1282
+msgid "Hide preview"
+msgstr "Απόκρυψη προεπισκόπησης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:797
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1302
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1306
+msgid "Night mode"
+msgstr "Νυχτερινή λειτουργία"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:803
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1289
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1294
+msgid "Full screen"
+msgstr "Πλήρης οθόνη"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:820
+msgid "Remove highlight"
+msgstr "Αφαίρεση επισήμανσης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:836
+msgid "Format"
+msgstr "Μορφοποίηση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:859
+msgid "Highlight"
+msgstr "Επισήμανση"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:864
+msgid "Subscript"
+msgstr "Δείκτης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:869
+msgid "Superscript"
+msgstr "Εκθέτης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:876
+msgid "Bullet List"
+msgstr "Λίστα κουκκίδων"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:880
+msgid "Numbered List"
+msgstr "Αριθμημένη λίστα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:886
+msgid "Bloque Quote"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:890
+msgid "Code"
+msgstr "Κώδικας"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:896
+msgid "Heading One"
+msgstr "Επικεφαλίδα ένα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:901
+msgid "Heading Two"
+msgstr "Επικεφαλίδα δύο"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:906
+msgid "Heading Three"
+msgstr "Επικεφαλίδα τρία"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:911
+msgid "Heading Four"
+msgstr "Επικεφαλίδα τέσσερα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:916
+msgid "Heading Five"
+msgstr "Επικεφαλίδα πέντε"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:921
+msgid "Heading Sex"
+msgstr "Επικεφαλίδα έξι"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:930
+msgid "Insert"
+msgstr "Εισαγωγή"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:933
+msgid "Insert Horizontal Rule"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:938
+msgid "Insert Timestamp"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:943
+msgid "Insert more"
+msgstr "Εισαγωγή περισσοτέρων"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:950
+msgid "Insert Image"
+msgstr "Εισαγωγή εικόνας"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:955
+msgid "Insert Url"
+msgstr "Εισαγωγή url"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:964
+msgid "Tools"
+msgstr "Εργαλεία"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:975
+msgid "Help"
+msgstr "Βοήθεια"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:983
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1162
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1163
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1509
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1511
+msgid "Html"
+msgstr "Html"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:992
+msgid "Web..."
+msgstr "Ιστός..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:993
+msgid "Get help online..."
+msgstr "Λήψη ηλεκτρονικής βοήθειας..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:994
+msgid "Translate this application..."
+msgstr "Μεταφράστε αυτή την εφαρμογή..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:995
+msgid "Report a bug..."
+msgstr "Αναφορά σφάλαματος..."
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:997
+msgid "Homepage"
+msgstr "Αρχική σελίδα"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:998
+msgid "Follow us in Twitter"
+msgstr "Ακολουθήστε μας στο Twitter"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:999
+msgid "Follow us in Google+"
+msgstr "Ακολουθήστε μας στο Google+"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1000
+msgid "Follow us in Facebook"
+msgstr "Ακολουθήστε μας στο Facebook"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1002
+msgid "About"
+msgstr "Περί"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1124
+msgid "An application to work with markdown"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1149
+msgid "File modified"
+msgstr "Αρχείο τροποποίηθηκε"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1150
+msgid "Save file?"
+msgstr "Αποθήκευση αρχείου;"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1281
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1285
+msgid "Show preview"
+msgstr "Εμφάνιση προεπισκόπησης"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1291
+msgid "Normal screen"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/utext.py:1303
+msgid "Day mode"
+msgstr "Λειτουργία ημέρας"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/src/insert_url_dialog.py:34
+msgid "Intert Url"
+msgstr "Εισαγωγή url"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:15
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:16
+msgid "utext"
+msgstr "utext"
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:17
+msgid "An application to work with markdown files"
+msgstr ""
+
+#: /home/atareao/Copy/PROGRAMACION/Python/trusty/utext/extras-utext.desktop.in:23
+msgid "Open new window"
+msgstr ""

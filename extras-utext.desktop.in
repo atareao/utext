@@ -1,0 +1,24 @@
+[Desktop Entry]
+_Name = utext
+_GenericName = utext
+_Comment = An application to work with markdown files
+Exec = /opt/extras.ubuntu.com/utext/bin/utext %U
+Icon = /opt/extras.ubuntu.com/utext/share/utext/icons/utext.svg
+Type = Application
+Terminal = false
+StartupNotify = true
+Encoding = UTF-8
+Categories = Utility;
+X-Ubuntu-Gettext-Domain = utext
+MimeType = text/x-web-markdown;text/plain;
+Actions = NewWindow
+$Name[es] = _('utext')
+$GenericName[es] = _('utext')
+$Comment[es] = _('An application to work with markdown files')
+
+[Desktop Action NewWindow]
+_Name = Open new window
+Exec = /opt/extras.ubuntu.com/utext/bin/utext %U
+OnlyShowIn = Unity;
+$Name[es] = _('Open new window')
+
