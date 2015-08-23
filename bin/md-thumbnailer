@@ -26,7 +26,7 @@ command -v convert >/dev/null 2>&1 || exit 1
 command -v composite >/dev/null 2>&1 || exit 1
 
 # path where to get icons used for generation
-ICONPATH="/opt/extras.ubuntu.com/utext/pixmaps"
+ICONPATH="/opt/extras.ubuntu.com/utext/share/utext/pixmaps"
 
 # get parameters
 FILE_URI=$1
@@ -58,4 +58,4 @@ case $MIMETYPE in
 esac
 
 # remove temporary files
-rm -R $TMP_DIR
+#rm -R $TMP_DIR
