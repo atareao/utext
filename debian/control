@@ -18,6 +18,10 @@ Depends: ${misc:Depends}, ${python:Depends},
 	python3-markdown,
 	python3-requests,
 	python3-bs4,
-	wkhtmltopdf
+	wkhtmltopdf,
+	pandoc,
+	html2ps,
+	gvfs-bin,
+	imagemagick	
 Description: An application to work with markdown files
  An application to work with markdown files.

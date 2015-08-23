@@ -1,3 +1,10 @@
+utext (0.3.7-0extras15.04.0) vivid; urgency=medium
+
+  * Added thumbnailer for preview files
+  * Added some changes to codes for underline...
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 23 Aug 2015 20:18:25 +0200
+
 utext (0.3.6-0extras15.04.1) vivid; urgency=medium
 
   * Some changes in extension

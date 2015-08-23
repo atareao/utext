@@ -1,0 +1,4 @@
+[Thumbnailer Entry]
+TryExec=/opt/extras.ubuntu.com/utext/bin/md-thumbnailer
+Exec=/opt/extras.ubuntu.com/utext/bin/md-thumbnailer %u %o %s
+MimeType=text/x-markdown;
