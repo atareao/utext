@@ -1119,6 +1119,7 @@ class uText(Gtk.Window):
 		self.menus['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		self.buttons['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		if (self.number_of_lines != self.writer.get_buffer().get_line_count()) and self.preferences['autosave']:
+			self.number_of_lines = self.writer.get_buffer().get_line_count()
 			self.save_current_file()
 
 	def get_buffer_text(self):
