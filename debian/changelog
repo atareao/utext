@@ -1,3 +1,9 @@
+utext (0.3.7-0extras15.04.4) wily; urgency=medium
+
+  * Modified autosave options when return of carriage happes
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 15 Nov 2015 07:54:40 +0100
+
 utext (0.3.7-0extras15.04.3) vivid; urgency=medium
 
   * Added thumbnailer for preview files
