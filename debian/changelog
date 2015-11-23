@@ -1,3 +1,9 @@
+utext (0.3.8-0extras15.04.0) wily; urgency=medium
+
+  * Added MathJax support
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 23 Nov 2015 13:43:13 +0100
+
 utext (0.3.7-0extras15.04.4) wily; urgency=medium
 
   * Modified autosave options when return of carriage happes

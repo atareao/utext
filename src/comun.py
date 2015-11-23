@@ -65,6 +65,7 @@ PARAMS = {	'version':'',
 			'html_viewer.preview_theme':'/opt/extras.ubuntu.com/utext/share/utext/themes/default',
 			'autosave':False,
 			'spellcheck':False,
+			'mathjax':False,
 }
 
 

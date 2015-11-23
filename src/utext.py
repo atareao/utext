@@ -24,6 +24,7 @@ from search_and_replace_dialog import SearchAndReplaceDialog
 from pprint import pprint
 from jinja2 import Environment, FileSystemLoader
 from markdown import Markdown, Extension
+from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from gi.repository import GObject, Gtk, Gio, WebKit, Gdk, GtkSource, GtkSpell, GdkPixbuf
 from comun import _
@@ -249,7 +250,11 @@ class uText(Gtk.Window):
 		print('aqui %d'%self.contador)
 		self.process_blocked = False
 		self.html_content = self.md.convert(self.markdown_content)
-		self.html_rendered = self.jt.render(css=self.css_content,content=self.html_content)	
+		if self.preferences['mathjax']:
+			mathjax='<script type="text/javascript"	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>'
+		else:
+			mathjax=''
+		self.html_rendered = self.jt.render(css=self.css_content,content=self.html_content,mathjax=mathjax)	
 		word_count = len(re.findall('(\S+)', BeautifulSoup(self.html_content).get_text('\n')))
 		self.statusbar.push(0,(_('Lines: {0}, Words: {1}, Characters: {2}')).format(self.writer.get_buffer().get_line_count(),word_count,self.writer.get_buffer().get_char_count()))
 		self.contador+=1
@@ -294,6 +299,7 @@ class uText(Gtk.Window):
 		self.preferences['statusbar'] = configuration.get('statusbar')
 		self.preferences['autosave'] = configuration.get('autosave')
 		self.preferences['spellcheck'] = configuration.get('spellcheck')
+		self.preferences['mathjax'] = configuration.get('mathjax')
 		#
 		self.preferences['markdown_editor.show_line_numbers'] = configuration.get('markdown_editor.show_line_numbers')
 		self.preferences['markdown_editor.show_line_marks'] = configuration.get('markdown_editor.show_line_marks')
@@ -325,11 +331,11 @@ class uText(Gtk.Window):
 		self.filerecents['file3'].set_label(self.preferences['filename3'])
 		self.filerecents['file3'].set_visible(len(self.preferences['filename3'])>0)
 		self.filerecents['file4'].set_label(self.preferences['filename4'])
-		self.filerecents['file4'].set_visible(len(self.preferences['filename4'])>0)
+		self.filerecents['file4'].set_visible(len(self.preferences['filename4'])>0)		
 		if self.preferences['spellcheck']:
 			self.spellchecker.attach(self.writer)
 		else:
-			self.spellchecker.detach()
+			self.spellchecker.detach()	
 					
 	def save_preferences(self):
 		configuration = Configuration()
@@ -1084,6 +1090,7 @@ class uText(Gtk.Window):
 			'markdown.extensions.smarty',
 			'markdown.extensions.toc',
 			'markdown.extensions.wikilinks',
+			MathExtension(),
 			MyExtension()
 		])	
 		# Jinja templates        

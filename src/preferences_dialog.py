@@ -242,7 +242,7 @@ class PreferencesDialog(Gtk.Dialog):
 		notebook.append_page(vbox4,Gtk.Label.new(_('General options')))
 		frame4 = Gtk.Frame()
 		vbox4.pack_start(frame4,False,False,1)
-		table4 = Gtk.Table(2, 2, False)
+		table4 = Gtk.Table(3, 2, False)
 		frame4.add(table4)
 		#***************************************************************
 		label41 = Gtk.Label(_('Autosave')+':')
@@ -255,6 +255,11 @@ class PreferencesDialog(Gtk.Dialog):
 		table4.attach(label42,0,1,1,2, xpadding=5, ypadding=5)
 		self.switch42 = Gtk.Switch()
 		table4.attach(self.switch42,1,2,1,2, xpadding=5, ypadding=5)
+		label52 = Gtk.Label(_('Use MathJax')+':')
+		label52.set_alignment(0, 0.5)
+		table4.attach(label52,0,1,2,3, xpadding=5, ypadding=5)
+		self.switch52 = Gtk.Switch()
+		table4.attach(self.switch52,1,2,2,3, xpadding=5, ypadding=5)
 		
 		#
 		self.load_preferences()
@@ -292,7 +297,7 @@ class PreferencesDialog(Gtk.Dialog):
 		select_value_in_combo(self.combobox_preview_theme,configuration.get('html_viewer.preview_theme'))
 		self.switch41.set_active(configuration.get('autosave'))
 		self.switch42.set_active(configuration.get('spellcheck'))
-		
+		self.switch52.set_active(configuration.get('mathjax'))
 	def save_preferences(self):
 		configuration = Configuration()
 		configuration.set('markdown_editor.show_line_numbers',self.switch21.get_active())
@@ -310,6 +315,7 @@ class PreferencesDialog(Gtk.Dialog):
 		configuration.set('html_viewer.preview_theme',get_selected_value_in_combo(self.combobox_preview_theme))
 		configuration.set('autosave',self.switch41.get_active())
 		configuration.set('spellcheck',self.switch42.get_active())
+		configuration.set('mathjax',self.switch52.get_active())
 		configuration.save()
 		
 
