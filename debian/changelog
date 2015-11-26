@@ -1,8 +1,10 @@
-utext (0.3.8-0extras15.04.0) wily; urgency=medium
+utext (0.3.8-0extras15.04.1) wily; urgency=medium
 
   * Added MathJax support
+  * Added autosave every 5 minutes
+  * Protect posibility of overwrite.
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 23 Nov 2015 13:43:13 +0100
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Thu, 26 Nov 2015 19:55:53 +0100
 
 utext (0.3.7-0extras15.04.4) wily; urgency=medium
 

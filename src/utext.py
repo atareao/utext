@@ -233,6 +233,7 @@ class uText(Gtk.Window):
 		self.buttons['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		#
 		self.number_of_lines = 0
+		self.time = time.time()
 		#
 		self.match_end = None
 		self.tag_found = self.writer.get_buffer().create_tag(TAG_FOUND,background="orange")
@@ -529,8 +530,21 @@ class uText(Gtk.Window):
 				if not filename.endswith('.md'):
 					filename += '.md'
 			dialog.destroy()
+			if filename is None:
+				self.save_current_file()
+				return
+			if os.path.exists(filename):
+				dialog_overwrite = Gtk.MessageDialog(self, 0, Gtk.MessageType.WARNING,
+				Gtk.ButtonsType.OK_CANCEL, _('File exists'))
+				dialog_overwrite.format_secondary_text(_('Overwrite?'))
+				response_overwrite = dialog_overwrite.run()
+				if response_overwrite != Gtk.ResponseType.OK:
+					dialog_overwrite.destroy()
+					self.save_current_file()
+					return
+				dialog_overwrite.destroy()
 			if filename is not None:
-				self.current_filepath = filename
+				self.current_filepath = filename			
 		if self.current_filepath and self.current_filepath is not None:									
 			data = self.get_buffer_text()
 			if data is not None:
@@ -670,6 +684,11 @@ class uText(Gtk.Window):
 		self.menus['open'].connect('activate',self.on_toolbar_clicked,'open')
 		self.menus['open'].add_accelerator('activate', accel_group,ord('O'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
 		self.filemenu.append(self.menus['open'])
+		#
+		self.menus['close'] = menu_open= Gtk.ImageMenuItem.new_with_label(_('Close'))
+		self.menus['close'].connect('activate',self.on_toolbar_clicked,'close')
+		self.menus['close'].add_accelerator('activate', accel_group,ord('C'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
+		self.filemenu.append(self.menus['close'])
 		#
 		menurecents = Gtk.Menu.new()
 		self.recents = Gtk.MenuItem.new_with_label(_('Recent files...'))
@@ -1125,7 +1144,8 @@ class uText(Gtk.Window):
 		self.buttons['undo'].set_sensitive(self.writer.get_buffer().can_undo)
 		self.menus['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		self.buttons['redo'].set_sensitive(self.writer.get_buffer().can_redo)
-		if (self.number_of_lines != self.writer.get_buffer().get_line_count()) and self.preferences['autosave']:
+		if (self.number_of_lines != self.writer.get_buffer().get_line_count()) or (self.time + 300 < time.time())  and self.preferences['autosave']:
+			self.time = time.time()
 			self.number_of_lines = self.writer.get_buffer().get_line_count()
 			self.save_current_file()
 
@@ -1217,6 +1237,10 @@ class uText(Gtk.Window):
 				self.writer.get_buffer().redo()
 		elif option == 'open':
 			self.load_file_dialog()	
+		elif option == 'close':
+			self.save_current_file()
+			self.current_filepath = None
+			self.on_toolbar_clicked(None,'new')
 		elif option == 'open_from_dropbox':
 			files = []
 			ds = DropboxService(comun.TOKEN_FILE)
