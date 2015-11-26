@@ -582,6 +582,11 @@ class uText(Gtk.Window):
 		self.buttons['open'].connect('clicked',self.on_toolbar_clicked,'open')
 		self.toolbar.add(self.buttons['open'])
 		#
+		self.buttons['close'] = Gtk.ToolButton(stock_id=Gtk.STOCK_CLOSE)
+		self.buttons['close'].set_tooltip_text(_('Close'))
+		self.buttons['close'].connect('clicked',self.on_toolbar_clicked,'close')
+		self.toolbar.add(self.buttons['close'])
+		#
 		self.buttons['save'] = Gtk.ToolButton(stock_id=Gtk.STOCK_SAVE)
 		self.buttons['save'].set_tooltip_text(_('Save'))
 		self.buttons['save'].connect('clicked',self.on_toolbar_clicked,'save')
