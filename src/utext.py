@@ -233,12 +233,12 @@ class uText(Gtk.Window):
 		self.buttons['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		#
 		self.number_of_lines = 0
-		self.time = time.time()
 		#
 		self.match_end = None
 		self.tag_found = self.writer.get_buffer().create_tag(TAG_FOUND,background="orange")
 		self.searched_text = ''
 		self.replacement_text = ''
+		self.launched = False
 		self.writer.grab_focus()
 		if afile is not None:
 			self.load_file(afile)
@@ -1145,15 +1145,30 @@ class uText(Gtk.Window):
 		self.read_buffer()
 		
 	def on_buffer_changed(self, widget):
+		self.file_saved = False
 		self.menus['undo'].set_sensitive(self.writer.get_buffer().can_undo)
 		self.buttons['undo'].set_sensitive(self.writer.get_buffer().can_undo)
 		self.menus['redo'].set_sensitive(self.writer.get_buffer().can_redo)
 		self.buttons['redo'].set_sensitive(self.writer.get_buffer().can_redo)
-		if (self.number_of_lines != self.writer.get_buffer().get_line_count()) or (self.time + 300 < time.time())  and self.preferences['autosave']:
-			self.time = time.time()
+		if (self.number_of_lines != self.writer.get_buffer().get_line_count()) and self.preferences['autosave']:
 			self.number_of_lines = self.writer.get_buffer().get_line_count()
 			self.save_current_file()
+			self.file_saved = True
+		else:
+			if not self.launched or self.launched == False:
+				self.launched = True
+				print('launched')
+				GObject.timeout_add(60*1000, self.save_current_file_deferreaded)
 
+	def save_current_file_deferreaded(self):
+		if self.preferences['autosave'] and self.file_saved == False:
+			self.number_of_lines = self.writer.get_buffer().get_line_count()
+			self.save_current_file()
+			self.file_saved = True
+			print('saved')
+		self.launched = False
+		return True
+		
 	def get_buffer_text(self):
 		try:
 			start_iter,end_iter = self.writer.get_buffer().get_bounds()
