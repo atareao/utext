@@ -239,6 +239,7 @@ class uText(Gtk.Window):
 		self.searched_text = ''
 		self.replacement_text = ''
 		self.launched = False
+		self.is_saving = False
 		self.writer.grab_focus()
 		if afile is not None:
 			self.load_file(afile)
@@ -510,50 +511,57 @@ class uText(Gtk.Window):
 		dialog.destroy()
 			
 	def save_current_file(self):
-		if not self.current_filepath or self.current_filepath is None:
-			filename = None
-			dialog = Gtk.FileChooserDialog(_('Select a file to save markdown'),
-											self,
-										   Gtk.FileChooserAction.SAVE,
-										   (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-											Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
-			dialog.set_default_response(Gtk.ResponseType.OK)
-			dialog.set_current_folder(self.preferences['last_dir'])
-			filter = Gtk.FileFilter()
-			filter.set_name(_('Markdown files'))
-			filter.add_mime_type('text/plain')
-			filter.add_pattern('*.md')
-			dialog.add_filter(filter)
-			response = dialog.run()
-			if response == Gtk.ResponseType.OK:
-				filename = dialog.get_filename()	
-				if not filename.endswith('.md'):
-					filename += '.md'
-			dialog.destroy()
-			if filename is None:
-				self.save_current_file()
-				return
-			if os.path.exists(filename):
-				dialog_overwrite = Gtk.MessageDialog(self, 0, Gtk.MessageType.WARNING,
-				Gtk.ButtonsType.OK_CANCEL, _('File exists'))
-				dialog_overwrite.format_secondary_text(_('Overwrite?'))
-				response_overwrite = dialog_overwrite.run()
-				if response_overwrite != Gtk.ResponseType.OK:
-					dialog_overwrite.destroy()
-					self.save_current_file()
+		if not self.file_saved:
+			self.is_saving = True
+			if not self.current_filepath or self.current_filepath is None:
+				filename = None
+				dialog = Gtk.FileChooserDialog(_('Select a file to save markdown'),
+												self,
+											   Gtk.FileChooserAction.SAVE,
+											   (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+												Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+				dialog.set_default_response(Gtk.ResponseType.OK)
+				dialog.set_current_folder(self.preferences['last_dir'])
+				filter = Gtk.FileFilter()
+				filter.set_name(_('Markdown files'))
+				filter.add_mime_type('text/plain')
+				filter.add_pattern('*.md')
+				dialog.add_filter(filter)
+				response = dialog.run()
+				if response == Gtk.ResponseType.OK:
+					filename = dialog.get_filename()	
+					if not filename.endswith('.md'):
+						filename += '.md'
+				dialog.destroy()
+				if filename is None:
+					#self.save_current_file()
+					self.is_saving = False
 					return
-				dialog_overwrite.destroy()
-			if filename is not None:
-				self.current_filepath = filename			
-		if self.current_filepath and self.current_filepath is not None:									
-			data = self.get_buffer_text()
-			if data is not None:
-				f = open(self.current_filepath, 'w')
-				f.write(data)
-				f.close()
-				self.set_win_title()
-				self.work_with_file(self.current_filepath)
-				self.writer.get_buffer().set_modified(False)
+				if os.path.exists(filename):
+					dialog_overwrite = Gtk.MessageDialog(self, 0, Gtk.MessageType.WARNING,
+					Gtk.ButtonsType.OK_CANCEL, _('File exists'))
+					dialog_overwrite.format_secondary_text(_('Overwrite?'))
+					response_overwrite = dialog_overwrite.run()
+					if response_overwrite != Gtk.ResponseType.OK:
+						dialog_overwrite.destroy()
+						#self.save_current_file()
+						self.is_saving = False
+						return
+					dialog_overwrite.destroy()
+				if filename is not None:
+					self.current_filepath = filename			
+			if self.current_filepath and self.current_filepath is not None:									
+				data = self.get_buffer_text()
+				if data is not None:
+					f = open(self.current_filepath, 'w')
+					f.write(data)
+					f.close()
+					self.set_win_title()
+					self.work_with_file(self.current_filepath)
+					self.writer.get_buffer().set_modified(False)
+					self.file_saved = True
+			self.is_saving = False
+
 
 	def set_win_title(self):
 		if self.current_filepath and self.current_filepath is not None:
@@ -692,7 +700,7 @@ class uText(Gtk.Window):
 		#
 		self.menus['close'] = menu_open= Gtk.ImageMenuItem.new_with_label(_('Close'))
 		self.menus['close'].connect('activate',self.on_toolbar_clicked,'close')
-		self.menus['close'].add_accelerator('activate', accel_group,ord('C'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
+		self.menus['close'].add_accelerator('activate', accel_group,ord('Q'), Gdk.ModifierType.CONTROL_MASK, Gtk.AccelFlags.VISIBLE)
 		self.filemenu.append(self.menus['close'])
 		#
 		menurecents = Gtk.Menu.new()
@@ -1158,13 +1166,14 @@ class uText(Gtk.Window):
 			if not self.launched or self.launched == False:
 				self.launched = True
 				print('launched')
-				GObject.timeout_add(60*1000, self.save_current_file_deferreaded)
+				GObject.timeout_add(300*1000, self.save_current_file_deferreaded)
 
 	def save_current_file_deferreaded(self):
+		if self.is_saving:
+			return False
 		if self.preferences['autosave'] and self.file_saved == False:
 			self.number_of_lines = self.writer.get_buffer().get_line_count()
 			self.save_current_file()
-			self.file_saved = True
 			print('saved')
 		self.launched = False
 		return True
