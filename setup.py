@@ -49,6 +49,7 @@ DATA_FILES = [
 	('/opt/extras.ubuntu.com/utext/share/utext/social',glob.glob('data/social/*.svg')),
 	('/opt/extras.ubuntu.com/utext/share/utext/icons',['data/icons/utext.svg']),
 	('/opt/extras.ubuntu.com/utext/share/utext/pdfkit',glob.glob('src/pdfkit/*.py')),
+	('/opt/extras.ubuntu.com/utext/share/utext/pypandoc',glob.glob('src/pypandoc/*.py')),
 	('/opt/extras.ubuntu.com/utext/share/utext/pixmaps',glob.glob('data/pixmaps/*.png')),
 	('/usr/share/applications',['data/extras-utext.desktop']),
 	('/usr/share/mime/packages',['data/markdown.xml']),

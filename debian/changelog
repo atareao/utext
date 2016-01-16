@@ -1,3 +1,9 @@
+utext (0.3.9-0extras15.04.0) wily; urgency=medium
+
+  * Added export to various formats
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sat, 16 Jan 2016 11:49:22 +0100
+
 utext (0.3.8-0extras15.04.4) wily; urgency=medium
 
   * Added MathJax support

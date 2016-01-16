@@ -2,526 +2,611 @@
 # Copyright (C) 2013 THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
 # atareao <lorenzo.carbonell.cerezo@gmail.com>, 2013.
-# 
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: utext 0.3.5\n"
+"Project-Id-Version: utext 0.3.9\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2015-05-23 10:11+0200\n"
+"POT-Creation-Date: 2016-01-16 11:52+0100\n"
 "PO-Revision-Date: 2013-05-12 22:04+0200\n"
 "Last-Translator: atareao <lorenzo.carbonell.cerezo@gmail.com>\n"
 "Language-Team: Spanish\n"
-"Language: es\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_dialog.py:34
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_dialog.py:50
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_dialog_and_replace.py:50
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_and_replace_dialog.py:50
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:849
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:852
-msgid "Search"
-msgstr "Buscar"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_dialog_and_replace.py:34
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_and_replace_dialog.py:34
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:864
-msgid "Search and replace"
-msgstr "Buscar y reemplazar"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_dialog_and_replace.py:55
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/search_and_replace_dialog.py:55
-msgid "Replace with"
-msgstr "Reemplazar con"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_image_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:34
 msgid "Intert Image"
 msgstr "Insertar imagen"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_image_dialog.py:50
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_url_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:50
 msgid "Alt text"
 msgstr "Texto alternativo"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_image_dialog.py:56
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:56
 msgid "Title"
 msgstr "Título"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_image_dialog.py:62
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_url_dialog.py:56
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:62
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:56
 msgid "Url"
 msgstr "Url"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/filename_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/filename_dialog.py:34
 msgid "set filename for Dropbox"
 msgstr "introduce el nombre del archivo para Dropbox"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/filename_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/filename_dialog.py:50
 msgid "Filename"
 msgstr "Nombre del archivo"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/files_in_dropbox_dialog.py:34
-msgid "select file from Dropbox"
-msgstr "selecciona archivo de Dropbox"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:44
+msgid "docx"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/files_in_dropbox_dialog.py:49
-msgid "Select file"
-msgstr "Selecciona archivo"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:48
+msgid "epub"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:66
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:801
-msgid "Preferences"
-msgstr "Preferencias"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:52
+msgid "html"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:147
-msgid "Markdown editor"
-msgstr "Editor Markdown"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:56
+msgid "latex"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:153
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:194
-msgid "Show line numbers"
-msgstr "Muestra números de línea"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:60
+msgid "man"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:158
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:199
-msgid "Show line marks"
-msgstr "Muestra marcas de línea"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:64
+msgid "mediawiki"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:163
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:204
-msgid "Insert spaces instead of tabs"
-msgstr "Isertar espacios en lugar de tabuladores"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:68
+msgid "odt"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:168
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:209
-msgid "Set tab width"
-msgstr "Ancho del tabulador"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:72
+msgid "pdf"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:175
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:216
-msgid "Set auto indent"
-msgstr "Auto indentado"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:76
+msgid "rtf"
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:180
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:221
-msgid "Highlight current line"
-msgstr "Señalar la línea actual"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:188
-msgid "Html viewer"
-msgstr "Visor Html"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:226
-#, fuzzy
-msgid "Preview Theme"
-msgstr "Previsualizar"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:242
-msgid "General options"
-msgstr "Opciones generales"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:248
-msgid "Autosave"
-msgstr "Autoguardado"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/preferences_dialog.py:253
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1004
-msgid "Spell check"
-msgstr "Comprobación ortográfica"
-
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:219
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:828
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1457
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:257
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:913
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1602
 msgid "Hide Toolbar"
 msgstr "Ocultar barra de herramientas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:222
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1454
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:260
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1599
 msgid "Show Toolbar"
 msgstr "Mostrar barra de herramientas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:225
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:824
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1450
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:263
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:909
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1595
 msgid "Hide status bar"
 msgstr "Ocultar barra de estado"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:228
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1447
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:266
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1592
 msgid "Show status bar"
 msgstr "Mostrar barra de estado"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:253
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:300
 #, python-brace-format
 msgid "Lines: {0}, Words: {1}, Characters: {2}"
 msgstr "Líneas: {0}, Palabras: {1}, Caracteres: {2}"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:473
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:520
 #, fuzzy
 msgid "Select a file to save pdf"
 msgstr "Selecciona un archivo para guardar con formato markdown"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:481
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:528
 msgid "PDF files"
 msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:508
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:557
 msgid "Select a file to save markdown"
 msgstr "Selecciona un archivo para guardar con formato markdown"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:516
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:565
 msgid "Markdown files"
 msgstr "Archivos markdown"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:543
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:581
+msgid "File exists"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:582
+msgid "Overwrite?"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:610
 msgid "Untitled"
 msgstr "Sín título"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:556
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:656
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:623
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:728
 msgid "New file"
 msgstr "Nuevo archivo"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:561
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:663
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:628
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:735
 msgid "Open"
 msgstr "Abrir"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:566
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:700
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:633
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:740
+msgid "Close"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:638
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:777
 msgid "Save"
 msgstr "Guardar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:571
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:706
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:643
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:783
 msgid "Save as"
 msgstr "Guardar como"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:578
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:737
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:650
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:822
 msgid "Undo"
 msgstr "Deshacer"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:583
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:742
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:655
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:827
 msgid "Redo"
 msgstr "Rehacer"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:590
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:876
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:662
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:961
 msgid "Bold"
 msgstr "Negrita"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:595
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:881
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:667
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:966
 msgid "Italic"
 msgstr "Cursiva"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:600
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:886
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:672
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:971
 msgid "Underline"
 msgstr "Subrayado"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:605
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:891
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:677
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:976
 msgid "Strikethrough"
 msgstr "Tachado"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:612
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:754
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:684
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:839
 msgid "Copy"
 msgstr "Copiar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:617
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:759
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:689
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:844
 msgid "Paste"
 msgstr "Pegar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:622
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:749
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:694
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:834
 msgid "Cut"
 msgstr "Cortar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:629
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:701
 msgid "Zoom in"
 msgstr "Zoom mas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:634
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:706
 msgid "Zoom out"
 msgstr "Zoom menos"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:639
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:711
 msgid "Zoom 100%"
 msgstr "Zoom 100%"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:651
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:723
 msgid "File"
 msgstr "Archivo"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:669
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:746
 msgid "Recent files..."
 msgstr "Archivos recientes..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:693
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:770
 msgid "Open from Dropbox"
 msgstr "Abrir de Dropbox"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:713
-#, fuzzy
-msgid "Save as PDF"
-msgstr "Guardar como"
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:791
+msgid "Export to..."
+msgstr ""
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:719
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:804
 msgid "Save in Dropbox"
 msgstr "Guardar en Dropbox"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:725
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:810
 msgid "Exit"
 msgstr "Salir"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:734
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:819
 msgid "Edit"
 msgstr "Editar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:764
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:849
 msgid "Remove"
 msgstr "Quitar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:770
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:855
 msgid "Select All"
 msgstr "Seleccionar todo"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:777
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:862
 msgid "Convert selection to lowercase"
 msgstr "Convertir la selección a minúsculas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:781
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:866
 msgid "Convert selection to titlecase"
 msgstr "Capitalizar la selección"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:785
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:870
 msgid "Convert selection to uppercase"
 msgstr "Convertir la selección a minúsculas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:791
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:876
 msgid "Copy selection to html"
 msgstr "Copiar la selección como html"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:795
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:880
 msgid "Copy all to html"
 msgstr "Copiar todo como html"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:810
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:886
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:66
+msgid "Preferences"
+msgstr "Preferencias"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:895
 msgid "View"
 msgstr "Ver"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:813
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1019
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1023
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1206
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1557
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:898
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1145
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1149
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1347
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1702
 msgid "Preview"
 msgstr "Previsualizar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:820
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1140
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1324
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:905
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1285
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1469
 msgid "Hide preview"
 msgstr "Ocultar previsualización"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:834
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1344
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1348
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:919
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1489
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1493
 msgid "Night mode"
 msgstr "Modo noche"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:840
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1331
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1336
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:925
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1476
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1481
 msgid "Full screen"
 msgstr "Pantalla completa"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:857
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:934
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:937
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:50
+msgid "Search"
+msgstr "Buscar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:942
 #, fuzzy
 msgid "Remove highlight"
 msgstr "Resaltar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:873
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:949
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:34
+msgid "Search and replace"
+msgstr "Buscar y reemplazar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:958
 msgid "Format"
 msgstr "Formato"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:896
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:981
 msgid "Highlight"
 msgstr "Resaltar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:901
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:986
 msgid "Subscript"
 msgstr "Subíndice"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:906
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:991
 msgid "Superscript"
 msgstr "Superíndice"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:913
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:998
 msgid "Bullet List"
 msgstr "Lista"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:917
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1002
 msgid "Numbered List"
 msgstr "Lista numerada"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:923
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1008
 msgid "Bloque Quote"
 msgstr "Cita"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:927
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1012
 msgid "Code"
 msgstr "Código"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:933
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1018
 msgid "Heading One"
 msgstr "Encabezado 1"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:938
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1023
 msgid "Heading Two"
 msgstr "Encabezado 2"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:943
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1028
 msgid "Heading Three"
 msgstr "Encabezado 3"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:948
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1033
 msgid "Heading Four"
 msgstr "Encabezado 4"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:953
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1038
 msgid "Heading Five"
 msgstr "Encabezado 5"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:958
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1043
 msgid "Heading Sex"
 msgstr "Encabezado 6"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:967
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1052
 msgid "Insert"
 msgstr "Insertar"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:970
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1055
 msgid "Insert Horizontal Rule"
 msgstr "Insertar una línea horizontal"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:975
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1060
 msgid "Insert Timestamp"
 msgstr "Insertar fecha"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:980
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1065
 msgid "Insert more"
 msgstr "Insertar <!--more-->"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:987
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1072
 msgid "Insert Image"
 msgstr "Insertar imagen"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:992
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1077
 msgid "Insert Url"
 msgstr "Insertar url"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1001
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1086
 msgid "Tools"
 msgstr "Herramientas"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1012
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1089
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:253
+msgid "Spell check"
+msgstr "Comprobación ortográfica"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1097
 msgid "Help"
 msgstr "Ayuda"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1020
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1202
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1203
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1551
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1553
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1103
+#, fuzzy
+msgid "Select a file to save to"
+msgstr "Selecciona un archivo para guardar con formato markdown"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1111
+#, fuzzy
+msgid "files"
+msgstr "Nuevo archivo"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1146
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1343
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1344
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1696
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1698
 msgid "Html"
 msgstr "Html"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1029
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1155
 msgid "Web..."
 msgstr "Web..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1030
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1156
 msgid "Get help online..."
 msgstr "Ayuda en línea..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1031
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1157
 msgid "Translate this application..."
 msgstr "Traducir la aplicación..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1032
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1158
 msgid "Report a bug..."
 msgstr "Informar de un error..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1034
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1160
 msgid "Homepage"
 msgstr "Homepage"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1035
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1161
 msgid "Follow us in Twitter"
 msgstr "Síguenos en Twitter"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1036
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1162
 msgid "Follow us in Google+"
 msgstr "Síguenos en Google+"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1037
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1163
 msgid "Follow us in Facebook"
 msgstr "Síguenos en Facebook"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1039
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1165
 msgid "About"
 msgstr "Acerca de..."
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1164
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1305
 msgid "An application to work with markdown"
 msgstr "Una aplicación para trabajar con markdown"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1189
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1330
 msgid "File modified"
 msgstr "Archivo modificado"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1190
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1331
 msgid "Save file?"
 msgstr "¿Guardamos el archivo?"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1323
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1327
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1468
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1472
 msgid "Show preview"
 msgstr "Mostrar previsualización"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1333
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1478
 msgid "Normal screen"
 msgstr "Pantalla normal"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/utext.py:1345
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1490
 msgid "Day mode"
 msgstr "Modo día"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/src/insert_url_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:55
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:55
+msgid "Replace with"
+msgstr "Reemplazar con"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:147
+msgid "Markdown editor"
+msgstr "Editor Markdown"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:153
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:194
+msgid "Show line numbers"
+msgstr "Muestra números de línea"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:158
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:199
+msgid "Show line marks"
+msgstr "Muestra marcas de línea"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:163
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:204
+msgid "Insert spaces instead of tabs"
+msgstr "Isertar espacios en lugar de tabuladores"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:168
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:209
+msgid "Set tab width"
+msgstr "Ancho del tabulador"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:175
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:216
+msgid "Set auto indent"
+msgstr "Auto indentado"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:180
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:221
+msgid "Highlight current line"
+msgstr "Señalar la línea actual"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:188
+msgid "Html viewer"
+msgstr "Visor Html"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:226
+#, fuzzy
+msgid "Preview Theme"
+msgstr "Previsualizar"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:242
+msgid "General options"
+msgstr "Opciones generales"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:248
+msgid "Autosave"
+msgstr "Autoguardado"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:258
+msgid "Use MathJax"
+msgstr ""
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:34
 msgid "Intert Url"
 msgstr "Introducir url"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/extras-utext.desktop.in:15
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/extras-utext.desktop.in:16
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/files_in_dropbox_dialog.py:34
+msgid "select file from Dropbox"
+msgstr "selecciona archivo de Dropbox"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/files_in_dropbox_dialog.py:49
+msgid "Select file"
+msgstr "Selecciona archivo"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:15
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:16
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:18
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:19
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:20
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:21
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:22
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:23
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:24
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:25
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:26
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:27
 msgid "utext"
 msgstr "utext"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/extras-utext.desktop.in:17
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:17
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:28
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:29
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:30
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:31
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:32
 msgid "An application to work with markdown files"
 msgstr "Una aplicación para trabajar con markdown"
 
-#: /home/atareao/Copy/PROGRAMACION/Python/vivid/utext/extras-utext.desktop.in:23
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:38
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:39
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:40
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:41
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:42
+#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:43
 msgid "Open new window"
 msgstr "Abrir nueva ventana"
+
+#~ msgid "Save as PDF"
+#~ msgstr "Guardar como"
 
 #~ msgid "Input link"
 #~ msgstr "Introducir enlace"

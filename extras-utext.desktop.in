@@ -15,10 +15,30 @@ Actions = NewWindow
 $Name[es] = _('utext')
 $GenericName[es] = _('utext')
 $Comment[es] = _('An application to work with markdown files')
+$Name[ko] = _('utext')
+$Name[gl] = _('utext')
+$Name[pt_BR] = _('utext')
+$Name[ru] = _('utext')
+$Name[el] = _('utext')
+$GenericName[ko] = _('utext')
+$GenericName[gl] = _('utext')
+$GenericName[pt_BR] = _('utext')
+$GenericName[ru] = _('utext')
+$GenericName[el] = _('utext')
+$Comment[ko] = _('An application to work with markdown files')
+$Comment[gl] = _('An application to work with markdown files')
+$Comment[pt_BR] = _('An application to work with markdown files')
+$Comment[ru] = _('An application to work with markdown files')
+$Comment[el] = _('An application to work with markdown files')
 
 [Desktop Action NewWindow]
 _Name = Open new window
 Exec = /opt/extras.ubuntu.com/utext/bin/utext %U
 OnlyShowIn = Unity;
 $Name[es] = _('Open new window')
+$Name[ko] = _('Open new window')
+$Name[gl] = _('Open new window')
+$Name[pt_BR] = _('Open new window')
+$Name[ru] = _('Open new window')
+$Name[el] = _('Open new window')
 

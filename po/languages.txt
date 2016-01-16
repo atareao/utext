@@ -1,1 +1,6 @@
 es
+ko
+gl
+pt_BR
+ru
+el

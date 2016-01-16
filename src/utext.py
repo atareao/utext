@@ -27,18 +27,56 @@ from markdown import Markdown, Extension
 from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from gi.repository import GObject, Gtk, Gio, WebKit, Gdk, GtkSource, GtkSpell, GdkPixbuf
+import pypandoc
 from comun import _
 
 from bs4 import BeautifulSoup
 
 import pdfkit 
+
 ##
 #import threading
 ##
 
 TIME_LAPSE = 500 #ms
 TAG_FOUND = 'found'
-
+EXPORT_FORMATS = [
+				{'name':_('docx'),
+				'typeof':'docx',
+				'extension':'docx',
+				'mimetype':'application/vnd.openxmlformats-officedocument.wordprocessingml.document'},
+				{'name':_('epub'),
+				'typeof':'epub3',
+				'extension':'epub',
+				'mimetype':'application/epub+zip'},
+				{'name':_('html'),
+				'typeof':'html5',
+				'extension':'html',
+				'mimetype':'text/html'},
+				{'name':_('latex'),
+				'typeof':'latex',
+				'extension':'latex',
+				'mimetype':'application/x-latex'},
+				{'name':_('man'),
+				'typeof':'man',
+				'extension':'man',
+				'mimetype':'application/x-troff-man'},
+				{'name':_('mediawiki'),
+				'typeof':'mediawiki',
+				'extension':'mediawiki',
+				'mimetype':'text/plain'},
+				{'name':_('odt'),
+				'typeof':'odt',
+				'extension':'odt',
+				'mimetype':'application/vnd.oasis.opendocument.text'},
+				{'name':_('pdf'),
+				'typeof':'pdf',
+				'extension':'pdf',
+				'mimetype':'application/pdf'},
+				{'name':_('rtf'),
+				'typeof':'rtf',
+				'extension':'rtf',
+				'mimetype':'text/rtf'}]
 env = Environment(loader=FileSystemLoader(comun.THEMESDIR))
 
 def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
@@ -240,6 +278,7 @@ class uText(Gtk.Window):
 		self.replacement_text = ''
 		self.launched = False
 		self.is_saving = False
+		self.file_saved = False
 		self.writer.grab_focus()
 		if afile is not None:
 			self.load_file(afile)
@@ -748,9 +787,17 @@ class uText(Gtk.Window):
 		#
 		self.filemenu.append(Gtk.SeparatorMenuItem())
 		#
-		self.menus['save_as_pdf']= Gtk.ImageMenuItem.new_with_label(_('Save as PDF'))
-		self.menus['save_as_pdf'].connect('activate',self.on_toolbar_clicked,'save_as_pdf')
-		self.filemenu.append(self.menus['save_as_pdf'])
+		menuexport = Gtk.Menu.new()
+		self.export = Gtk.MenuItem.new_with_label(_('Export to...'))
+		self.export.set_submenu(menuexport)
+		self.filemenu.append(self.export)
+		#
+		self.exports = {}
+		for exportformat in EXPORT_FORMATS:
+			self.exports[exportformat['typeof']] = Gtk.MenuItem.new_with_label(exportformat['name'])
+			self.exports[exportformat['typeof']].connect('activate',self.on_menu_export,exportformat)
+			self.exports[exportformat['typeof']].set_visible(False)
+			menuexport.append(self.exports[exportformat['typeof']])
 		#
 		self.filemenu.append(Gtk.SeparatorMenuItem())
 		#
@@ -1052,7 +1099,48 @@ class uText(Gtk.Window):
 		#
 		menubar.append(self.fileh)
 		################################################################				
-		
+	def on_menu_export(self,widget,exportformat):
+		dialog = Gtk.FileChooserDialog(_('Select a file to save to')+' '+exportformat['name'],
+										self,
+									   Gtk.FileChooserAction.SAVE,
+									   (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+										Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+		dialog.set_default_response(Gtk.ResponseType.OK)
+		dialog.set_current_folder(self.preferences['last_dir'])
+		filter = Gtk.FileFilter()
+		filter.set_name(exportformat['name'].upper()+' '+_('files'))
+		filter.add_mime_type(exportformat['mimetype'])
+		filter.add_pattern('*.'+exportformat['extension'])
+		dialog.add_filter(filter)
+		response = dialog.run()
+		if response == Gtk.ResponseType.OK:
+			filename = dialog.get_filename()
+			dialog.destroy()
+			if filename is None:
+				return
+			if not filename.endswith('.'+exportformat['extension']):
+				filename += '.'+exportformat['extension']						
+			data = self.get_buffer_text()
+			if data is not None:
+				if exportformat['typeof']=='pdf':				
+					options = {
+						'page-size': 'A4',
+						'margin-top': '20mm',
+						'margin-right': '15mm',
+						'margin-bottom': '20mm',
+						'margin-left': '25mm',
+						'encoding': "UTF-8",
+					}			
+					pdfkit.from_string(self.html_content,filename,options=options)
+				else:
+					try:
+						output = pypandoc.convert(data,#source=tmpf.name,
+									to=exportformat['typeof'],
+									format='md',
+									outputfile=filename)
+					except Exception as e:
+						print(e)		
+
 	def on_activate_preview_or_html(self,widget):
 		if self.menus['preview_or_html'].get_label() == _('Preview'):			
 			self.menus['preview_or_html'].set_label(_('Html'))
