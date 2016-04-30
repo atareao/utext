@@ -1,47 +1,48 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# French translation for utext
+# Copyright (c) 2015 Rosetta Contributors and Canonical Ltd 2015
+# This file is distributed under the same license as the utext package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: utext 0.3.9\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2016-04-30 12:26+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2015-10-22 21:51+0000\n"
+"Last-Translator: Jean-Marc <Unknown>\n"
+"Language-Team: French <fr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: fr\n"
+"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-04-30 10:20+0000\n"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:34
 msgid "Intert Image"
-msgstr ""
+msgstr "Insérer une image"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:50
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:50
 msgid "Alt text"
-msgstr ""
+msgstr "Alternative textuelle"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:56
 msgid "Title"
-msgstr ""
+msgstr "Titre"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:62
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:56
 msgid "Url"
-msgstr ""
+msgstr "URL"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:34
 msgid "set filename for Dropbox"
-msgstr ""
+msgstr "définir un nom de fichier pour Dropbox"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:50
 msgid "Filename"
-msgstr ""
+msgstr "Nom de fichier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:45
 msgid "docx"
@@ -83,44 +84,44 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:922
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1611
 msgid "Hide Toolbar"
-msgstr ""
+msgstr "Masquer la barre d'outils"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:261
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1608
 msgid "Show Toolbar"
-msgstr ""
+msgstr "Afficher la barre d'outils"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:264
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:918
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1604
 msgid "Hide status bar"
-msgstr ""
+msgstr "Masquer la barre d'état"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:267
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1601
 msgid "Show status bar"
-msgstr ""
+msgstr "Afficher la barre d'état"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:301
 #, python-brace-format
 msgid "Lines: {0}, Words: {1}, Characters: {2}"
-msgstr ""
+msgstr "Lignes : {0}, mots : {1}, caractères : {2}"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:529
 msgid "Select a file to save pdf"
-msgstr ""
+msgstr "Sélectionner un fichier pour enregistrer le pdf"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:537
 msgid "PDF files"
-msgstr ""
+msgstr "Fichiers PDF"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:566
 msgid "Select a file to save markdown"
-msgstr ""
+msgstr "Sélectionnez un fichier à enregistrer en Markdown"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:574
 msgid "Markdown files"
-msgstr ""
+msgstr "Fichiers Markdown"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:590
 msgid "File exists"
@@ -132,17 +133,17 @@ msgstr ""
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:619
 msgid "Untitled"
-msgstr ""
+msgstr "Sans titre"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:632
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:737
 msgid "New file"
-msgstr ""
+msgstr "Nouveau fichier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:637
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:744
 msgid "Open"
-msgstr ""
+msgstr "Ouvrir"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:642
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:749
@@ -152,81 +153,81 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:647
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:786
 msgid "Save"
-msgstr ""
+msgstr "Enregistrer"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:652
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:792
 msgid "Save as"
-msgstr ""
+msgstr "Enregistrer sous"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:659
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:831
 msgid "Undo"
-msgstr ""
+msgstr "Annuler"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:664
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:836
 msgid "Redo"
-msgstr ""
+msgstr "Rétablir"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:671
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:970
 msgid "Bold"
-msgstr ""
+msgstr "Gras"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:676
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:975
 msgid "Italic"
-msgstr ""
+msgstr "Italique"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:681
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:980
 msgid "Underline"
-msgstr ""
+msgstr "Souligné"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:686
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:985
 msgid "Strikethrough"
-msgstr ""
+msgstr "Barré"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:693
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:848
 msgid "Copy"
-msgstr ""
+msgstr "Copier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:698
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:853
 msgid "Paste"
-msgstr ""
+msgstr "Coller"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:703
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:843
 msgid "Cut"
-msgstr ""
+msgstr "Couper"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:710
 msgid "Zoom in"
-msgstr ""
+msgstr "Agrandir"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:715
 msgid "Zoom out"
-msgstr ""
+msgstr "Réduire"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:720
 msgid "Zoom 100%"
-msgstr ""
+msgstr "Zoom à 100 %"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:732
 msgid "File"
-msgstr ""
+msgstr "Fichier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:755
 msgid "Recent files..."
-msgstr ""
+msgstr "Fichiers récents..."
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:779
 msgid "Open from Dropbox"
-msgstr ""
+msgstr "Ouvrir depuis Dropbox"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:800
 msgid "Export to..."
@@ -234,52 +235,52 @@ msgstr ""
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:813
 msgid "Save in Dropbox"
-msgstr ""
+msgstr "Enregistrer dans Dropbox"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:819
 msgid "Exit"
-msgstr ""
+msgstr "Quitter"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:828
 msgid "Edit"
-msgstr ""
+msgstr "Éditer"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:858
 msgid "Remove"
-msgstr ""
+msgstr "Supprimer"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:864
 msgid "Select All"
-msgstr ""
+msgstr "Tout sélectionner"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:871
 msgid "Convert selection to lowercase"
-msgstr ""
+msgstr "Convertir la sélection en minuscules"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:875
 msgid "Convert selection to titlecase"
-msgstr ""
+msgstr "Convertir la sélection en capitales"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:879
 msgid "Convert selection to uppercase"
-msgstr ""
+msgstr "Convertir la sélection en majuscules"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:885
 msgid "Copy selection to html"
-msgstr ""
+msgstr "Copier la sélection en HTML"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:889
 msgid "Copy all to html"
-msgstr ""
+msgstr "Tout copier en HTML"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:895
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:70
 msgid "Preferences"
-msgstr ""
+msgstr "Préférences"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:904
 msgid "View"
-msgstr ""
+msgstr "Afficher"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:907
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1154
@@ -287,25 +288,25 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1356
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1711
 msgid "Preview"
-msgstr ""
+msgstr "Aperçu"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:914
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1294
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1478
 msgid "Hide preview"
-msgstr ""
+msgstr "Masquer l'aperçu"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:928
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1498
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1502
 msgid "Night mode"
-msgstr ""
+msgstr "Mode nuit"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:934
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1485
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1490
 msgid "Full screen"
-msgstr ""
+msgstr "Plein écran"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:943
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:946
@@ -314,118 +315,121 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog.py:50
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:50
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:951
 msgid "Remove highlight"
-msgstr ""
+msgstr "Supprimer la mise en surbrillance"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:958
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:34
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:34
 msgid "Search and replace"
-msgstr ""
+msgstr "Rechercher & remplacer"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:967
 msgid "Format"
-msgstr ""
+msgstr "Format"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:990
 msgid "Highlight"
-msgstr ""
+msgstr "Surligner"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:995
 msgid "Subscript"
-msgstr ""
+msgstr "Indice"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1000
 msgid "Superscript"
-msgstr ""
+msgstr "Exposant"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1007
 msgid "Bullet List"
-msgstr ""
+msgstr "Liste à puces"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1011
 msgid "Numbered List"
-msgstr ""
+msgstr "Liste numérotée"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1017
 msgid "Bloque Quote"
-msgstr ""
+msgstr "Bloc de citation"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1021
 msgid "Code"
-msgstr ""
+msgstr "Code"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1027
 msgid "Heading One"
-msgstr ""
+msgstr "Titre 1"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1032
 msgid "Heading Two"
-msgstr ""
+msgstr "Titre 2"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1037
 msgid "Heading Three"
-msgstr ""
+msgstr "Titre 3"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1042
 msgid "Heading Four"
-msgstr ""
+msgstr "Titre 4"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1047
 msgid "Heading Five"
-msgstr ""
+msgstr "Titre 5"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1052
+#, fuzzy
 msgid "Heading Six"
-msgstr ""
+msgstr "Titre 6"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1061
 msgid "Insert"
-msgstr ""
+msgstr "Insérer"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1064
 msgid "Insert Horizontal Rule"
-msgstr ""
+msgstr "Insérer une règle horizontale"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1069
 msgid "Insert Timestamp"
-msgstr ""
+msgstr "Insérer un horodatage"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1074
 msgid "Insert more"
-msgstr ""
+msgstr "Insérer plus"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1081
 msgid "Insert Image"
-msgstr ""
+msgstr "Insérer une image"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1086
 msgid "Insert Url"
-msgstr ""
+msgstr "Insérer une URL"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1095
 msgid "Tools"
-msgstr ""
+msgstr "Outils"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1098
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:260
 msgid "Spell check"
-msgstr ""
+msgstr "Correcteur orthographique"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1106
 msgid "Help"
-msgstr ""
+msgstr "Aide"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1112
+#, fuzzy
 msgid "Select a file to save to"
-msgstr ""
+msgstr "Sélectionner un fichier pour enregistrer le pdf"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1120
+#, fuzzy
 msgid "files"
-msgstr ""
+msgstr "Fichiers PDF"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1155
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1352
@@ -433,143 +437,144 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1705
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1707
 msgid "Html"
-msgstr ""
+msgstr "Html"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1164
 msgid "Web..."
-msgstr ""
+msgstr "Web..."
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1165
 msgid "Get help online..."
-msgstr ""
+msgstr "Obtenir de l'aide en ligne..."
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1166
 msgid "Translate this application..."
-msgstr ""
+msgstr "Traduire cette application..."
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1167
 msgid "Report a bug..."
-msgstr ""
+msgstr "Signaler un bogue..."
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1169
 msgid "Homepage"
-msgstr ""
+msgstr "Page d'accueil"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1170
 msgid "Follow us in Twitter"
-msgstr ""
+msgstr "Suivez-nous sur Twitter"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1171
 msgid "Follow us in Google+"
-msgstr ""
+msgstr "Suivez-nous sur Google+"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1172
 msgid "Follow us in Facebook"
-msgstr ""
+msgstr "Suivez-nous sur Facebook"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1174
 msgid "About"
-msgstr ""
+msgstr "À propos"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1314
 msgid "An application to work with markdown"
-msgstr ""
+msgstr "Une application pour travailler avec Markdown"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1339
 msgid "File modified"
-msgstr ""
+msgstr "Fichier modifié"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1340
 msgid "Save file?"
-msgstr ""
+msgstr "Enregistrer le fichier ?"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1477
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1481
 msgid "Show preview"
-msgstr ""
+msgstr "Afficher l'aperçu"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1487
 msgid "Normal screen"
-msgstr ""
+msgstr "Écran normal"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1499
 msgid "Day mode"
-msgstr ""
+msgstr "Mode jour"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:55
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:55
 msgid "Replace with"
-msgstr ""
+msgstr "Remplacer par"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:151
 msgid "Markdown editor"
-msgstr ""
+msgstr "Éditeur Markdown"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:157
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:201
 msgid "Show line numbers"
-msgstr ""
+msgstr "Afficher les numéros des lignes"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:162
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:206
 msgid "Show line marks"
-msgstr ""
+msgstr "Afficher les marqueurs de ligne"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:167
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:211
 msgid "Insert spaces instead of tabs"
-msgstr ""
+msgstr "Insérer des espaces au lieu de tabulations"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:172
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:216
 msgid "Set tab width"
-msgstr ""
+msgstr "Définir la largeur de tabulation"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:179
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:223
 msgid "Set auto indent"
-msgstr ""
+msgstr "Définir le retrait automatique"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:184
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:228
 msgid "Highlight current line"
-msgstr ""
+msgstr "Mettre en surbrillance la ligne actuelle"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:195
 msgid "Html viewer"
-msgstr ""
+msgstr "Visionneur HTML"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:233
 msgid "Preview Theme"
-msgstr ""
+msgstr "Thème"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:249
 msgid "General options"
-msgstr ""
+msgstr "Options générales"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:255
 msgid "Autosave"
-msgstr ""
+msgstr "Enregistrement automatique"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:265
 msgid "Use MathJax"
 msgstr ""
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:277
+#, fuzzy
 msgid "Select font"
-msgstr ""
+msgstr "Sélectionner un fichier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:34
 msgid "Intert Url"
-msgstr ""
+msgstr "Insérer une URL"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/files_in_dropbox_dialog.py:34
 msgid "select file from Dropbox"
-msgstr ""
+msgstr "sélectionner un fichier depuis Dropbox"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/files_in_dropbox_dialog.py:49
 msgid "Select file"
-msgstr ""
+msgstr "Sélectionner un fichier"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:15
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:16
@@ -592,7 +597,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:39
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:40
 msgid "utext"
-msgstr ""
+msgstr "utext"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:17
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:28
@@ -605,7 +610,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:43
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:44
 msgid "An application to work with markdown files"
-msgstr ""
+msgstr "Une application pour travailler avec des fichiers Markdown"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:50
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:51
@@ -618,4 +623,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:58
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:59
 msgid "Open new window"
-msgstr ""
+msgstr "Ouvrir une nouvelle fenêtre"
+
+#~ msgid "Save as PDF"
+#~ msgstr "Enregistrer au format PDF"

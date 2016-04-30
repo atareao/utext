@@ -1,21 +1,22 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# Serbian translation for utext
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the utext package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
 #
-#, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
+"Project-Id-Version: utext 0.3.9\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
 "POT-Creation-Date: 2016-04-30 12:26+0200\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"PO-Revision-Date: 2016-04-17 14:12+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <sr@li.org>\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Language: sr\n"
+"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-04-30 10:20+0000\n"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:34
 msgid "Intert Image"
@@ -28,12 +29,12 @@ msgstr ""
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:56
 msgid "Title"
-msgstr ""
+msgstr "Наслов"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:62
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:56
 msgid "Url"
-msgstr ""
+msgstr "Адреса"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:34
 msgid "set filename for Dropbox"
@@ -41,7 +42,7 @@ msgstr ""
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:50
 msgid "Filename"
-msgstr ""
+msgstr "Назив датотеке"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:45
 msgid "docx"
@@ -314,7 +315,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog.py:50
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:50
 msgid "Search"
-msgstr ""
+msgstr "Потражи"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:951
 msgid "Remove highlight"
@@ -324,7 +325,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:34
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:34
 msgid "Search and replace"
-msgstr ""
+msgstr "Потражите и замените"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:967
 msgid "Format"
@@ -499,7 +500,7 @@ msgstr ""
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:55
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:55
 msgid "Replace with"
-msgstr ""
+msgstr "Замени са"
 
 #: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:151
 msgid "Markdown editor"

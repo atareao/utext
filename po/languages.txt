@@ -4,3 +4,7 @@ gl
 pt_BR
 ru
 el
+fr
+uk
+ca
+sr

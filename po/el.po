@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: utext 0.3.9\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2016-01-16 11:52+0100\n"
+"POT-Creation-Date: 2016-04-30 12:26+0200\n"
 "PO-Revision-Date: 2015-06-11 22:39+0000\n"
 "Last-Translator: Aggelos Arnaoutis <angelosarn@hotmail.com>\n"
 "Language-Team: Greek <el@li.org>\n"
@@ -15,592 +15,612 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: el\n"
-"X-Generator: Launchpad (build 17557)\n"
-"X-Launchpad-Export-Date: 2015-06-15 20:00+0000\n"
+"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-04-30 10:20+0000\n"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:34
 msgid "Intert Image"
 msgstr "Εισαγωγή εικόνας"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:50
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:50
 msgid "Alt text"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:56
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:56
 msgid "Title"
 msgstr "Τίτλος"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_image_dialog.py:62
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:56
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_image_dialog.py:62
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:56
 msgid "Url"
 msgstr "Url"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/filename_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:34
 msgid "set filename for Dropbox"
 msgstr "ορισμός ονόματος αρχείου για Dropbox"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/filename_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/filename_dialog.py:50
 msgid "Filename"
 msgstr "'Ονομα αρχείου"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:44
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:45
 msgid "docx"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:48
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:49
 msgid "epub"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:52
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:53
 msgid "html"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:56
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:57
 msgid "latex"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:60
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:61
 msgid "man"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:64
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:65
 msgid "mediawiki"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:68
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:69
 msgid "odt"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:72
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:73
 msgid "pdf"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:76
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:77
 msgid "rtf"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:257
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:913
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1602
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:258
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:922
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1611
 msgid "Hide Toolbar"
 msgstr "Απόκρυψη γραμμής εργαλείων"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:260
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1599
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:261
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1608
 msgid "Show Toolbar"
 msgstr "Εμφάνιση γραμμής εργαλείων"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:263
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:909
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1595
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:264
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:918
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1604
 msgid "Hide status bar"
 msgstr "Απόκρυψη γραμμής κατάστασης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:266
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1592
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:267
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1601
 msgid "Show status bar"
 msgstr "Εμφάνιση γραμμής κατάστασης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:300
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:301
 #, python-brace-format
 msgid "Lines: {0}, Words: {1}, Characters: {2}"
 msgstr "Γραμμές: {0}, Λέξεις: {1}, Χαρακτήρες: {2}"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:520
-#, fuzzy
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:529
 msgid "Select a file to save pdf"
-msgstr "Επιλογή αρχείου"
+msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:528
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:537
 msgid "PDF files"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:557
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:566
 msgid "Select a file to save markdown"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:565
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:574
 msgid "Markdown files"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:581
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:590
 msgid "File exists"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:582
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:591
 msgid "Overwrite?"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:610
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:619
 msgid "Untitled"
 msgstr "Χωρίς τίτλο"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:623
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:728
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:632
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:737
 msgid "New file"
 msgstr "Νέο αρχείο"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:628
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:735
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:637
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:744
 msgid "Open"
 msgstr "Άνοιγμα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:633
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:740
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:642
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:749
 msgid "Close"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:638
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:777
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:647
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:786
 msgid "Save"
 msgstr "Αποθήκευση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:643
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:783
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:652
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:792
 msgid "Save as"
 msgstr "Αποθήκευση ως"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:650
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:822
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:659
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:831
 msgid "Undo"
 msgstr "Αναίρεση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:655
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:827
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:664
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:836
 msgid "Redo"
 msgstr "Επανάληψη"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:662
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:961
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:671
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:970
 msgid "Bold"
 msgstr "Έντονα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:667
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:966
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:676
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:975
 msgid "Italic"
 msgstr "Πλάγια"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:672
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:971
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:681
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:980
 msgid "Underline"
 msgstr "Υπογράμμιση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:677
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:976
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:686
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:985
 msgid "Strikethrough"
 msgstr "Διακριτή διαγραφή"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:684
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:839
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:693
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:848
 msgid "Copy"
 msgstr "Αντιγραφή"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:689
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:844
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:698
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:853
 msgid "Paste"
 msgstr "Επικόλληση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:694
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:834
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:703
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:843
 msgid "Cut"
 msgstr "Αποκοπή"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:701
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:710
 msgid "Zoom in"
 msgstr "Μεγέθυνση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:706
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:715
 msgid "Zoom out"
 msgstr "Σμίκρυνση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:711
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:720
 msgid "Zoom 100%"
 msgstr "Εστίαση 100%"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:723
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:732
 msgid "File"
 msgstr "Αρχείο"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:746
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:755
 msgid "Recent files..."
 msgstr "Πρόσφατα αρχεία"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:770
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:779
 msgid "Open from Dropbox"
 msgstr "Άνοιγμα από Dropbox"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:791
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:800
 msgid "Export to..."
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:804
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:813
 msgid "Save in Dropbox"
 msgstr "Αποθήκευση στο Dropbox"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:810
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:819
 msgid "Exit"
 msgstr "Έξοδος"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:819
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:828
 msgid "Edit"
 msgstr "Επεξεργασία"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:849
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:858
 msgid "Remove"
 msgstr "Αφαίρεση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:855
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:864
 msgid "Select All"
 msgstr "Επιλογή όλων"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:862
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:871
 msgid "Convert selection to lowercase"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:866
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:875
 msgid "Convert selection to titlecase"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:870
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:879
 msgid "Convert selection to uppercase"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:876
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:885
 msgid "Copy selection to html"
 msgstr "Αντιγραφή επιλογής σε html"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:880
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:889
 msgid "Copy all to html"
 msgstr "Αντιγραφή όλων σε html"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:886
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:66
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:895
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:70
 msgid "Preferences"
 msgstr "Προτιμήσεις"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:895
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:904
 msgid "View"
 msgstr "Προβολή"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:898
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1145
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1149
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1347
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1702
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:907
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1154
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1158
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1356
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1711
 msgid "Preview"
 msgstr "Προεπισκόπηση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:905
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1285
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1469
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:914
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1294
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1478
 msgid "Hide preview"
 msgstr "Απόκρυψη προεπισκόπησης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:919
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1489
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1493
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:928
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1498
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1502
 msgid "Night mode"
 msgstr "Νυχτερινή λειτουργία"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:925
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1476
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1481
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:934
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1485
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1490
 msgid "Full screen"
 msgstr "Πλήρης οθόνη"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:934
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:937
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:50
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog.py:34
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog.py:50
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:943
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:946
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog.py:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:50
 msgid "Search"
 msgstr "Αναζήτηση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:942
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:951
 msgid "Remove highlight"
 msgstr "Αφαίρεση επισήμανσης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:949
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:34
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:958
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:34
 msgid "Search and replace"
 msgstr "Αναζήτηση και αντικατάσταση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:958
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:967
 msgid "Format"
 msgstr "Μορφοποίηση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:981
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:990
 msgid "Highlight"
 msgstr "Επισήμανση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:986
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:995
 msgid "Subscript"
 msgstr "Δείκτης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:991
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1000
 msgid "Superscript"
 msgstr "Εκθέτης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:998
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1007
 msgid "Bullet List"
 msgstr "Λίστα κουκκίδων"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1002
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1011
 msgid "Numbered List"
 msgstr "Αριθμημένη λίστα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1008
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1017
 msgid "Bloque Quote"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1012
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1021
 msgid "Code"
 msgstr "Κώδικας"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1018
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1027
 msgid "Heading One"
 msgstr "Επικεφαλίδα ένα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1023
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1032
 msgid "Heading Two"
 msgstr "Επικεφαλίδα δύο"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1028
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1037
 msgid "Heading Three"
 msgstr "Επικεφαλίδα τρία"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1033
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1042
 msgid "Heading Four"
 msgstr "Επικεφαλίδα τέσσερα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1038
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1047
 msgid "Heading Five"
 msgstr "Επικεφαλίδα πέντε"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1043
-msgid "Heading Sex"
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1052
+#, fuzzy
+msgid "Heading Six"
 msgstr "Επικεφαλίδα έξι"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1052
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1061
 msgid "Insert"
 msgstr "Εισαγωγή"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1055
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1064
 msgid "Insert Horizontal Rule"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1060
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1069
 msgid "Insert Timestamp"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1065
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1074
 msgid "Insert more"
 msgstr "Εισαγωγή περισσοτέρων"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1072
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1081
 msgid "Insert Image"
 msgstr "Εισαγωγή εικόνας"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1077
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1086
 msgid "Insert Url"
 msgstr "Εισαγωγή url"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1086
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1095
 msgid "Tools"
 msgstr "Εργαλεία"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1089
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:253
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1098
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:260
 msgid "Spell check"
 msgstr "Ορθογραφικός έλεγχος"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1097
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1106
 msgid "Help"
 msgstr "Βοήθεια"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1103
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1112
 #, fuzzy
 msgid "Select a file to save to"
 msgstr "Επιλογή αρχείου"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1111
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1120
 #, fuzzy
 msgid "files"
 msgstr "Νέο αρχείο"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1146
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1343
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1344
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1696
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1698
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1155
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1352
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1353
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1705
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1707
 msgid "Html"
 msgstr "Html"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1155
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1164
 msgid "Web..."
 msgstr "Ιστός..."
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1156
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1165
 msgid "Get help online..."
 msgstr "Λήψη ηλεκτρονικής βοήθειας..."
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1157
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1166
 msgid "Translate this application..."
 msgstr "Μεταφράστε αυτή την εφαρμογή..."
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1158
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1167
 msgid "Report a bug..."
 msgstr "Αναφορά σφάλαματος..."
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1160
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1169
 msgid "Homepage"
 msgstr "Αρχική σελίδα"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1161
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1170
 msgid "Follow us in Twitter"
 msgstr "Ακολουθήστε μας στο Twitter"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1162
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1171
 msgid "Follow us in Google+"
 msgstr "Ακολουθήστε μας στο Google+"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1163
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1172
 msgid "Follow us in Facebook"
 msgstr "Ακολουθήστε μας στο Facebook"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1165
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1174
 msgid "About"
 msgstr "Περί"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1305
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1314
 msgid "An application to work with markdown"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1330
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1339
 msgid "File modified"
 msgstr "Αρχείο τροποποίηθηκε"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1331
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1340
 msgid "Save file?"
 msgstr "Αποθήκευση αρχείου;"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1468
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1472
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1477
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1481
 msgid "Show preview"
 msgstr "Εμφάνιση προεπισκόπησης"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1478
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1487
 msgid "Normal screen"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/utext.py:1490
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/utext.py:1499
 msgid "Day mode"
 msgstr "Λειτουργία ημέρας"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_dialog_and_replace.py:55
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/search_and_replace_dialog.py:55
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_dialog_and_replace.py:55
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/search_and_replace_dialog.py:55
 msgid "Replace with"
 msgstr "Αντικατάσταση με"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:147
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:151
 msgid "Markdown editor"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:153
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:194
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:157
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:201
 msgid "Show line numbers"
 msgstr "Εμφάνιση αριθμών γραμμών"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:158
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:199
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:162
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:206
 msgid "Show line marks"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:163
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:204
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:167
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:211
 msgid "Insert spaces instead of tabs"
 msgstr "Εισαγωγή κενών αντί στηλοθετών"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:168
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:209
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:172
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:216
 msgid "Set tab width"
 msgstr "Ορισμός πλάτους στηλοθέτη"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:175
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:216
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:179
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:223
 msgid "Set auto indent"
 msgstr "Ορισμός αυτόματης εσοχής"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:180
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:221
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:184
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:228
 msgid "Highlight current line"
 msgstr "Επισήμανση τρέχουσας γραμμής"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:188
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:195
 msgid "Html viewer"
 msgstr "Προβολέας html"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:226
-#, fuzzy
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:233
 msgid "Preview Theme"
-msgstr "Προεπισκόπηση"
+msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:242
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:249
 msgid "General options"
 msgstr "Γενικές επιλογές"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:248
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:255
 msgid "Autosave"
 msgstr "Αυτόματη αποθήκευση"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/preferences_dialog.py:258
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:265
 msgid "Use MathJax"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/insert_url_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/preferences_dialog.py:277
+#, fuzzy
+msgid "Select font"
+msgstr "Επιλογή αρχείου"
+
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/insert_url_dialog.py:34
 msgid "Intert Url"
 msgstr "Εισαγωγή url"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/files_in_dropbox_dialog.py:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/files_in_dropbox_dialog.py:34
 msgid "select file from Dropbox"
 msgstr "επιλογή αρχείου από Dropbox"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/src/files_in_dropbox_dialog.py:49
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/src/files_in_dropbox_dialog.py:49
 msgid "Select file"
 msgstr "Επιλογή αρχείου"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:15
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:16
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:18
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:19
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:20
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:21
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:22
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:23
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:24
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:25
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:26
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:27
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:15
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:16
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:18
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:19
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:20
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:21
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:22
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:23
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:24
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:25
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:26
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:27
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:33
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:34
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:35
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:36
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:37
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:38
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:39
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:40
 msgid "utext"
 msgstr "utext"
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:17
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:28
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:29
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:30
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:31
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:32
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:17
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:28
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:29
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:30
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:31
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:32
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:41
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:42
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:43
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:44
 msgid "An application to work with markdown files"
 msgstr ""
 
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:38
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:39
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:40
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:41
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:42
-#: /home/lorenzo/CloudStation/Programacion/Python/vivid/utext/extras-utext.desktop.in:43
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:50
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:51
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:52
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:53
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:54
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:55
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:56
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:57
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:58
+#: /home/lorenzo/CloudStation/Programacion/Python/current/utext/extras-utext.desktop.in:59
 msgid "Open new window"
 msgstr ""
