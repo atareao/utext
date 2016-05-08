@@ -69,6 +69,8 @@ CONFIG_DIR = os.path.join(os.path.expanduser('~'), '.config')
 CONFIG_APP_DIR = os.path.join(CONFIG_DIR, APP)
 CONFIG_FILE = os.path.join(CONFIG_APP_DIR, APP_CONF)
 TOKEN_FILE = os.path.join(CONFIG_APP_DIR, 'token')
+TOKEN_FILE_DRIVE = os.path.join(CONFIG_APP_DIR, 'token_drive')
+print(TOKEN_FILE_DRIVE)
 #########################################
 # check if running from source
 if is_package():

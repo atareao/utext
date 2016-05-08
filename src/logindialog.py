@@ -3,7 +3,7 @@
 #
 #
 # LoginDialog
-# 
+#
 #
 # Copyright (C) 2012 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
@@ -26,50 +26,65 @@ from gi.repository import Gtk
 from gi.repository import WebKit
 from gi.repository import GObject
 import comun
-class LoginDialog(Gtk.Dialog):
-	def __init__(self,width, height, url):
-		self.code = None
-		Gtk.Dialog.__init__(self)
-		self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
-		self.set_title(comun.APP)
-		self.set_icon_from_file(comun.ICON)
-		#
-		vbox = Gtk.VBox(spacing = 5)
-		self.get_content_area().add(vbox)
-		hbox1 = Gtk.HBox()
-		vbox.pack_start(hbox1,True,True,0)
-		#
-		self.scrolledwindow1 = Gtk.ScrolledWindow()
-		self.scrolledwindow1.set_policy(Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
-		self.scrolledwindow1.set_shadow_type(Gtk.ShadowType.IN)
-		hbox1.pack_start(self.scrolledwindow1,True,True,0)
-		#
-		self.viewer = WebKit.WebView()
-		self.scrolledwindow1.add(self.viewer)
-		self.scrolledwindow1.set_size_request(width,height)
-		self.viewer.connect('navigation-policy-decision-requested', self.on_navigation_requested)
-		self.viewer.open(url)
-		#		
-		self.show_all()
 
-	####################################################################
-	#########################BROWSER####################################
-	####################################################################
-	def on_navigation_requested(self, view, frame, req, nav, pol):
-		try:
-			uri = req.get_uri()
-			print(uri)
-			pos = uri.find('http://localhost/?oauth_token=')
-			if pos > -1:
-				self.code,self.uid = (uri[30:]).split('&')
-				self.hide()
-		except Exception as e:
-			print(e)
-			print('Error')
-	####################################################################
-	#########################ACTIONS####################################
-	####################################################################
+
+class LoginDialog(Gtk.Dialog):
+    def __init__(self, width, height, url, isgoogle=False):
+        self.code = None
+        Gtk.Dialog.__init__(self)
+        self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
+        self.set_title(comun.APP)
+        self.set_icon_from_file(comun.ICON)
+        self.isgoogle = isgoogle
+        #
+        vbox = Gtk.VBox(spacing=5)
+        self.get_content_area().add(vbox)
+        hbox1 = Gtk.HBox()
+        vbox.pack_start(hbox1, True, True, 0)
+        #
+        self.scrolledwindow1 = Gtk.ScrolledWindow()
+        self.scrolledwindow1.set_policy(
+            Gtk.PolicyType.AUTOMATIC, Gtk.PolicyType.AUTOMATIC)
+        self.scrolledwindow1.set_shadow_type(Gtk.ShadowType.IN)
+        hbox1.pack_start(self.scrolledwindow1, True, True, 0)
+        #
+        self.viewer = WebKit.WebView()
+        self.scrolledwindow1.add(self.viewer)
+        self.scrolledwindow1.set_size_request(width, height)
+        self.viewer.connect('navigation-policy-decision-requested',
+                            self.on_navigation_requested)
+        self.viewer.open(url)
+        self.code = None
+        self.uid = None
+        #
+        self.show_all()
+
+    # ###################################################################
+    # ########################BROWSER####################################
+    # ###################################################################
+    def on_navigation_requested(self, view, frame, req, nav, pol):
+        try:
+            uri = req.get_uri()
+            print('=========================================')
+            print(uri)
+            print('=========================================')
+            if self.isgoogle:
+                pos = uri.find('http://localhost/?code=')
+                if pos > -1:
+                    self.code = uri.split('=')[1]
+                    self.hide()
+            else:
+                pos = uri.find('http://localhost/?oauth_token=')
+                if pos > -1:
+                    self.code, self.uid = (uri[30:]).split('&')
+                    self.hide()
+        except Exception as e:
+            print(e)
+            print('Error')
+    # ###################################################################
+    # ########################ACTIONS####################################
+    # ###################################################################
 
 if __name__ == '__main__':
-	ld = LoginDialog('http://www.google.com')
-	ld.run()
+    ld = LoginDialog('http://www.google.com')
+    ld.run()

@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+import chardet
 import os
+import codecs
 import comun
 import sys
 import locale
@@ -26,6 +28,7 @@ from jinja2 import Environment, FileSystemLoader
 from markdown import Markdown, Extension
 from mdx_mathjax import MathExtension
 from myextension import MyExtension
+from urllib.parse import quote_plus, unquote_plus
 from gi.repository import GObject, Gtk, Gio, WebKit, Gdk, GtkSource, GtkSpell, GdkPixbuf
 from gi.repository import Pango
 import pypandoc
@@ -42,77 +45,83 @@ import pdfkit
 TIME_LAPSE = 500 #ms
 TAG_FOUND = 'found'
 EXPORT_FORMATS = [
-                {'name':_('docx'),
-                'typeof':'docx',
-                'extension':'docx',
-                'mimetype':'application/vnd.openxmlformats-officedocument.wordprocessingml.document'},
-                {'name':_('epub'),
-                'typeof':'epub3',
-                'extension':'epub',
-                'mimetype':'application/epub+zip'},
-                {'name':_('html'),
-                'typeof':'html5',
-                'extension':'html',
-                'mimetype':'text/html'},
-                {'name':_('latex'),
-                'typeof':'latex',
-                'extension':'latex',
-                'mimetype':'application/x-latex'},
-                {'name':_('man'),
-                'typeof':'man',
-                'extension':'man',
-                'mimetype':'application/x-troff-man'},
-                {'name':_('mediawiki'),
-                'typeof':'mediawiki',
-                'extension':'mediawiki',
-                'mimetype':'text/plain'},
-                {'name':_('odt'),
-                'typeof':'odt',
-                'extension':'odt',
-                'mimetype':'application/vnd.oasis.opendocument.text'},
-                {'name':_('pdf'),
-                'typeof':'pdf',
-                'extension':'pdf',
-                'mimetype':'application/pdf'},
-                {'name':_('rtf'),
-                'typeof':'rtf',
-                'extension':'rtf',
-                'mimetype':'text/rtf'}]
+    {'name': _('docx'),
+     'typeof': 'docx',
+     'extension': 'docx',
+     'mimetype':  'application/vnd.openxmlformats-officedocument.\
+wordprocessingml.document'},
+    {'name': _('epub'),
+     'typeof': 'epub3',
+     'extension': 'epub',
+     'mimetype': 'application/epub+zip'},
+    {'name': _('html'),
+     'typeof': 'html5',
+     'extension': 'html',
+     'mimetype': 'text/html'},
+    {'name': _('latex'),
+     'typeof': 'latex',
+     'extension': 'latex',
+     'mimetype': 'application/x-latex'},
+    {'name': _('man'),
+     'typeof': 'man',
+     'extension': 'man',
+     'mimetype': 'application/x-troff-man'},
+    {'name': _('mediawiki'),
+     'typeof': 'mediawiki',
+     'extension': 'mediawiki',
+     'mimetype': 'text/plain'},
+    {'name': _('odt'),
+     'typeof': 'odt',
+     'extension': 'odt',
+     'mimetype': 'application/vnd.oasis.opendocument.text'},
+    {'name': _('pdf'),
+     'typeof': 'pdf',
+     'extension': 'pdf',
+     'mimetype': 'application/pdf'},
+    {'name': _('rtf'),
+     'typeof': 'rtf',
+     'extension': 'rtf',
+     'mimetype': 'text/rtf'}]
 env = Environment(loader=FileSystemLoader(comun.THEMESDIR))
 
-def add2menu(menu, text = None, icon = None, conector_event = None, conector_action = None):
-    if text != None:
+
+def add2menu(menu, text=None, icon=None, conector_event=None,
+             conector_action=None):
+    if text is not None:
         menu_item = Gtk.ImageMenuItem.new_with_label(text)
         if icon:
             image = Gtk.Image.new_from_stock(icon, Gtk.IconSize.MENU)
             menu_item.set_image(image)
             menu_item.set_always_show_image(True)
     else:
-        if icon == None:
+        if icon is None:
             menu_item = Gtk.SeparatorMenuItem()
         else:
             menu_item = Gtk.ImageMenuItem.new_from_stock(icon, None)
             menu_item.set_always_show_image(True)
-    if conector_event != None and conector_action != None:
-        menu_item.connect(conector_event,conector_action)
+    if conector_event is not None and conector_action is not None:
+        menu_item.connect(conector_event, conector_action)
     menu_item.show()
     menu.append(menu_item)
     return menu_item
 
+
 class uText(Gtk.Window):
     __gsignals__ = {
-        'text-changed':(GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,(object,)),
-        'save-me':(GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,(object,)),
+        'text-changed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
+                         (object,)),
+        'save-me': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
+                    (object,)),
         }
 
-    def __init__(self,afile=None):
+    def __init__(self, afile=None):
         Gtk.Window.__init__(self, title='')
         self.set_position(Gtk.WindowPosition.CENTER_ALWAYS)
         self.set_icon_from_file(comun.ICON)
         self.set_border_width(5)
         self.set_default_size(800, 600)
         self.connect('delete-event', self.on_close_application)
-        self.connect('realize',self.on_activate_preview_or_html)
+        self.connect('realize', self.on_activate_preview_or_html)
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         # Vertical box. Contains menu and PaneView
         self.vbox = Gtk.VBox(False, 2)
@@ -123,21 +132,17 @@ class uText(Gtk.Window):
         self.match_end = None
         self.searched_text = ''
         self.replacement_text = ''
-        #self.the_event = threading.Event()
-        #self.the_event.clear()
         self.process_blocked = False
         self.markdown_content = ''
         self.html_content = ''
         self.html_rendered = ''
-        css = open(os.path.join(comun.THEMESDIR,'default','style.css'), 'r')
+        css = open(os.path.join(comun.THEMESDIR, 'default', 'style.css'), 'r')
         self.css_content = css.read()
         css.close()
-        #
-
-        #Init Menu
+        # Init Menu
         self.init_menu()
 
-        #Init Toolbar
+        # Init Toolbar
         self.init_toolbar()
 
         # Markdown Editor
@@ -161,15 +166,12 @@ class uText(Gtk.Window):
         # Set textview buffer
         self.writer.set_buffer(buffer)
         self.writer.connect("key-release-event", self.on_key_release_event)
-        #SpellChecker
+        # SpellChecker
         if GtkSpell._namespace == "Gtkspell":
             self.spellchecker = GtkSpell.Spell.new()
         elif GtkSpell._namespace == "GtkSpell":
             self.spellchecker = GtkSpell.Checker.new()
-        #self.spellchecker = GtkSpell.Checker.new()
         self.spellchecker.attach(self.writer)
-        #self.spellchecker.buffer_initialize()
-        # Dunno
         lm = GtkSource.LanguageManager.get_default()
         language = lm.get_language("markdown")
         self.writer.get_buffer().set_language(language)
@@ -177,9 +179,10 @@ class uText(Gtk.Window):
         # WebKit
         self.webkit_viewer = WebKit.WebView()
         self.webkit_viewer.set_name("previewContent")
-        self.webkit_viewer.connect("navigation-policy-decision-requested", self.on_navigation)
+        self.webkit_viewer.connect(
+            "navigation-policy-decision-requested", self.on_navigation)
         settings = WebKit.WebSettings()
-        #settings.set_property('enable-file-access-from-file-uris', True)
+        # settings.set_property('enable-file-access-from-file-uris', True)
         self.webkit_viewer.set_settings(settings)
 
         # Html
@@ -205,20 +208,22 @@ class uText(Gtk.Window):
         self.scrolledwindow1 = Gtk.ScrolledWindow()
         self.scrolledwindow1.set_hexpand(False)
         self.scrolledwindow1.set_vexpand(True)
-        self.action_scroll1 = self.scrolledwindow1.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed,'scroll1')
+        self.action_scroll1 = self.scrolledwindow1.get_vadjustment().connect(
+            'value-changed', self.on_scrolled_value_changed, 'scroll1')
 
         # Scrolled Window 2 (for webkit)
         self.scrolledwindow2 = Gtk.ScrolledWindow()
         self.scrolledwindow2.set_hexpand(False)
         self.scrolledwindow2.set_vexpand(True)
-        self.action_scroll2 = self.scrolledwindow2.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed_preview)
+        self.action_scroll2 = self.scrolledwindow2.get_vadjustment().connect(
+            'value-changed', self.on_scrolled_value_changed_preview)
 
         # Scrolled Window 3 (for html)
         self.scrolledwindow3 = Gtk.ScrolledWindow()
         self.scrolledwindow3.set_hexpand(False)
         self.scrolledwindow3.set_vexpand(True)
-        self.action_scroll3 = self.scrolledwindow3.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed_html)
-        #self.action_scroll3 = self.scrolledwindow3.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed,'scroll3')
+        self.action_scroll3 = self.scrolledwindow3.get_vadjustment().connect(
+            'value-changed', self.on_scrolled_value_changed_html)
 
         # Add textview, webkit and html
         self.scrolledwindow1.add(self.writer)
@@ -234,8 +239,8 @@ class uText(Gtk.Window):
         self.hpaned.pack2(vbox_child, True, True)
         self.vbox.pack_start(self.hpaned, True, True, 0)
 
-        #StatusBar
-        self.statusbar =  Gtk.Statusbar()
+        # StatusBar
+        self.statusbar = Gtk.Statusbar()
         self.vbox.pack_start(self.statusbar, False, False, 0)
 
         # Init Jinja, markdown
@@ -249,7 +254,7 @@ class uText(Gtk.Window):
         # Set windows title
         self.set_win_title()
         #
-        self.resize(self.preferences['width'],self.preferences['height'])
+        self.resize(self.preferences['width'], self.preferences['height'])
         #
         self.show_all()
         self.show_source_code(False)
@@ -274,7 +279,8 @@ class uText(Gtk.Window):
         self.number_of_lines = 0
         #
         self.match_end = None
-        self.tag_found = self.writer.get_buffer().create_tag(TAG_FOUND,background="orange")
+        self.tag_found = self.writer.get_buffer().create_tag(
+            TAG_FOUND, background="orange")
         self.searched_text = ''
         self.replacement_text = ''
         self.launched = False
@@ -289,24 +295,33 @@ class uText(Gtk.Window):
         return False
 
     def process_defereaded(self):
-        print('aqui %d'%self.contador)
+        print('aqui %d' % self.contador)
         self.process_blocked = False
         self.html_content = self.md.convert(self.markdown_content)
         if self.preferences['mathjax']:
-            mathjax='<script type="text/javascript"	src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>'
+            mathjax = '''
+<script type="text/javascript"	src="https://cdn.mathjax.org/mathjax\
+/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+'''
         else:
-            mathjax=''
-        self.html_rendered = self.jt.render(css=self.css_content,content=self.html_content,mathjax=mathjax)
-        word_count = len(re.findall('(\S+)', BeautifulSoup(self.html_content).get_text('\n')))
-        self.statusbar.push(0,(_('Lines: {0}, Words: {1}, Characters: {2}')).format(self.writer.get_buffer().get_line_count(),word_count,self.writer.get_buffer().get_char_count()))
+            mathjax = ''
+        self.html_rendered = self.jt.render(
+            css=self.css_content, content=self.html_content, mathjax=mathjax)
+        word_count = len(re.findall(
+            '(\S+)', BeautifulSoup(self.html_content, 'lxml').get_text('\n')))
+        self.statusbar.push(0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(self.writer.get_buffer().get_line_count(),word_count,self.writer.get_buffer().get_char_count()))
         self.contador+=1
         self.update_preview()
 
     def apply_preferences(self):
-        self.writer.set_show_line_numbers(self.preferences['markdown_editor.show_line_numbers'])
-        self.writer.set_show_line_marks(self.preferences['markdown_editor.show_line_marks'])
-        self.writer.set_insert_spaces_instead_of_tabs(self.preferences['markdown_editor.spaces'])
-        self.writer.set_tab_width(self.preferences['markdown_editor.tab_width'])
+        self.writer.set_show_line_numbers(
+            self.preferences['markdown_editor.show_line_numbers'])
+        self.writer.set_show_line_marks(
+            self.preferences['markdown_editor.show_line_marks'])
+        self.writer.set_insert_spaces_instead_of_tabs(
+            self.preferences['markdown_editor.spaces'])
+        self.writer.set_tab_width(
+            self.preferences['markdown_editor.tab_width'])
         self.writer.set_auto_indent(
             self.preferences['markdown_editor.auto_indent'])
         self.writer.set_highlight_current_line(
@@ -315,19 +330,28 @@ class uText(Gtk.Window):
             self.preferences['markdown_editor.font'])
         self.writer.modify_font(font)
 
-        self.html_viewer.set_show_line_numbers(self.preferences['html_viewer.show_line_numbers'])
-        self.html_viewer.set_show_line_marks(self.preferences['html_viewer.show_line_marks'])
-        self.html_viewer.set_insert_spaces_instead_of_tabs(self.preferences['html_viewer.spaces'])
-        self.html_viewer.set_tab_width(self.preferences['html_viewer.tab_width'])
-        self.html_viewer.set_auto_indent(self.preferences['html_viewer.tab_width'])
-        self.html_viewer.set_highlight_current_line(self.preferences['html_viewer.highlight_current_line'])
-        css = open(os.path.join(self.preferences['html_viewer.preview_theme'],'style.css'), 'r')
+        self.html_viewer.set_show_line_numbers(
+            self.preferences['html_viewer.show_line_numbers'])
+        self.html_viewer.set_show_line_marks(
+            self.preferences['html_viewer.show_line_marks'])
+        self.html_viewer.set_insert_spaces_instead_of_tabs(
+            self.preferences['html_viewer.spaces'])
+        self.html_viewer.set_tab_width(
+            self.preferences['html_viewer.tab_width'])
+        self.html_viewer.set_auto_indent(
+            self.preferences['html_viewer.tab_width'])
+        self.html_viewer.set_highlight_current_line(
+            self.preferences['html_viewer.highlight_current_line'])
+        css = open(
+            os.path.join(
+                self.preferences['html_viewer.preview_theme'],
+                'style.css'), 'r')
         self.css_content = css.read()
         css.close()
         #
         self.update_buffer()
 
-    def show_source_code(self,show):
+    def show_source_code(self, show):
         if show:
             self.scrolledwindow2.hide()
             self.scrolledwindow3.show()
@@ -389,36 +413,35 @@ class uText(Gtk.Window):
 
     def save_preferences(self):
         configuration = Configuration()
-        configuration.set('version',self.preferences['version'])
-        configuration.set('last_dir',self.preferences['last_dir'])
-        configuration.set('last_filename',self.preferences['last_filename'])
-        configuration.set('filename1',self.preferences['filename1'])
-        configuration.set('filename2',self.preferences['filename2'])
-        configuration.set('filename3',self.preferences['filename3'])
-        configuration.set('filename4',self.preferences['filename4'])
+        configuration.set('version', self.preferences['version'])
+        configuration.set('last_dir', self.preferences['last_dir'])
+        configuration.set('last_filename', self.preferences['last_filename'])
+        configuration.set('filename1', self.preferences['filename1'])
+        configuration.set('filename2', self.preferences['filename2'])
+        configuration.set('filename3', self.preferences['filename3'])
+        configuration.set('filename4', self.preferences['filename4'])
         arectangle = self.get_allocation()
-        configuration.set('width',arectangle.width)
-        configuration.set('height',arectangle.height)
-        configuration.set('toolbar',self.toolbar.get_visible())
-        configuration.set('statusbar',self.statusbar.get_visible())
+        configuration.set('width', arectangle.width)
+        configuration.set('height', arectangle.height)
+        configuration.set('toolbar', self.toolbar.get_visible())
+        configuration.set('statusbar', self.statusbar.get_visible())
         configuration.save()
-
 
     def on_scrolled_value_changed_preview(self, widget):
         value = self.scrolledwindow2.get_vadjustment().get_value()
-        if value == 0: #Fix
-            self.on_scrolled_value_changed(None,'scroll1')
+        if value == 0:  # Fix
+            self.on_scrolled_value_changed(None, 'scroll1')
         else:
-            pass #Something better?
+            pass  # Something better?
+
     def on_scrolled_value_changed_html(self, widget):
         value = self.scrolledwindow3.get_vadjustment().get_value()
-        if value == 0: #Fix
-            self.on_scrolled_value_changed(None,'scroll1')
+        if value == 0:  # Fix
+            self.on_scrolled_value_changed(None, 'scroll1')
         else:
-            pass #Something better?
+            pass  # Something better?
 
     def on_scrolled_value_changed(self, adjustment, scrolledwindow):
-        #self.scrolledwindow1.get_vadjustment().handler_block(self.action_scroll1)
         self.scrolledwindow2.get_vadjustment().disconnect(self.action_scroll2)
         self.scrolledwindow3.get_vadjustment().disconnect(self.action_scroll3)
         page_size1 = self.scrolledwindow1.get_vadjustment().get_page_size()
@@ -442,16 +465,20 @@ class uText(Gtk.Window):
         elif pos1 == upper1:
             pos2 = upper2
             pos3 = upper3
-        elif (upper1-lower1)>0:
+        elif (upper1-lower1) > 0:
             pos2 = pos1*(upper2-lower2)/(upper1-lower1)
             pos3 = pos1*(upper3-lower3)/(upper1-lower1)
         self.scrolledwindow2.get_vadjustment().set_value(pos2-page_size2)
         self.scrolledwindow3.get_vadjustment().set_value(pos3-page_size3)
         #
-        self.action_scroll2 = self.scrolledwindow2.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed_preview)
-        self.action_scroll3 = self.scrolledwindow3.get_vadjustment().connect('value-changed',self.on_scrolled_value_changed_html)
+        self.action_scroll2 = self.scrolledwindow2.get_vadjustment().connect(
+            'value-changed', self.on_scrolled_value_changed_preview)
+        self.action_scroll3 = self.scrolledwindow3.get_vadjustment().connect(
+            'value-changed', self.on_scrolled_value_changed_html)
+
     def load_file_dialog(self):
-        dialog = Gtk.FileChooserDialog("Open file", self,
+        dialog = Gtk.FileChooserDialog(
+            "Open file", self,
             Gtk.FileChooserAction.SAVE,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
              Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
@@ -466,7 +493,7 @@ class uText(Gtk.Window):
 
         dialog.destroy()
 
-    def on_menu_file_open(self,widget):
+    def on_menu_file_open(self, widget):
         filename = None
         if widget == self.filerecents['file1']:
             filename = self.preferences['filename1']
@@ -479,7 +506,7 @@ class uText(Gtk.Window):
         if filename is not None and os.path.exists(filename):
             self.load_file(filename)
 
-    def work_with_file(self,filename):
+    def work_with_file(self, filename):
         self.preferences['last_filename'] = filename
         self.preferences['last_dir'] = os.path.dirname(filename)
         if filename == self.preferences['filename1']:
@@ -506,11 +533,16 @@ class uText(Gtk.Window):
 
     def load_file(self, file_path=None):
         self.current_filepath = file_path
-        if self.current_filepath:
-            f = open(self.current_filepath, 'r')
-            self.writer.get_buffer().set_text(f.read())
-            f.close()
-            self.work_with_file(file_path)
+        f = open(self.current_filepath, 'rb')
+        data = f.read()
+        f.close()
+        encoding = chardet.detect(data)['encoding']
+        print('************************************')
+        print(encoding)
+        print('************************************')
+        ans = data.decode(encoding)
+        self.writer.get_buffer().set_text(ans)
+        self.work_with_file(file_path)
         self.set_win_title()
         self.writer.get_buffer().set_modified(False)
         self.writer.grab_focus()
@@ -546,6 +578,7 @@ class uText(Gtk.Window):
             if not filename.endswith('.pdf'):
                 filename += '.pdf'
             data = self.get_buffer_text()
+            encoding = chardet.detect(self.html_content)['encoding']
             if data is not None:
                 options = {
                     'page-size': 'A4',
@@ -553,9 +586,10 @@ class uText(Gtk.Window):
                     'margin-right': '15mm',
                     'margin-bottom': '20mm',
                     'margin-left': '25mm',
-                    'encoding': "UTF-8",
+                    'encoding': encoding,
                 }
-                pdfkit.from_string(self.html_content,filename,options=options)
+                print(self.html_content)
+                pdfkit.from_string(self.html_content, filename, options=options)
         dialog.destroy()
 
     def save_current_file(self):
@@ -1131,24 +1165,38 @@ class uText(Gtk.Window):
                 filename += '.'+exportformat['extension']
             data = self.get_buffer_text()
             if data is not None:
-                if exportformat['typeof']=='pdf':
+                if exportformat['typeof'] == 'pdf':
                     options = {
                         'page-size': 'A4',
                         'margin-top': '20mm',
                         'margin-right': '15mm',
                         'margin-bottom': '20mm',
                         'margin-left': '25mm',
-                        'encoding': "UTF-8",
+                        'encoding': 'utf-8',
                     }
-                    pdfkit.from_string(self.html_content,filename,options=options)
+                    data = '<html><head><meta charset="utf-8">'
+                    data += '</head><body>'
+                    data += unquote_plus(self.html_content)
+                    data += '</body></html>'
+                    print(data)
+                    pdfkit.from_string(
+                        data, filename, options=options)
                 else:
                     try:
-                        output = pypandoc.convert(data,#source=tmpf.name,
-                                    to=exportformat['typeof'],
-                                    format='md',
-                                    outputfile=filename)
+                        extra_args = (
+                                      '--smart',
+                                      '--standalone',
+                                      )
+                        output = pypandoc.convert(
+                            data,  # source=tmpf.name,
+                            to=exportformat['typeof'],
+                            format='md',
+                            outputfile=filename,
+                            extra_args=extra_args)
                     except Exception as e:
                         print(e)
+        else:
+            dialog.destroy()
 
     def on_activate_preview_or_html(self,widget):
         if self.menus['preview_or_html'].get_label() == _('Preview'):
