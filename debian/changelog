@@ -1,3 +1,9 @@
+utext (0.4.0-0extras16.04.0) xenial; urgency=medium
+
+  * Added Drive support
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 11 May 2016 22:53:10 +0200
+
 utext (0.3.11-0extras16.04.0) xenial; urgency=medium
 
   * Fixed exports
