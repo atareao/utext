@@ -46,10 +46,10 @@ CLIENT_ID = \
 CLIENT_SECRET = 'YpgNcrHnECuPnJ9O0goot9Lv'
 SCOPE = 'https://www.googleapis.com/auth/drive.file'
 MAIN_URL = 'https://www.googleapis.com/'
-TURL = MAIN_URL + 'drive/v3/%s'
+GET_FILES_URL = MAIN_URL + 'drive/v3/files'
 DELETE_URL = MAIN_URL + 'drive/v3/files/%s'
 GET_URL = MAIN_URL + 'drive/v3/files/%s'
-UPDATE_URL = MAIN_URL + 'drive/v3/files/%s'
+UPDATE_URL = MAIN_URL + 'upload/drive/v3/files/%s'
 UPLOADURL = MAIN_URL + 'upload/drive/v3/files'
 
 
@@ -210,8 +210,7 @@ class DriveService(GoogleService):
         return None
 
     def get_files(self):
-        url = TURL % 'files'
-        ans = self.__do_request('GET', url)
+        ans = self.__do_request('GET', GET_FILES_URL)
         if ans and ans.status_code == 200:
             return json.loads(ans.text)
         return None
@@ -219,44 +218,27 @@ class DriveService(GoogleService):
     def delete_file(self, fileId):
         ans = self.__do_request('DELETE', DELETE_URL % fileId)
         if ans and ans.status_code == 200:
-            return ans.text
+            return json.loads(ans.text)
         return None
 
     def get_file(self, fileId):
         params = {}
         params['alt'] = 'media'
+        params['fields'] = 'name,originalFilename'
         ans = self.__do_request('GET', GET_URL % fileId, params=params)
         if ans and ans.status_code == 200:
             return ans.text
         return None
 
-    def update_file(self, fileId, content):
-        params['uploadType'] = 'media'
-        addheaders = {
-            'Content-type': 'multipart/related; boundary=foo_bar_baz',
-            'Content-length': str(len(content)),
-            'MIME-version': '1.0'}
-        ans = self.__do_request('PATCH', UPDATE_URL % fileId,
-                                addheaders=addheaders,
-                                params=params, data=content)
-        if ans is not None:
-            return ans.text
-
-    def put_file(self, afile):
-        name = afile.split('/')[-1]
+    def update_file(self, fileId, filename, content):
         params = {}
         params['uploadType'] = 'multipart'
-        afilee = codecs.open(afile, 'r', 'utf-8')
-        data = afilee.read()
-        print(data)
-        afilee.close()
         data = '''
 --foo_bar_baz
 Content-Type: application/json; charset=UTF-8
 
 {
-  "name": "%s",
-  "data": "cabrón"
+  "name": "%s"
 }
 
 --foo_bar_baz
@@ -264,16 +246,44 @@ Content-Type: text/markdown; charset=UTF-8
 
 %s
 --foo_bar_baz--
-''' % (name, data)
-        print(name)
+''' % (filename, content)
+        addheaders = {
+            'Content-type': 'multipart/related; boundary=foo_bar_baz',
+            'Content-length': str(len(data)),
+            'MIME-version': '1.0'}
+        ans = self.__do_request('PATCH', UPDATE_URL % fileId,
+                                addheaders=addheaders,
+                                params=params, data=data)
+        if ans is not None and ans.status_code == 200:
+            return json.loads(ans.text)
+        return None
+
+    def put_file(self, filename, content):
+        params = {}
+        params['uploadType'] = 'multipart'
+        data = '''
+--foo_bar_baz
+Content-Type: application/json; charset=UTF-8
+
+{
+  "name": "%s"
+}
+
+--foo_bar_baz
+Content-Type: text/markdown; charset=UTF-8
+
+%s
+--foo_bar_baz--
+''' % (filename, content)
         addheaders = {
             'Content-type': 'multipart/related; boundary=foo_bar_baz',
             'Content-length': str(len(data)),
             'MIME-version': '1.0'}
         ans = self.__do_request('POST', UPLOADURL, addheaders=addheaders,
                                 params=params, data=data)
-        if ans is not None:
-            return ans.text
+        if ans is not None and ans.status_code == 200:
+            return json.loads(ans.text)
+        return None
 
 
 if __name__ == '__main__':
@@ -281,9 +291,24 @@ if __name__ == '__main__':
     ds = DriveService(comun.TOKEN_FILE_DRIVE)
     if os.path.exists(comun.TOKEN_FILE_DRIVE):
         # print(ds.put_file('/home/atareao/Escritorio/remarkable2.md'))
-        pprint(ds.get_files())
-        pprint(ds.put_file('/home/lorenzo/CloudStation/Articulos/201305/20130512.md'))
+        #pprint(ds.get_files())
+        #pprint(ds.put_file('/home/lorenzo/CloudStation/Articulos/201305/20130512.md'))
+        #pprint(ds.put_file('esto_es_una_prueba', 'Esto es una prueba de funcionamiento'))
+        files = ds.get_files()
+        pprint(files)
+        for afile in ds.get_files():
+            pprint(afile)
         pprint(ds.get_file('0B3WiYW6nOxJDdVNRNERlcmRwanM'))
+        pprint(ds.update_file('0B3WiYW6nOxJDdVNRNERlcmRwanM','20130512.md', 'jejejjejej'))
+        '''
+        afilee = codecs.open('/home/lorenzo/CloudStation/Articulos/201305/20130512.md', 'r', 'utf-8')
+        data = afilee.read()
+        afilee.close()
+        pprint(ds.put_file('otra_prueba', data))
+        '''
+        ans = ds.put_file(
+            'esto_es_una_prueba', 'Esto es una prueba de funcionamiento')
+        pprint(ans)
     else:
         print('======================= 1 =============================')
         authorize_url = ds.get_authorize_url()
