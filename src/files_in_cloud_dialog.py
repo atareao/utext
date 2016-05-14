@@ -28,12 +28,12 @@ import comun
 from comun import _
 
 
-class FilesInDriveDialog(Gtk.Dialog):
-    def __init__(self, files):
+class FilesInCloudDialog(Gtk.Dialog):
+    def __init__(self, service, files):
         #
         Gtk.Dialog.__init__(
             self,
-            'uText | '+_('select file from Dropbox'),
+            'uText | '+_('select file from %s' % (service)),
             None,
             Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
@@ -47,7 +47,7 @@ class FilesInDriveDialog(Gtk.Dialog):
         self.get_content_area().add(vbox0)
         frame1 = Gtk.Frame()
         vbox0.pack_start(frame1, False, True, 1)
-        table1 = Gtk.Table(1, 2, False)
+        table1 = Gtk.Table(2, 1, False)
         frame1.add(table1)
         label1 = Gtk.Label(_('Select file')+':')
         label1.set_alignment(0, 0.5)
@@ -60,7 +60,12 @@ class FilesInDriveDialog(Gtk.Dialog):
         column = Gtk.TreeViewColumn(None, renderer, text=0)
         self.tree.append_column(column)
         self.tree.set_headers_visible(False)
-        table1.attach(self.tree, 1, 2, 0, 1, xpadding=5, ypadding=5)
+        scrolled_window = Gtk.ScrolledWindow()
+        scrolled_window.set_policy(
+            Gtk.PolicyType.NEVER, Gtk.PolicyType.AUTOMATIC)
+        scrolled_window.add(self.tree)
+        scrolled_window.set_min_content_height(100)
+        table1.attach(scrolled_window, 0, 1, 1, 2, xpadding=5, ypadding=5)
         #
         self.show_all()
 
@@ -78,13 +83,18 @@ class FilesInDriveDialog(Gtk.Dialog):
         pass
 
 if __name__ == "__main__":
-    cm = FilesInDriveDialog([
-        "En un lugar de la mancha 1",
-        "En un lugar de la mancha 1",
-        "En un lugar de la mancha 1",
-        "En un lugar de la mancha 1",
-        "En un lugar de la mancha 1",
-        ])
+    files = []
+    file1 = {'name': 'test1'}
+    file2 = {'name': 'test2'}
+    file3 = {'name': 'test3'}
+    file4 = {'name': 'test4'}
+    file5 = {'name': 'test5'}
+    files.append(file1)
+    files.append(file2)
+    files.append(file3)
+    files.append(file4)
+    files.append(file5)
+    cm = FilesInCloudDialog('Drive', files)
     if cm.run() == Gtk.ResponseType.ACCEPT:
             print(cm.get_selected())
     cm.hide()

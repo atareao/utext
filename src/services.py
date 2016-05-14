@@ -138,22 +138,17 @@ class DropboxService(object):
             return ans.text
         return None
 
-    def put_file(self, afile):
-        name = afile.split('/')[-1]
-        print(name)
-        url = 'https://api-content.dropbox.com/1/files_put/auto/%s' % (name)
-        print(url)
+    def put_file(self, filename, content):
+        url = 'https://api-content.dropbox.com/1/files_put/auto/%s' % (
+            filename)
         addparams = {}
         addparams['overwrite'] = True
-        afilee = open(afile, 'rb')
-        data = afilee.read()
-        afilee.close()
         addheaders = {
             'Content-type': 'multipart/related;boundary="END_OF_PART"',
-            'Content-length': str(len(data)),
+            'Content-length': str(len(content)),
             'MIME-version': '1.0'}
         ans = self.__do_request('POST', url, addheaders=addheaders,
-                                addparams=addparams, data=data)
+                                addparams=addparams, data=content)
         if ans is not None:
             return ans.text
 
@@ -195,8 +190,12 @@ if __name__ == '__main__':
     ds = DropboxService(comun.TOKEN_FILE)
     if os.path.exists(comun.TOKEN_FILE):
         print(ds.get_account_info())
-        print(ds.put_file('/home/atareao/Escritorio/remarkable2.md'))
-        print(ds.get_files())
+        print(ds.put_file(
+            'remarkable2.md',
+            'esto es un ejemplo del funcionamiento'))
+        ans = ds.get_file('remarkable2.md')
+        print('============')
+        print(ans)
     else:
         oauth_token, oauth_token_secret = ds.get_request_token()
         authorize_url = ds.get_authorize_url(oauth_token, oauth_token_secret)

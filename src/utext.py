@@ -1,6 +1,19 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-
+import gi
+try:
+    gi.require_version('Gtk', '3.0')
+    gi.require_version('WebKit', '3.0')
+    gi.require_version('GtkSource', '3.0')
+    gi.require_version('GtkSpell', '3.0')
+    gi.require_version('GdkPixbuf', '2.0')
+    gi.require_version('Pango', '1.0')
+except:
+    print('Repository version required not present')
+    exit(1)
+from gi.repository import GObject, Gtk, Gio, WebKit
+from gi.repository import Gdk, GtkSource, GtkSpell, GdkPixbuf
+from gi.repository import Pango
 import chardet
 import os
 import codecs
@@ -20,8 +33,7 @@ from logindialog import LoginDialog
 from insert_image_dialog import InsertImageDialog
 from insert_url_dialog import InsertUrlDialog
 from filename_dialog import FilenameDialog
-from files_in_dropbox_dialog import FilesInDropboxDialog
-from files_in_drive_dialog import FilesInDriveDialog
+from files_in_cloud_dialog import FilesInCloudDialog
 from preferences_dialog import PreferencesDialog
 from search_dialog import SearchDialog
 from search_and_replace_dialog import SearchAndReplaceDialog
@@ -31,9 +43,6 @@ from markdown import Markdown, Extension
 from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from urllib.parse import quote_plus, unquote_plus
-from gi.repository import GObject, Gtk, Gio, WebKit
-from gi.repository import Gdk, GtkSource, GtkSpell, GdkPixbuf
-from gi.repository import Pango
 import pypandoc
 from comun import _
 
@@ -127,10 +136,12 @@ class uText(Gtk.Window):
         self.vbox = Gtk.VBox(False, 2)
         self.add(self.vbox)
         #
+        self.current_filepath = None
         self.fileDriveId = None
         self.fileDropboxId = None
         self.fileDrive = None
         self.fileDropbox = None
+        self.is_closing = False
         self.number_of_lines = 0
         self.contador = 0
         self.match_end = None
@@ -253,7 +264,6 @@ class uText(Gtk.Window):
         # Load editor gtk styles
         self.load_styles()
 
-        self.current_filepath = None
         self.load_preferences()
         # Set windows title
         self.set_win_title()
@@ -409,6 +419,8 @@ class uText(Gtk.Window):
             configuration.get('html_viewer.highlight_current_line')
         self.preferences['html_viewer.preview_theme'] =\
             configuration.get('html_viewer.preview_theme')
+        self.preferences['dropbox'] = os.path.exists(comun.TOKEN_FILE)
+        self.preferences['drive'] = os.path.exists(comun.TOKEN_FILE_DRIVE)
         #
         if len(self.preferences['last_dir']) == 0:
             self.preferences['last_dir'] = os.path.expanduser('~')
@@ -435,6 +447,14 @@ class uText(Gtk.Window):
             self.spellchecker.attach(self.writer)
         else:
             self.spellchecker.detach()
+        self.menus['save_on_dropbox'].set_sensitive(
+            self.preferences['dropbox'])
+        self.menus['save_on_drive'].set_sensitive(
+            self.preferences['drive'])
+        self.menus['open_from_dropbox'].set_sensitive(
+            self.preferences['dropbox'])
+        self.menus['open_from_drive'].set_sensitive(
+            self.preferences['drive'])
 
     def save_preferences(self):
         configuration = Configuration()
@@ -562,20 +582,21 @@ class uText(Gtk.Window):
         self.fileDropboxId = None
         self.fileDrive = None
         self.fileDropbox = None
-        f = open(self.current_filepath, 'rb')
-        data = f.read()
-        f.close()
-        encoding = chardet.detect(data)['encoding']
-        print('************************************')
-        print(encoding)
-        print('************************************')
-        ans = data.decode(encoding)
-        self.writer.get_buffer().set_text(ans)
-        self.work_with_file(file_path)
-        self.set_win_title()
-        self.writer.get_buffer().set_modified(False)
-        self.writer.grab_focus()
-        self.read_buffer()
+        if self.current_filepath is not None:
+            f = open(self.current_filepath, 'rb')
+            data = f.read()
+            f.close()
+            encoding = chardet.detect(data)['encoding']
+            print('************************************')
+            print(encoding)
+            print('************************************')
+            ans = data.decode(encoding)
+            self.writer.get_buffer().set_text(ans)
+            self.work_with_file(file_path)
+            self.set_win_title()
+            self.writer.get_buffer().set_modified(False)
+            self.writer.grab_focus()
+            self.read_buffer()
 
     def save_as(self):
         temp_current_filepath = self.current_filepath
@@ -624,48 +645,30 @@ class uText(Gtk.Window):
         dialog.destroy()
 
     def save_current_file(self):
+        if self.is_closing is True:
+            return
         if not self.file_saved:
             self.is_saving = True
-            if not self.current_filepath or self.current_filepath is None:
-                filename = None
-                dialog = Gtk.FileChooserDialog(
-                    _('Select a file to save markdown'),
-                    self,
-                    Gtk.FileChooserAction.SAVE,
-                    (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
-                     Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
-                dialog.set_default_response(Gtk.ResponseType.OK)
-                dialog.set_current_folder(self.preferences['last_dir'])
-                filter = Gtk.FileFilter()
-                filter.set_name(_('Markdown files'))
-                filter.add_mime_type('text/plain')
-                filter.add_pattern('*.md')
-                dialog.add_filter(filter)
-                response = dialog.run()
-                if response == Gtk.ResponseType.OK:
-                    filename = dialog.get_filename()
-                    if not filename.endswith('.md'):
-                        filename += '.md'
-                dialog.destroy()
-                if filename is None:
-                    self.is_saving = False
-                    return
-                if os.path.exists(filename):
-                    dialog_overwrite = Gtk.MessageDialog(
-                        self, 0, Gtk.MessageType.WARNING,
-                        Gtk.ButtonsType.OK_CANCEL, _('File exists'))
-                    dialog_overwrite.format_secondary_text(_('Overwrite?'))
-                    response_overwrite = dialog_overwrite.run()
-                    if response_overwrite != Gtk.ResponseType.OK:
-                        dialog_overwrite.destroy()
-                        self.is_saving = False
-                        return
-                    dialog_overwrite.destroy()
-                if filename is not None:
-                    self.current_filepath = filename
-            if self.current_filepath and self.current_filepath is not None:
-                data = self.get_buffer_text()
-                if data is not None:
+            data = self.get_buffer_text()
+            if data is not None and len(data) > 0:
+                if self.fileDrive is not None:
+                    ds = DriveService(comun.TOKEN_FILE_DRIVE)
+                    if os.path.exists(comun.TOKEN_FILE_DRIVE):
+                        if self.fileDriveId is not None:
+                            ans = ds.update_file(self.fileDriveId,
+                                                 self.fileDrive,
+                                                 data)
+                        else:
+                            ans = ds.put_file(self.fileDrive, data)
+                        if ans is not None:
+                            self.fileDriveId = ans['id']
+                    self.file_saved = True
+                if self.fileDropbox is not None:
+                    ds = DropboxService(comun.TOKEN_FILE)
+                    if os.path.exists(comun.TOKEN_FILE):
+                        ds.put_file(self.fileDropbox, data)
+                    self.file_saved = True
+                if self.current_filepath is not None:
                     f = open(self.current_filepath, 'w')
                     f.write(data)
                     f.close()
@@ -673,15 +676,53 @@ class uText(Gtk.Window):
                     self.work_with_file(self.current_filepath)
                     self.writer.get_buffer().set_modified(False)
                     self.file_saved = True
+                else:
+                    filename = None
+                    while(filename is None):
+                        dialog = Gtk.FileChooserDialog(
+                            _('Select a file to save markdown'),
+                            self,
+                            Gtk.FileChooserAction.SAVE,
+                            (Gtk.STOCK_CANCEL, Gtk.ResponseType.CANCEL,
+                             Gtk.STOCK_OPEN, Gtk.ResponseType.OK))
+                        dialog.set_default_response(Gtk.ResponseType.OK)
+                        dialog.set_current_folder(self.preferences['last_dir'])
+                        filter = Gtk.FileFilter()
+                        filter.set_name(_('Markdown files'))
+                        filter.add_mime_type('text/plain')
+                        filter.add_pattern('*.md')
+                        dialog.add_filter(filter)
+                        response = dialog.run()
+                        if response == Gtk.ResponseType.OK:
+                            filename = dialog.get_filename()
+                            if not filename.endswith('.md'):
+                                filename += '.md'
+                        dialog.destroy()
+                    if os.path.exists(filename):
+                        dialog_overwrite = Gtk.MessageDialog(
+                            self, 0, Gtk.MessageType.WARNING,
+                            Gtk.ButtonsType.OK_CANCEL, _('File exists'))
+                        dialog_overwrite.format_secondary_text(_('Overwrite?'))
+                        response_overwrite = dialog_overwrite.run()
+                        if response_overwrite != Gtk.ResponseType.OK:
+                            dialog_overwrite.destroy()
+                            self.is_saving = False
+                            return
+                        dialog_overwrite.destroy()
+                    if filename is not None:
+                        self.current_filepath = filename
             self.is_saving = False
+        self.set_win_title()
 
     def set_win_title(self):
         if self.current_filepath and self.current_filepath is not None:
             current_filename = self.current_filepath.split("/")[-1]
-            self.cloud_filename = current_filename
+        elif self.fileDropbox is not None:
+            current_filename = self.fileDropbox
+        elif self.fileDrive is not None:
+            current_filename = self.fileDrive
         else:
             current_filename = _('Untitled')
-            self.cloud_filename = None
         title = "uText - %s" % (current_filename)
         self.set_title(title)
 
@@ -1702,77 +1743,58 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.load_file_dialog()
         elif option == 'close':
             self.save_current_file()
+            self.is_closing = True
             self.current_filepath = None
             self.on_toolbar_clicked(None, 'new')
             self.fileDriveId = None
             self.fileDropboxId = None
             self.fileDrive = None
             self.fileDropbox = None
+            self.set_win_title()
+            self.is_closing = False
         elif option == 'open_from_dropbox':
             files = []
             ds = DropboxService(comun.TOKEN_FILE)
             if os.path.exists(comun.TOKEN_FILE) and ds.get_account_info():
                 files = ds.get_files()
-            else:
-                oauth_token, oauth_token_secret = ds.get_request_token()
-                authorize_url = ds.get_authorize_url(
-                    oauth_token, oauth_token_secret)
-                ld.run()
-                oauth_token = ld.code
-                uid = ld.uid
-                ld.destroy()
-                if oauth_token is not None:
-                    print(oauth_token, uid)
-                    ans = ds.get_access_token(oauth_token, oauth_token_secret)
-                    print(ans)
-                    print(ds.get_account_info())
-                    if os.path.exists(comun.TOKEN_FILE) and\
-                            ds.get_account_info():
-                        files = ds.get_files()
-            if len(files) > 0:
-                result = []
-                for element in files:
-                    result.append(element['path'][1:])
-                cm = FilesInDropboxDialog(result)
-                if cm.run() == Gtk.ResponseType.ACCEPT:
-                    file_selected = cm.get_selected()
-                    self.fileDropbox = file_selected
-                    self.fileDropboxId = -1
-                    text_string = ds.get_file(file_selected)
-                    self.writer.get_buffer().set_text(text_string)
-                    self.read_buffer()
-                cm.destroy()
+                if len(files) > 0:
+                    result = []
+                    for element in files:
+                        afile = {}
+                        afile['name'] = element['path'][1:]
+                        result.append(afile)
+                    cm = FilesInCloudDialog('Dropbox', result)
+                    if cm.run() == Gtk.ResponseType.ACCEPT:
+                        file_selected = cm.get_selected()
+                        self.fileDropbox = file_selected['name']
+                        self.fileDropboxId = -1
+                        text_string = ds.get_file(self.fileDropbox)
+                        if text_string is not None:
+                            self.writer.get_buffer().set_text(text_string)
+                            self.read_buffer()
+                    cm.destroy()
         elif option == 'open_from_drive':
             files = []
             ds = DriveService(comun.TOKEN_FILE_DRIVE)
             if os.path.exists(comun.TOKEN_FILE_DRIVE):
                 files = ds.get_files()
-            else:
-                authorize_url = ds.get_authorize_url()
-                ld = LoginDialog(1024, 600, authorize_url, isgoogle=True)
-                ld.run()
-                temp_oauth_token = ld.code
-                uid = ld.uid
-                ld.destroy()
-                if temp_oauth_token is not None:
-                    print(ds.get_authorization(temp_oauth_token))
-                    files = ds.get_files()
-            if len(files) > 0 and 'files' in files.keys() and\
-                    len(files['files']) > 0:
-                result = []
-                for element in files['files']:
-                    print(element)
-                    result.append(element)
-                cm = FilesInDriveDialog(result)
-                if cm.run() == Gtk.ResponseType.ACCEPT:
-                    file_selected = cm.get_selected()
-                    print(file_selected)
-                    self.fileDrive = file_selected['name']
-                    self.fileDriveId = file_selected['id']
-                    text_string = ds.get_file(file_selected['id'])
-                    self.writer.get_buffer().set_text(text_string)
-                    self.read_buffer()
-                cm.destroy()
+                if len(files) > 0 and 'files' in files.keys() and\
+                        len(files['files']) > 0:
+                    result = []
+                    for element in files['files']:
+                        print(element)
+                        result.append(element)
+                    cm = FilesInCloudDialog('Drive', result)
+                    if cm.run() == Gtk.ResponseType.ACCEPT:
+                        file_selected = cm.get_selected()
+                        print(file_selected)
+                        self.fileDrive = file_selected['name']
+                        self.fileDriveId = file_selected['id']
+                        text_string = ds.get_file(file_selected['id'])
+                        if text_string is not None:
+                            self.writer.get_buffer().set_text(text_string)
+                            self.read_buffer()
+                    cm.destroy()
         elif option == 'exit':
             self.on_close_application(widget, None)
         elif option == 'save':
@@ -1782,57 +1804,33 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
         elif option == 'save_as_pdf':
             self.save_as_pdf()
         elif option == 'save_on_dropbox':
-            if self.cloud_filename is None:
-                dialog = FilenameDialog()
-                if dialog.run() == Gtk.ResponseType.OK:
-                    filename = dialog.filename.get_text()
+            if self.fileDropbox is None:
+                dialog = FilenameDialog('Dropbox')
+                if dialog.run() == Gtk.ResponseType.ACCEPT:
+                    filename = dialog.get_filename()
                     dialog.destroy()
                     if not filename.endswith('.md'):
                         filename = filename + '.md'
-                    self.cloud_filename = filename
+                    self.fileDropbox = filename
+                    self.fileDropboxId = -1
                 else:
                     dialog.destroy()
                     return
-            temp_dropbox_file = '/tmp/%s' % self.cloud_filename
-            if os.path.exists(temp_dropbox_file):
-                os.remove(temp_dropbox_file)
             data = self.get_buffer_text()
             if data is not None:
-                f = open(temp_dropbox_file, 'w')
-                f.write(data)
-                f.close()
                 ds = DropboxService(comun.TOKEN_FILE)
                 if os.path.exists(comun.TOKEN_FILE) and ds.get_account_info():
-                    print(ds.put_file(temp_dropbox_file))
-                else:
-                    oauth_token, oauth_token_secret = ds.get_request_token()
-                    authorize_url = ds.get_authorize_url(
-                        oauth_token, oauth_token_secret)
-                    ld = LoginDialog(1024, 600, authorize_url)
-                    ld.run()
-                    oauth_token = ld.code
-                    uid = ld.uid
-                    ld.destroy()
-                    if oauth_token is not None:
-                        print(oauth_token, uid)
-                        ans = ds.get_access_token(
-                            oauth_token, oauth_token_secret)
-                        print(ans)
-                        print(ds.get_account_info())
-                        if os.path.exists(comun.TOKEN_FILE) and\
-                                ds.get_account_info():
-                            print(ds.put_file(temp_dropbox_file))
-                if os.path.exists(temp_dropbox_file):
-                    os.remove(temp_dropbox_file)
+                    print(1)
+                    print(ds.put_file(self.fileDropbox, data))
         elif option == 'save_on_drive':
-            if self.cloud_filename is None:
-                dialog = FilenameDialog()
-                if dialog.run() == Gtk.ResponseType.OK:
-                    filename = dialog.filename.get_text()
+            if self.fileDrive is None:
+                dialog = FilenameDialog('Drive')
+                if dialog.run() == Gtk.ResponseType.ACCEPT:
+                    filename = dialog.get_filename()
                     dialog.destroy()
                     if not filename.endswith('.md'):
                         filename = filename + '.md'
-                    self.cloud_filename = filename
+                    self.fileDrive = filename
                 else:
                     dialog.destroy()
                     return
@@ -1842,30 +1840,12 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 if os.path.exists(comun.TOKEN_FILE_DRIVE):
                     if self.fileDriveId is not None:
                         ans = ds.update_file(self.fileDriveId,
-                                             self.cloud_filename,
+                                             self.fileDrive,
                                              data)
                     else:
-                        ans = ds.put_file(self.cloud_filename, data)
+                        ans = ds.put_file(self.fileDrive, data)
                     if ans is not None:
                         self.fileDriveId = ans['id']
-                else:
-                    authorize_url = ds.get_authorize_url()
-                    ld = LoginDialog(1024, 600, authorize_url, isgoogle=True)
-                    ld.run()
-                    temp_oauth_token = ld.code
-                    uid = ld.uid
-                    ld.destroy()
-                    if temp_oauth_token is not None:
-                        print(ds.get_authorization(temp_oauth_token))
-                        if os.path.exists(comun.TOKEN_FILE_DRIVE):
-                            if self.fileDriveId is not None:
-                                ans = ds.update_file(self.fileDriveId,
-                                                     self.cloud_filename,
-                                                     data)
-                            else:
-                                ans = ds.put_file(self.cloud_filename, data)
-                            if ans is not None:
-                                self.fileDriveId = ans['id']
         elif option == 'search':
             searchDialog = SearchDialog(self.searched_text)
             if searchDialog.run() == Gtk.ResponseType.ACCEPT:
