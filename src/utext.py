@@ -50,9 +50,15 @@ from bs4 import BeautifulSoup
 
 import pdfkit
 
+import threading
+import queue
 
 TIME_LAPSE = 500
 TAG_FOUND = 'found'
+MATHJAX = '''
+<script type="text/javascript"	src="https://cdn.mathjax.org/mathjax\
+/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+'''
 EXPORT_FORMATS = [
     {'name': _('docx'),
      'typeof': 'docx',
@@ -115,6 +121,43 @@ def add2menu(menu, text=None, icon=None, conector_event=None,
     return menu_item
 
 
+class Worker(threading.Thread, GObject.GObject):
+    __gsignals__ = {
+        'updated': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
+                    (object,)),
+        }
+
+    def __init__(self, callback):
+        threading.Thread.__init__(self)
+        GObject.GObject.__init__(self)
+        self.work = False
+        self.setDaemon(True)
+        self.callback = callback
+        self.q = queue.Queue()
+
+    def stop(self):
+        self.work = False
+        self.q.put(0)
+
+    def do_it(self):
+        print('===== putting ====')
+        self.q.put(1)
+
+    def run(self):
+        self.work = True
+        number = 1
+        while self.work and number > 0:
+            number = self.q.get()
+            time.sleep(0.5)
+            while self.q.empty() is False:
+                print('===== getting ====')
+                number = self.q.get()
+            print('===== do it =====')
+            GObject.idle_add(self.callback)
+        print('===== end =====')
+        return
+
+
 class uText(Gtk.Window):
     __gsignals__ = {
         'text-changed': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
@@ -136,6 +179,7 @@ class uText(Gtk.Window):
         self.vbox = Gtk.VBox(False, 2)
         self.add(self.vbox)
         #
+        self.worker = None
         self.current_filepath = None
         self.fileDriveId = None
         self.fileDropboxId = None
@@ -147,10 +191,6 @@ class uText(Gtk.Window):
         self.match_end = None
         self.searched_text = ''
         self.replacement_text = ''
-        self.process_blocked = False
-        self.markdown_content = ''
-        self.html_content = ''
-        self.html_rendered = ''
         css = open(os.path.join(comun.THEMESDIR, 'default', 'style.css'), 'r')
         self.css_content = css.read()
         css.close()
@@ -303,33 +343,39 @@ class uText(Gtk.Window):
         self.writer.grab_focus()
         if afile is not None:
             self.load_file(afile)
+        ##
+        self.worker = Worker(self.process_content)
+        self.worker.start()
 
     def process_content(self):
-        GObject.idle_add(self.process_defereaded)
-        return False
-
-    def process_defereaded(self):
         print('aqui %d' % self.contador)
         self.process_blocked = False
-        self.html_content = self.md.convert(self.markdown_content)
-        if self.preferences['mathjax']:
-            mathjax = '''
-<script type="text/javascript"	src="https://cdn.mathjax.org/mathjax\
-/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-'''
+        markdown_content = self.get_buffer_text()
+        if self.html_viewer.is_visible():
+            html_content = self.md.convert(markdown_content)
+            self.html_viewer.get_buffer().set_text(html_content)
+            word_count = len(re.findall(
+                '(\S+)', BeautifulSoup(html_content, 'lxml').get_text('\n')))
         else:
-            mathjax = ''
-        self.html_rendered = self.jt.render(
-            css=self.css_content, content=self.html_content, mathjax=mathjax)
-        word_count = len(re.findall(
-            '(\S+)', BeautifulSoup(self.html_content, 'lxml').get_text('\n')))
+            word_count = len(re.findall('(\S+)', markdown_content))
         self.statusbar.push(
             0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
                 self.writer.get_buffer().get_line_count(),
                 word_count,
                 self.writer.get_buffer().get_char_count()))
+        if self.webkit_viewer.is_visible():
+            if self.preferences['mathjax']:
+                mathjax = MATHJAX
+            else:
+                mathjax = ''
+            html_content = self.md.convert(markdown_content)
+            html_rendered = self.jt.render(
+                css=self.css_content, content=html_content, mathjax=mathjax)
+            if html_rendered is not None:
+                self.webkit_viewer.load_string(html_rendered,
+                                               "text/html",
+                                               "utf-8", '')
         self.contador += 1
-        self.update_preview()
 
     def apply_preferences(self):
         self.writer.set_show_line_numbers(
@@ -367,7 +413,8 @@ class uText(Gtk.Window):
         self.css_content = css.read()
         css.close()
         #
-        self.update_buffer()
+        if self.worker is not None:
+            self.worker.do_it()
 
     def show_source_code(self, show):
         if show:
@@ -376,7 +423,8 @@ class uText(Gtk.Window):
         else:
             self.scrolledwindow2.show()
             self.scrolledwindow3.hide()
-        self.update_preview()
+        if self.worker is not None:
+            self.worker.do_it()
 
     def load_preferences(self):
         configuration = Configuration()
@@ -596,7 +644,8 @@ class uText(Gtk.Window):
             self.set_win_title()
             self.writer.get_buffer().set_modified(False)
             self.writer.grab_focus()
-            self.read_buffer()
+            if self.worker is not None:
+                self.worker.do_it()
 
     def save_as(self):
         temp_current_filepath = self.current_filepath
@@ -1588,7 +1637,8 @@ class uText(Gtk.Window):
         ])
         # Jinja templates
         self.jt = env.get_template('header.html')
-        self.update_buffer()
+        if self.worker is not None:
+            self.worker.do_it()
 
     def load_styles(self):
         self.style_provider = Gtk.CssProvider()
@@ -1602,16 +1652,8 @@ class uText(Gtk.Window):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-    def read_buffer(self):
-        markdown_content = self.get_buffer_text()
-        if markdown_content is not None:
-            self.markdown_content = markdown_content
-            if not self.process_blocked:
-                self.process_blocked = True
-                GObject.timeout_add(TIME_LAPSE, self.process_content)
-
     def on_key_release_event(self, widget, event):
-        self.read_buffer()
+        self.worker.do_it()
 
     def on_buffer_changed(self, widget):
         self.file_saved = False
@@ -1654,21 +1696,6 @@ class uText(Gtk.Window):
             print('--------------------------')
             pass
         return None
-
-    def update_buffer(self):
-        if self.menus['preview'].get_label() == _('Hide preview') and not\
-                self.process_blocked:
-            self.process_blocked = True
-            GObject.timeout_add(TIME_LAPSE, self.process_content)
-
-    def update_preview(self):
-        if self.html_content is not None and self.html_viewer.is_visible():
-            GObject.idle_add(
-                self.html_viewer.get_buffer().set_text, self.html_content)
-        if self.html_rendered is not None and self.webkit_viewer.is_visible():
-            GObject.idle_add(
-                self.webkit_viewer.load_string, self.html_rendered,
-                "text/html", "utf-8", '')
 
     def on_navigation(self, web_view, frame, request, nav_action,
                       policy_decision, data=None):
@@ -1771,7 +1798,8 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                         text_string = ds.get_file(self.fileDropbox)
                         if text_string is not None:
                             self.writer.get_buffer().set_text(text_string)
-                            self.read_buffer()
+                            if self.worker is not None:
+                                self.worker.do_it()
                     cm.destroy()
         elif option == 'open_from_drive':
             files = []
@@ -1793,7 +1821,8 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                         text_string = ds.get_file(file_selected['id'])
                         if text_string is not None:
                             self.writer.get_buffer().set_text(text_string)
-                            self.read_buffer()
+                            if self.worker is not None:
+                                self.worker.do_it()
                     cm.destroy()
         elif option == 'exit':
             self.on_close_application(widget, None)
@@ -1887,7 +1916,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             else:
                 self.menus['preview'].set_label(_('Show preview'))
                 self.hpaned.get_child2().set_visible(False)
-            self.update_preview()
+            self.worker.do_it()
         elif option == 'fullscreen':
             if self.menus['fullscreen'].get_label() == _('Full screen'):
                 self.fullscreen()
@@ -2033,7 +2062,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(2)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'italic':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('*', '*')
@@ -2042,7 +2071,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(1)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'strikethrough':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('~~', '~~')
@@ -2051,7 +2080,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(1)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'subscript':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('--', '--')
@@ -2060,7 +2089,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(2)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'superscript':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('++', '++')
@@ -2069,7 +2098,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(2)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'highlight':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('==', '==')
@@ -2078,7 +2107,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(2)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'underline':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('__', '__')
@@ -2087,7 +2116,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             aniter.backward_chars(2)
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
-            self.update_buffer()
+            self.worker.do_it()
         elif option == 'rule':
             self.writer.get_buffer().begin_user_action()
             self.insert_at_cursor('\n---\n')
@@ -2177,12 +2206,12 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             textbuffer.insert_at_cursor('%s ' % tag)
         else:
             textbuffer.insert_at_cursor('\n%s ' % tag)
-        self.update_buffer()
+        self.worker.do_it()
 
     def insert_at_cursor(self, tag):
         textbuffer = self.writer.get_buffer()
         textbuffer.insert_at_cursor('%s' % tag)
-        self.update_buffer()
+        self.worker.do_it()
 
     def wrap_text(self, start_tag, end_tag):
         textbuffer = self.writer.get_buffer()
