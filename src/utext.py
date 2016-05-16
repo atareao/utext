@@ -44,6 +44,7 @@ from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from urllib.parse import quote_plus, unquote_plus
 import pypandoc
+from concurrent import futures
 from comun import _
 
 from bs4 import BeautifulSoup
@@ -119,6 +120,12 @@ def add2menu(menu, text=None, icon=None, conector_event=None,
     menu_item.show()
     menu.append(menu_item)
     return menu_item
+
+
+def do_it_in_background(todo, callback):
+    executor = futures.ProcessPoolExecutor(max_workers=1)
+    future = executor.submit(todo)
+    future.add_done_callback(callback)
 
 
 class Worker(threading.Thread, GObject.GObject):
@@ -349,32 +356,39 @@ class uText(Gtk.Window):
 
     def process_content(self):
         print('aqui %d' % self.contador)
-        self.process_blocked = False
+        word_count = -1
+        html_content = None
         markdown_content = self.get_buffer_text()
         if self.html_viewer.is_visible():
             html_content = self.md.convert(markdown_content)
             self.html_viewer.get_buffer().set_text(html_content)
             word_count = len(re.findall(
                 '(\S+)', BeautifulSoup(html_content, 'lxml').get_text('\n')))
-        else:
-            word_count = len(re.findall('(\S+)', markdown_content))
-        self.statusbar.push(
-            0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
-                self.writer.get_buffer().get_line_count(),
-                word_count,
-                self.writer.get_buffer().get_char_count()))
         if self.webkit_viewer.is_visible():
             if self.preferences['mathjax']:
                 mathjax = MATHJAX
             else:
                 mathjax = ''
-            html_content = self.md.convert(markdown_content)
+            if html_content is None:
+                html_content = self.md.convert(markdown_content)
+            if word_count < 0:
+                word_count = len(re.findall('(\S+)', BeautifulSoup(
+                        html_content,
+                        'lxml').get_text('\n')))
+
             html_rendered = self.jt.render(
                 css=self.css_content, content=html_content, mathjax=mathjax)
             if html_rendered is not None:
                 self.webkit_viewer.load_string(html_rendered,
                                                "text/html",
                                                "utf-8", '')
+        if word_count < 0:
+            word_count = len(re.findall('(\S+)', markdown_content))
+        self.statusbar.push(
+            0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
+                self.writer.get_buffer().get_line_count(),
+                word_count,
+                self.writer.get_buffer().get_char_count()))
         self.contador += 1
 
     def apply_preferences(self):
@@ -678,7 +692,6 @@ class uText(Gtk.Window):
             if not filename.endswith('.pdf'):
                 filename += '.pdf'
             data = self.get_buffer_text()
-            encoding = chardet.detect(self.html_content)['encoding']
             if data is not None:
                 options = {
                     'page-size': 'A4',
@@ -688,9 +701,10 @@ class uText(Gtk.Window):
                     'margin-left': '25mm',
                     'encoding': encoding,
                 }
-                print(self.html_content)
+                html_content = self.md.convert(data)
+                encoding = chardet.detect(html_content)['encoding']
                 pdfkit.from_string(
-                    self.html_content, filename, options=options)
+                    html_content, filename, options=options)
         dialog.destroy()
 
     def save_current_file(self):
@@ -1483,11 +1497,11 @@ class uText(Gtk.Window):
                         'margin-left': '25mm',
                         'encoding': 'utf-8',
                     }
+                    html_content = self.md.convert(data)
                     data = '<html><head><meta charset="utf-8">'
                     data += '</head><body>'
-                    data += unquote_plus(self.html_content)
+                    data += unquote_plus(html_content)
                     data += '</body></html>'
-                    print(data)
                     pdfkit.from_string(
                         data, filename, options=options)
                 else:

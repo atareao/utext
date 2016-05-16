@@ -1,8 +1,9 @@
-utext (0.5.0-0extras16.04.0) xenial; urgency=medium
+utext (0.5.0-0extras16.04.1) xenial; urgency=medium
 
   * Updating preview in background
+  * Fixed a bug on export to...
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Sun, 15 May 2016 09:46:23 +0200
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Mon, 16 May 2016 20:27:58 +0200
 
 utext (0.4.0-0extras16.04.1) xenial; urgency=medium
 
