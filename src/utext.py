@@ -44,15 +44,15 @@ from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from urllib.parse import quote_plus, unquote_plus
 import pypandoc
-from concurrent import futures
 from comun import _
 
 from bs4 import BeautifulSoup
 
 import pdfkit
 
-import threading
-import queue
+from threading import Thread
+# from multiprocessing import Process, Queue
+from queue import Queue
 
 TIME_LAPSE = 500
 TAG_FOUND = 'found'
@@ -122,25 +122,19 @@ def add2menu(menu, text=None, icon=None, conector_event=None,
     return menu_item
 
 
-def do_it_in_background(todo, callback):
-    executor = futures.ProcessPoolExecutor(max_workers=1)
-    future = executor.submit(todo)
-    future.add_done_callback(callback)
-
-
-class Worker(threading.Thread, GObject.GObject):
+class Worker(Thread, GObject.GObject):
     __gsignals__ = {
         'updated': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                     (object,)),
         }
 
     def __init__(self, callback):
-        threading.Thread.__init__(self)
+        Thread.__init__(self)
         GObject.GObject.__init__(self)
         self.work = False
-        self.setDaemon(True)
+        self.daemon = True
         self.callback = callback
-        self.q = queue.Queue()
+        self.q = Queue()
 
     def stop(self):
         self.work = False
@@ -153,7 +147,11 @@ class Worker(threading.Thread, GObject.GObject):
     def run(self):
         self.work = True
         number = 1
+        print('=== aqui ===')
+        contador = 0
         while self.work and number > 0:
+            contador += 1
+            print('=== aqui %s ===' % (contador))
             number = self.q.get()
             time.sleep(0.5)
             while self.q.empty() is False:
