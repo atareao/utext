@@ -237,6 +237,7 @@ class uText(Gtk.Window):
         self.writer.get_buffer().set_language(language)
 
         # WebKit
+        WebKit.set_cache_model(WebKit.CacheModel.DOCUMENT_VIEWER)
         self.webkit_viewer = WebKit.WebView()
         self.webkit_viewer.set_name("previewContent")
         self.webkit_viewer.connect(
