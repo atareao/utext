@@ -1,3 +1,9 @@
+utext (0.5.2-0extras16.04.0) xenial; urgency=medium
+
+  * Using Timer
+
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 22 Jun 2016 21:14:41 +0200
+
 utext (0.5.1-0extras16.04.0) xenial; urgency=medium
 
   * WebKit.set_cache_model(WebKit.CacheModel.DOCUMENT_VIEWER)
