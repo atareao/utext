@@ -1,5 +1,24 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+#
+# This file is part of utext
+#
+# Copyright (C) 2012-2016 Lorenzo Carbonell
+# lorenzo.carbonell.cerezo@gmail.com
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
 import gi
 try:
     gi.require_version('Gtk', '3.0')
@@ -43,6 +62,7 @@ from markdown import Markdown, Extension
 from mdx_mathjax import MathExtension
 from myextension import MyExtension
 from urllib.parse import quote_plus, unquote_plus
+from idleobject import IdleObject
 import pypandoc
 from comun import _
 
@@ -50,11 +70,11 @@ from bs4 import BeautifulSoup
 
 import pdfkit
 
-from threading import Thread
+from threading import Thread, Event, Timer
 # from multiprocessing import Process, Queue
 from queue import Queue
 
-TIME_LAPSE = 500
+TIME_LAPSE = 0.5
 TAG_FOUND = 'found'
 MATHJAX = '''
 <script type="text/javascript"	src="https://cdn.mathjax.org/mathjax\
@@ -122,7 +142,7 @@ def add2menu(menu, text=None, icon=None, conector_event=None,
     return menu_item
 
 
-class Worker(Thread, GObject.GObject):
+class Worker(Thread, IdleObject):
     __gsignals__ = {
         'updated': (GObject.SIGNAL_RUN_FIRST, GObject.TYPE_NONE,
                     (object,)),
@@ -133,33 +153,37 @@ class Worker(Thread, GObject.GObject):
         GObject.GObject.__init__(self)
         self.work = False
         self.daemon = True
+        self.event = Event()
         self.callback = callback
-        self.q = Queue()
+        self.time = time.time()
+        self.timer = None
+
+    def restart_timer(self):
+        if self.timer is not None:
+            self.timer.cancel()
+            self.timer = None
+            self.timer = Timer(2*TIME_LAPSE, self.do_it)
+            self.timer.start()
+        else:
+            self.timer = Timer(2*TIME_LAPSE, self.do_it)
+            self.timer.start()
 
     def stop(self):
         self.work = False
-        self.q.put(0)
 
     def do_it(self):
-        print('===== putting ====')
-        self.q.put(1)
+        if time.time() - self.time > TIME_LAPSE:
+            self.event.set()
+        else:
+            self.restart_timer()
+        self.time = time.time()
 
     def run(self):
         self.work = True
-        number = 1
-        print('=== aqui ===')
-        contador = 0
-        while self.work and number > 0:
-            contador += 1
-            print('=== aqui %s ===' % (contador))
-            number = self.q.get()
-            time.sleep(0.5)
-            while self.q.empty() is False:
-                print('===== getting ====')
-                number = self.q.get()
-            print('===== do it =====')
+        while(self.work):
+            self.event.wait()
             GObject.idle_add(self.callback)
-        print('===== end =====')
+            self.event.clear()
         return
 
 

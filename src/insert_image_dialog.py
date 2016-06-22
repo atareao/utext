@@ -1,12 +1,10 @@
-#!/usr/bin/env python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
-# preferences_dialog.py
+# This file is part of utext
 #
-# This file is part of PushBullet-Indicator
-#
-# Copyright (C) 2014
-# Lorenzo Carbonell Cerezo <lorenzo.carbonell.cerezo@gmail.com>
+# Copyright (C) 2012-2016 Lorenzo Carbonell
+# lorenzo.carbonell.cerezo@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
@@ -66,11 +64,11 @@ class InsertImageDialog(Gtk.Dialog):
 		table1.attach(self.url,1,2,2,3, xpadding=5, ypadding=5)
 		#
 		self.show_all()
-	
+
 
 	def close_application(self, widget, event):
 		self.hide()
-		
+
 	def close_ok(self):
 		pass
 

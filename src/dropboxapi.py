@@ -1,10 +1,9 @@
-#!/usr/bin/python3
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
 #
+# This file is part of utext
 #
-# googletasksapi.py
-#
-# Copyright (C) 2011 Lorenzo Carbonell
+# Copyright (C) 2012-2016 Lorenzo Carbonell
 # lorenzo.carbonell.cerezo@gmail.com
 #
 # This program is free software: you can redistribute it and/or modify
@@ -19,9 +18,6 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
-#
-#
-#
 
 from services import GoogleService
 from logindialog import LoginDialog
@@ -29,7 +25,7 @@ from urllib.parse import quote, urlencode, parse_qs
 import os
 import json
 import io
-import comun 
+import comun
 import datetime
 import dateutil
 import dateutil.rrule
@@ -82,7 +78,7 @@ def get_utc_offset(date):
 	if time.localtime(t).tm_isdst: # pragma: no cover
 		utc_offset = -time.altzone
 	else:
-		utc_offset = -time.timezone	
+		utc_offset = -time.timezone
 	hours = abs(utc_offset) // 3600
 	minutes = abs(utc_offset) % 3600 // 60
 	sign = (utc_offset < 0 and '-') or '+'
@@ -107,7 +103,7 @@ class LocalTZ(datetime.tzinfo):
 		if time.localtime(t).tm_isdst: # pragma: no cover
 			utc_offset = -time.altzone
 		else:
-			utc_offset = -time.timezone	
+			utc_offset = -time.timezone
 		minutes = abs(utc_offset) // 60
 		self.__offset = datetime.timedelta(minutes = minutes)
 
@@ -120,7 +116,7 @@ class LocalTZ(datetime.tzinfo):
 	def dst(self, dt):
 		return datetime.timedelta(0)
 
-	
+
 class RecurrenceRule(object):
 	def __init__(self,frequence,interval = 0):
 		self.frequence = frequence
@@ -134,7 +130,7 @@ class RecurrenceRule(object):
 class Event(dict):
 	def __init__(self,entry=None):
 		self.set_from_entry(entry)
-	
+
 	def set_from_entry(self,entry):
 		if entry:
 			self.update(entry)
@@ -182,7 +178,7 @@ class Event(dict):
 						rrule = dateutil.rrule.rrulestr(el)
 						rset.rrule(rrule)
 					except Exception as e:
-						print(e)									
+						print(e)
 				try:
 					ans = rset.after(daybefore,inc=True)
 				except Exception as e:
@@ -197,11 +193,11 @@ class Event(dict):
 			elif 'dateTime' in self[typeofdate].keys():
 				dtstart = self[typeofdate]['dateTime']
 				return rfc3339.parse_datetime(dtstart)
-		return None		
-	
+		return None
+
 	def get_start_date(self):
 		return self._get_date('start')
-	
+
 	def get_end_date(self):
 		return self._get_date('end')
 
@@ -211,7 +207,7 @@ class Event(dict):
 			return adate.strftime('%x')
 		else:
 			return adate.strftime('%x')+' - '+adate.strftime('%H:%M')
-					
+
 	def __eq__(self,other):
 		for key in self.keys():
 			if key in other.keys():
@@ -235,13 +231,13 @@ class Event(dict):
 
 	def __ge__(self,other):
 		return self.get_start_date() >= other.get_start_date()
-	
+
 class Calendar(dict):
 	def __init__(self,entry=None):
 		self.set_from_entry(entry)
 		self['events'] = {}
-	
-	def set_from_entry(self,entry):		
+
+	def set_from_entry(self,entry):
 		if entry:
 			self.update(entry)
 
@@ -254,14 +250,14 @@ class Calendar(dict):
 			ans += '%s: %s\n'%(key,self[key])
 		return ans
 
-class GoogleCalendar(GoogleService):			
+class GoogleCalendar(GoogleService):
 	def __init__(self,token_file):
 		GoogleService.__init__(self,auth_url=AUTH_URL,token_url=TOKEN_URL,redirect_uri=REDIRECT_URI,scope=SCOPE,client_id=CLIENT_ID,client_secret=CLIENT_SECRET,token_file=comun.TOKEN_FILE)
 		self.calendars = {}
 
 	def read(self):
 		self.calendars = self.get_calendars_and_events()
-		
+
 	def __do_request(self,method,url,addheaders=None,data=None,params=None,first=True):
 		headers ={'Authorization':'OAuth %s'%self.access_token}
 		if addheaders:
@@ -269,14 +265,14 @@ class GoogleCalendar(GoogleService):
 		print(headers)
 		if data:
 			if params:
-				response = self.session.request(method,url,data=data,headers=headers,params=params)		
+				response = self.session.request(method,url,data=data,headers=headers,params=params)
 			else:
-				response = self.session.request(method,url,data=data,headers=headers)		
+				response = self.session.request(method,url,data=data,headers=headers)
 		else:
 			if params:
 				response = self.session.request(method,url,headers=headers,params=params)
-			else:		
-				response = self.session.request(method,url,headers=headers)		
+			else:
+				response = self.session.request(method,url,headers=headers)
 		print(response)
 		if response.status_code == 200 or response.status_code == 201 or response.status_code == 204:
 			return response
@@ -317,11 +313,11 @@ class GoogleCalendar(GoogleService):
 		params = {'calendarId':calendar_id}
 		if type(start_date) == datetime.date:
 			start_value = {'date':start_date.strftime('%Y-%m-%d')}
-		else:			
+		else:
 			start_value = {'dateTime':start_date.strftime('%Y-%m-%dT%H:%M:%S')+get_utc_offset(start_date)}
 		if type(end_date) == datetime.date:
 			end_value = {'date':end_date.strftime('%Y-%m-%d')}
-		else:			
+		else:
 			end_value = {'dateTime':end_date.strftime('%Y-%m-%dT%H:%M:%S')+get_utc_offset(end_date)}
 		data = {
 			'kind':'calendar#event',
@@ -354,17 +350,17 @@ class GoogleCalendar(GoogleService):
 			except Exception as e:
 				print(e)
 		return None
-		
+
 	def edit_event(self,calendar_id,event_id,summary,start_date,end_date,description=None,reminder=False,reminder_minutes=15,rrule=None):
 		url = 'https://www.googleapis.com/calendar/v3/calendars/%s/events/%s'%(calendar_id,event_id)
 		params = {'calendarId':calendar_id,'eventId':event_id}
 		if type(start_date) == datetime.date:
 			start_value = {'date':start_date.strftime('%Y-%m-%d')}
-		else:			
+		else:
 			start_value = {'dateTime':start_date.strftime('%Y-%m-%dT%H:%M:%S')+get_utc_offset(start_date)}
 		if type(end_date) == datetime.date:
 			end_value = {'date':end_date.strftime('%Y-%m-%d')}
-		else:			
+		else:
 			end_value = {'dateTime':end_date.strftime('%Y-%m-%dT%H:%M:%S')+get_utc_offset(end_date)}
 		data = {
 			'kind':'calendar#event',
@@ -393,14 +389,14 @@ class GoogleCalendar(GoogleService):
 			try:
 				aevent = Event(json.loads(response.text))
 				aevent['calendar_id'] = calendar_id
-				return aevent				
+				return aevent
 			except Exception as e:
 				print(e)
-		return None				
+		return None
 
 	def get_calendars_and_events(self):
 		calendars = {}
-		response = self.__do_request('GET',CALENDAR_LIST_URL)		
+		response = self.__do_request('GET',CALENDAR_LIST_URL)
 		if response and response.text:
 			try:
 				answer = json.loads(response.text)
@@ -415,7 +411,7 @@ class GoogleCalendar(GoogleService):
 
 	def get_calendars(self):
 		calendars = {}
-		response = self.__do_request('GET',CALENDAR_LIST_URL)		
+		response = self.__do_request('GET',CALENDAR_LIST_URL)
 		if response and response.text:
 			try:
 				answer = json.loads(response.text)
@@ -430,7 +426,7 @@ class GoogleCalendar(GoogleService):
 	def get_events(self,calendar_id):
 		events = {}
 		params = {'calendarId':calendar_id,'maxResults':1000000}
-		response = self.__do_request('GET',EVENT_LIST_URL%calendar_id,params = params)		
+		response = self.__do_request('GET',EVENT_LIST_URL%calendar_id,params = params)
 		if response and response.text:
 			try:
 				answer = json.loads(response.text)
@@ -442,7 +438,7 @@ class GoogleCalendar(GoogleService):
 			except Exception as e:
 				print(e)
 		return events
-		
+
 	def backup(self):
 		f = open(comun.BACKUP_FILE,'w')
 		f.write(json.dumps(self.calendars))
@@ -461,7 +457,7 @@ class GoogleCalendar(GoogleService):
 				aevent = Event(event)
 				events[aevent['id']] = aevent
 			acalendar['events'] = events
-			self.calendars[key] = acalendar	
+			self.calendars[key] = acalendar
 
 	def getNextTenEvents(self,calendar_ids):
 		events = []
@@ -474,8 +470,8 @@ class GoogleCalendar(GoogleService):
 		for event in lookinevents:
 			sd = event.get_start_date()
 			#print(event.get_start_date())
-			if sd is not None and sd > adatetime:						
-				events.append({'date':sd,'event':event})					
+			if sd is not None and sd > adatetime:
+				events.append({'date':sd,'event':event})
 		sortedlist = sorted(events, key=lambda x: x['date'])
 		ans = []
 		for val in sortedlist:
@@ -486,7 +482,7 @@ class GoogleCalendar(GoogleService):
 		print(ans)
 		print('--------------------------------------------------------')
 		return ans
-		
+
 	def getAllEventsInCalendar(self,calendar):
 		return calendar['events'].values()
 
@@ -498,7 +494,7 @@ class GoogleCalendar(GoogleService):
 		for calendar in self.calendars.values():
 			events.extend(calendar['events'].values())
 		return events
-		
+
 	def getAllEventsOnMonth(self,date,calendars=[]):
 		lookinevents = []
 		for calendar_id in calendars:
@@ -552,10 +548,10 @@ class GoogleCalendar(GoogleService):
 				if event['start']['date'].startswith(search):
 					adate = event.get_start_date().date()
 					sortedevents[adate].append(event)
-			elif 'start' in event.keys() and 'dateTime' in event['start'].keys():		
+			elif 'start' in event.keys() and 'dateTime' in event['start'].keys():
 				if event['start']['dateTime'].startswith(search):
 					adate = event.get_start_date().date()
-					sortedevents[adate].append(event)				
+					sortedevents[adate].append(event)
 		return sortedevents
 
 if __name__ == '__main__':
@@ -574,14 +570,14 @@ if __name__ == '__main__':
 		#temporary_token = input('Introduce the token: ')
 		print(gc.get_authorization(temporary_token))
 	'''
-	'''	
+	'''
 	for calendar in gc.get_calendars():
 		print('########################################################')
 		print(calendar.params['id'])
 		print(calendar.params['summary'])
 		for event in gc.get_events(calendar.params['id']):
 			print(event.params['summary'],event.params['description'] if 'description' in event.params.keys() else '')
-		#print gca.get_events(calendar['id']) 
+		#print gca.get_events(calendar['id'])
 	'''
 	#gc.backup()
 	#gc.restore()
@@ -589,7 +585,7 @@ if __name__ == '__main__':
 	'''
 	gc.read_from_google_calendar()
 	print(gc.calendars)
-	#print(gc.getAllEventsOnMonth())	
+	#print(gc.getAllEventsOnMonth())
 	'''
 	'''
 	calendar = gc.add_calendar('la prueba del cañón')
@@ -597,7 +593,7 @@ if __name__ == '__main__':
 	gc.add_event(calendar['id'],'cañón',datetime.date.today(),datetime.date.today(),rrule=RecurrenceRule(frequence=FREQUENCE_MONTHLY))
 	ahora = datetime.datetime.now()
 	luego = ahora + add_time(minutes=50,hours=7)
-	gc.add_event(calendar['id'],'prueba2',ahora,luego,True)	
+	gc.add_event(calendar['id'],'prueba2',ahora,luego,True)
 	mievent = gc.add_event(calendar['id'],'recurrente',ahora,luego,False)
 	print(mievent)
 	gc.edit_event(calendar['id'],mievent['id'],'editando',datetime.datetime.now()+add_time(hours=7),datetime.datetime.now()+add_time(hours=8))
@@ -627,7 +623,7 @@ if __name__ == '__main__':
 	now = datetime.datetime.now()
 	nowplus = now +datetime.timedelta(days=30)
 	for event in gc.getAllEvents():
-		if 'recurrence' in event.keys():			
+		if 'recurrence' in event.keys():
 			for el in event['recurrence']:
 				if el.find('DTSTART') == -1:
 					if 'date' in event['start'].keys():
@@ -665,7 +661,7 @@ if __name__ == '__main__':
 	f.write(json.dumps(eventos, sort_keys=True, indent=4))
 	f.close()
 	for event in eventos.values():
-		if 'recurrence' in event.keys():			
+		if 'recurrence' in event.keys():
 			for el in event['recurrence']:
 				if el.find('TZID')!=-1:
 					print(el)
