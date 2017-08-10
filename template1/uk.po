@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: utext 0.5.2\n"
 "Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
-"POT-Creation-Date: 2017-07-27 11:43+0200\n"
+"POT-Creation-Date: 2017-08-10 17:40+0200\n"
 "PO-Revision-Date: 2016-01-23 10:39+0000\n"
 "Last-Translator: Ihor Chomko <igorchomko@gmail.com>\n"
 "Language-Team: Ukrainian <uk@li.org>\n"
@@ -28,15 +28,15 @@ msgid "Select file"
 msgstr "Обрати файл"
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/search_and_replace_dialog.py:37
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1927
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2034
 msgid "Search and replace"
 msgstr "Знайти і замінити"
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/search_and_replace_dialog.py:57
 #: /datos/Sync/Programacion/Python/utext/src/utext/search_dialog.py:36
 #: /datos/Sync/Programacion/Python/utext/src/utext/search_dialog.py:56
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1903
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1906
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2010
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2013
 msgid "Search"
 msgstr "Пошук"
 
@@ -50,17 +50,17 @@ msgid "Insert Table"
 msgstr "Вставити зображення"
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/insert_table_dialog.py:65
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1186
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1196
 msgid "Rows"
 msgstr ""
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/insert_table_dialog.py:69
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1198
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1208
 msgid "Columns"
 msgstr ""
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:73
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1840
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1947
 msgid "Preferences"
 msgstr "Настройки"
 
@@ -115,7 +115,7 @@ msgid "Autosave"
 msgstr "Автозбереження"
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:208
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2150
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2257
 msgid "Spell check"
 msgstr "Перевірка правопису"
 
@@ -128,7 +128,7 @@ msgid "Cloud services"
 msgstr ""
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:228
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:981
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:988
 #, fuzzy
 msgid "Dropbox"
 msgstr "Зберегти в Dropbox"
@@ -158,7 +158,7 @@ msgstr "Ім’я файлу"
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/insert_url_dialog.py:47
 #: /datos/Sync/Programacion/Python/utext/src/utext/insert_image_dialog.py:47
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2134
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2241
 msgid "Insert Url"
 msgstr "Вставити адресу Url"
 
@@ -213,465 +213,485 @@ msgid "rtf"
 msgstr ""
 
 #: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:296
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2436
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2543
 msgid "An application to work with markdown"
 msgstr "Програма для роботи з документами markdown"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:516
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1876
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2781
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:524
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1983
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2912
 msgid "Hide Toolbar"
 msgstr "Приховати панель інструментів"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:519
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2778
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:527
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2909
 msgid "Show Toolbar"
 msgstr "Показати панель інструментів"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:522
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1871
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2774
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:530
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1978
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2905
 msgid "Hide status bar"
 msgstr "Приховати рядок стану"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:525
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2771
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:533
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2902
 msgid "Show status bar"
 msgstr "Показати рядок стану"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:591
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:603
 #, python-brace-format
 msgid "Lines: {0}, Words: {1}, Characters: {2}"
 msgstr "Рядків: {0}, Слів: {1}, Знаків: {2}"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:868
-msgid "Select a file to save pdf"
-msgstr "Обрати файл для збереження у PDF"
-
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:877
-msgid "PDF files"
-msgstr "Файли PDF"
-
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:940
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:870
 msgid "Select a file to save markdown"
 msgstr "Обрати файл для збереження в markdown"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:948
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:878
 msgid "Markdown files"
 msgstr "Файли markdown"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:961
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:894
 msgid "File exists"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:962
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:895
 msgid "Overwrite?"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:984
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:918
+msgid "Select a file to save pdf"
+msgstr "Обрати файл для збереження у PDF"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:927
+msgid "PDF files"
+msgstr "Файли PDF"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:991
 msgid "Drive"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:986
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:993
 msgid "Untitled"
 msgstr "Без назви"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1005
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1034
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1015
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1044
 #, fuzzy
 msgid "Heading 1"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1010
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1020
 #, fuzzy
 msgid "Heading 2"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1015
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1025
 #, fuzzy
 msgid "Heading 3"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1020
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1030
 #, fuzzy
 msgid "Heading 4"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1025
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1035
 #, fuzzy
 msgid "Heading 5"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1030
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1040
 #, fuzzy
 msgid "Heading 6"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1159
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1169
 #, fuzzy
 msgid "Insert date"
 msgstr "Вставити зображення"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1161
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1171
 #, fuzzy
 msgid "Insert horizontal line"
 msgstr "Вставити горизонтальну лінію"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1163
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1173
 #, fuzzy
 msgid "Insert <!--more-->"
 msgstr "Вставити більше"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1176
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1186
 #, fuzzy
 msgid "Insert table"
 msgstr "Вставити зображення"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1181
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1191
 msgid "Add row before"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1182
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1192
 msgid "Add row after"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1185
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1195
 #, fuzzy
 msgid "Remove row"
 msgstr "Вилучити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1191
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1201
 msgid "Add column before"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1193
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1203
 msgid "Add column after"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1197
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1207
 #, fuzzy
 msgid "Remove column"
 msgstr "Вилучити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1332
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1623
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1342
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1730
 msgid "New file"
 msgstr "Новий файл"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1341
 #: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1351
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1360
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1632
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1361
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1370
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1739
 msgid "Open"
 msgstr "Відкрити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1343
 #: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1353
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1639
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1363
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1746
 msgid "Close"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1385
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1685
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1384
+msgid "Print"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1390
+msgid "Export to pdf"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1396
+#, fuzzy
+msgid "Enter full screen"
+msgstr "Повний екран"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1402
+#, fuzzy
+msgid "Save as..."
+msgstr "Зберегти як"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1455
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1458
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2253
+msgid "Tools"
+msgstr "Інструменти"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1490
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1792
 msgid "Save"
 msgstr "Зберегти"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1618
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1725
 msgid "File"
 msgstr "Файл"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1648
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1755
 msgid "Recent files..."
 msgstr "Недавні файли"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1673
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1780
 msgid "Open from Dropbox"
 msgstr "Відкрити з Dropbox"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1678
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1785
 #, fuzzy
 msgid "Open from Google Drive"
 msgstr "Відкрити з Dropbox"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1693
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1800
 msgid "Save as"
 msgstr "Зберегти як"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1705
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1812
 msgid "Export to..."
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1721
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1828
 #, fuzzy
 msgid "Save on Dropbox"
 msgstr "Зберегти в Dropbox"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1727
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1834
 msgid "Save on Google Drive"
 msgstr ""
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1734
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1841
 msgid "Exit"
 msgstr "Вийти"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1746
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1853
 msgid "Edit"
 msgstr "Редагувати"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1749
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1856
 msgid "Undo"
 msgstr "Скасувати"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1757
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1864
 msgid "Redo"
 msgstr "Повторити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1766
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1873
 msgid "Cut"
 msgstr "Вирізати"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1773
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1880
 msgid "Copy"
 msgstr "Копіювати"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1780
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1887
 msgid "Paste"
 msgstr "Вставити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1788
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1895
 msgid "Remove"
 msgstr "Вилучити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1796
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1903
 msgid "Select All"
 msgstr "Обрати все"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1807
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1914
 msgid "Convert selection to lowercase"
 msgstr "Конвертувати обране до нижнього регістру"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1813
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1920
 msgid "Convert selection to titlecase"
 msgstr "Конвертувати обране до великих перших букв"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1819
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1926
 msgid "Convert selection to uppercase"
 msgstr "Конвертувати обране до верхнього регістру"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1827
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1934
 msgid "Copy selection to html"
 msgstr "Копіювати обране в html"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1833
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1940
 msgid "Copy all to html"
 msgstr "Копіювати все в html"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1850
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1957
 msgid "View"
 msgstr "Вигляд"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1854
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2225
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2229
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2489
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2899
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1961
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2332
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2336
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2596
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:3042
 msgid "Preview"
 msgstr "Попередній перегляд"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1865
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2638
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1972
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2743
 msgid "Hide preview"
 msgstr "Приховати попередній прегляд"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1884
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2657
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2662
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1991
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2768
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2773
 msgid "Night mode"
 msgstr "Нічний режим"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1892
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2644
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2649
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1999
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2755
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2760
 msgid "Full screen"
 msgstr "Повний екран"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1915
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2022
 msgid "Remove highlight"
 msgstr "Вилучити виділення"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1939
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2046
 msgid "Format"
 msgstr "Формат"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1942
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2049
 msgid "Bold"
 msgstr "Жирний"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1951
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2058
 msgid "Italic"
 msgstr "Курсив"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1960
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2067
 msgid "Underline"
 msgstr "Підкреслений"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1969
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2076
 msgid "Strikethrough"
 msgstr "Закреслений"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1978
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2085
 msgid "Highlight"
 msgstr "Виділення"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1988
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2095
 msgid "Subscript"
 msgstr "Підрядковий символ"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1997
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2104
 msgid "Superscript"
 msgstr "Надрядковий символ"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2008
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2115
 msgid "Bullet List"
 msgstr "Маркірований список"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2014
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2121
 msgid "Numbered List"
 msgstr "Нумерований список"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2022
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2129
 msgid "Bloque Quote"
 msgstr "Тег blockquote"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2027
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2134
 msgid "Code"
 msgstr "Код"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2035
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2142
 msgid "Heading One"
 msgstr "Heading один"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2044
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2151
 msgid "Heading Two"
 msgstr "Heading два"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2053
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2160
 msgid "Heading Three"
 msgstr "Heading три"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2062
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2169
 msgid "Heading Four"
 msgstr "Heading чотири"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2071
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2178
 msgid "Heading Five"
 msgstr "Heading п’ять"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2080
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2187
 #, fuzzy
 msgid "Heading Six"
 msgstr "Heading шість"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2092
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2199
 msgid "Insert"
 msgstr "Вставити"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2096
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2203
 msgid "Insert Horizontal Rule"
 msgstr "Вставити горизонтальну лінію"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2105
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2212
 msgid "Insert Timestamp"
 msgstr "Вставити позначку часу"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2114
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2221
 msgid "Insert more"
 msgstr "Вставити більше"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2125
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2232
 msgid "Insert Image"
 msgstr "Вставити зображення"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2146
-msgid "Tools"
-msgstr "Інструменти"
-
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2162
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2269
 msgid "Help"
 msgstr "Допомога"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2169
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2276
 #, fuzzy
 msgid "Select a file to save to"
 msgstr "Обрати файл для збереження у PDF"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2177
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2284
 #, fuzzy
 msgid "files"
 msgstr "Файли PDF"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2226
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2485
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2486
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2895
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2896
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2333
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2592
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2593
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:3038
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:3039
 msgid "Html"
 msgstr "Html"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2237
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2344
 msgid "Web..."
 msgstr "Інтернет..."
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2243
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2350
 msgid "Get help online..."
 msgstr "Отримати онлайнову довідку..."
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2249
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2356
 msgid "Translate this application..."
 msgstr "Перекласти цю програму..."
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2255
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2362
 msgid "Report a bug..."
 msgstr "Повідомити про помилку..."
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2262
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2369
 msgid "Homepage"
 msgstr "Головна сторінка"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2268
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2375
 msgid "Follow us in Twitter"
 msgstr "Підписка на нас у Twitter"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2274
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2381
 msgid "Follow us in Google+"
 msgstr "Підписка на нас у Google+"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2280
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2387
 msgid "Follow us in Facebook"
 msgstr "Підписка на нас у Facebook"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2287
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2394
 msgid "About"
 msgstr "Про"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2469
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2576
 msgid "File modified"
 msgstr "Файл змінено"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2470
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2577
 msgid "Save file?"
 msgstr "Зберегти файл?"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2637
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2641
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2742
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2749
 msgid "Show preview"
 msgstr "Показати попередній перегляд"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2646
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2757
 msgid "Normal screen"
 msgstr "Нормальний екран"
 
-#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2658
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2769
 msgid "Day mode"
 msgstr "Денний режим"
 
