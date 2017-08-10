@@ -1,0 +1,656 @@
+# Serbian translation for utext
+# Copyright (c) 2016 Rosetta Contributors and Canonical Ltd 2016
+# This file is distributed under the same license as the utext package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: utext 0.5.2\n"
+"Report-Msgid-Bugs-To: lorenzo.carbonell.cerezo@gmail.com\n"
+"POT-Creation-Date: 2017-07-27 11:43+0200\n"
+"PO-Revision-Date: 2016-04-17 14:12+0000\n"
+"Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>\n"
+"Language-Team: Serbian <sr@li.org>\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Launchpad (build 17995)\n"
+"X-Launchpad-Export-Date: 2016-04-30 10:20+0000\n"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/files_in_cloud_dialog.py:39
+#, python-format
+msgid "select file from %s"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/files_in_cloud_dialog.py:55
+msgid "Select file"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/search_and_replace_dialog.py:37
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1927
+msgid "Search and replace"
+msgstr "Потражите и замените"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/search_and_replace_dialog.py:57
+#: /datos/Sync/Programacion/Python/utext/src/utext/search_dialog.py:36
+#: /datos/Sync/Programacion/Python/utext/src/utext/search_dialog.py:56
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1903
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1906
+msgid "Search"
+msgstr "Потражи"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/search_and_replace_dialog.py:62
+msgid "Replace with"
+msgstr "Замени са"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_table_dialog.py:47
+msgid "Insert Table"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_table_dialog.py:65
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1186
+msgid "Rows"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_table_dialog.py:69
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1198
+msgid "Columns"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:73
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1840
+msgid "Preferences"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:89
+msgid "Markdown editor"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:94
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:142
+msgid "Show line numbers"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:100
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:148
+msgid "Show line marks"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:106
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:154
+msgid "Insert spaces instead of tabs"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:112
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:160
+msgid "Set tab width"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:120
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:168
+msgid "Set auto indent"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:126
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:174
+msgid "Highlight current line"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:137
+msgid "Html viewer"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:180
+msgid "Preview Theme"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:197
+msgid "General options"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:202
+msgid "Autosave"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:208
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2150
+msgid "Spell check"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:214
+msgid "Use MathJax"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:223
+msgid "Cloud services"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:228
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:981
+msgid "Dropbox"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:234
+msgid "Google Drive"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/preferences_dialog.py:290
+msgid "Select font"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/filename_dialog.py:38
+#, python-format
+msgid "set filename for %s"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/filename_dialog.py:54
+#, python-format
+msgid "Set filename for %s"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/filename_dialog.py:57
+msgid "Filename"
+msgstr "Назив датотеке"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_url_dialog.py:47
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_image_dialog.py:47
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2134
+msgid "Insert Url"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_url_dialog.py:65
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_image_dialog.py:65
+msgid "Alt text"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_url_dialog.py:72
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_image_dialog.py:79
+msgid "Url"
+msgstr "Адреса"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/insert_image_dialog.py:72
+msgid "Title"
+msgstr "Наслов"
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:76
+msgid "docx"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:81
+msgid "epub"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:85
+msgid "html"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:89
+msgid "latex"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:93
+msgid "man"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:97
+msgid "mediawiki"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:101
+msgid "odt"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:105
+msgid "pdf"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:109
+msgid "rtf"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:296
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2436
+msgid "An application to work with markdown"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:516
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1876
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2781
+msgid "Hide Toolbar"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:519
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2778
+msgid "Show Toolbar"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:522
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1871
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2774
+msgid "Hide status bar"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:525
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2771
+msgid "Show status bar"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:591
+#, python-brace-format
+msgid "Lines: {0}, Words: {1}, Characters: {2}"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:868
+msgid "Select a file to save pdf"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:877
+msgid "PDF files"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:940
+msgid "Select a file to save markdown"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:948
+msgid "Markdown files"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:961
+msgid "File exists"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:962
+msgid "Overwrite?"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:984
+msgid "Drive"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:986
+msgid "Untitled"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1005
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1034
+msgid "Heading 1"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1010
+msgid "Heading 2"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1015
+msgid "Heading 3"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1020
+msgid "Heading 4"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1025
+msgid "Heading 5"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1030
+msgid "Heading 6"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1159
+msgid "Insert date"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1161
+msgid "Insert horizontal line"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1163
+msgid "Insert <!--more-->"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1176
+msgid "Insert table"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1181
+msgid "Add row before"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1182
+msgid "Add row after"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1185
+msgid "Remove row"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1191
+msgid "Add column before"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1193
+msgid "Add column after"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1197
+msgid "Remove column"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1332
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1623
+msgid "New file"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1341
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1351
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1360
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1632
+msgid "Open"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1343
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1353
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1639
+msgid "Close"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1385
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1685
+msgid "Save"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1618
+msgid "File"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1648
+msgid "Recent files..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1673
+msgid "Open from Dropbox"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1678
+msgid "Open from Google Drive"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1693
+msgid "Save as"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1705
+msgid "Export to..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1721
+msgid "Save on Dropbox"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1727
+msgid "Save on Google Drive"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1734
+msgid "Exit"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1746
+msgid "Edit"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1749
+msgid "Undo"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1757
+msgid "Redo"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1766
+msgid "Cut"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1773
+msgid "Copy"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1780
+msgid "Paste"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1788
+msgid "Remove"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1796
+msgid "Select All"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1807
+msgid "Convert selection to lowercase"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1813
+msgid "Convert selection to titlecase"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1819
+msgid "Convert selection to uppercase"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1827
+msgid "Copy selection to html"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1833
+msgid "Copy all to html"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1850
+msgid "View"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1854
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2225
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2229
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2489
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2899
+msgid "Preview"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1865
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2638
+msgid "Hide preview"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1884
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2657
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2662
+msgid "Night mode"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1892
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2644
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2649
+msgid "Full screen"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1915
+msgid "Remove highlight"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1939
+msgid "Format"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1942
+msgid "Bold"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1951
+msgid "Italic"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1960
+msgid "Underline"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1969
+msgid "Strikethrough"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1978
+msgid "Highlight"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1988
+msgid "Subscript"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:1997
+msgid "Superscript"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2008
+msgid "Bullet List"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2014
+msgid "Numbered List"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2022
+msgid "Bloque Quote"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2027
+msgid "Code"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2035
+msgid "Heading One"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2044
+msgid "Heading Two"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2053
+msgid "Heading Three"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2062
+msgid "Heading Four"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2071
+msgid "Heading Five"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2080
+msgid "Heading Six"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2092
+msgid "Insert"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2096
+msgid "Insert Horizontal Rule"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2105
+msgid "Insert Timestamp"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2114
+msgid "Insert more"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2125
+msgid "Insert Image"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2146
+msgid "Tools"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2162
+msgid "Help"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2169
+msgid "Select a file to save to"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2177
+msgid "files"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2226
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2485
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2486
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2895
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2896
+msgid "Html"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2237
+msgid "Web..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2243
+msgid "Get help online..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2249
+msgid "Translate this application..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2255
+msgid "Report a bug..."
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2262
+msgid "Homepage"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2268
+msgid "Follow us in Twitter"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2274
+msgid "Follow us in Google+"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2280
+msgid "Follow us in Facebook"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2287
+msgid "About"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2469
+msgid "File modified"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2470
+msgid "Save file?"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2637
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2641
+msgid "Show preview"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2646
+msgid "Normal screen"
+msgstr ""
+
+#: /datos/Sync/Programacion/Python/utext/src/utext/utext.py:2658
+msgid "Day mode"
+msgstr ""

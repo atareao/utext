@@ -1,0 +1,33 @@
+bin/utext /usr/bin
+src/utext/*.py /usr/share/utext/utext
+src/utext/pdfkit/*.py /usr/share/utext/utext/pdfkit
+src/utext/pypandoc/*.py /usr/share/utext/utext/pypandoc
+src/utext/themes/*.css /usr/share/utext/utext/themes
+src/utext/themes/*.html /usr/share/utext/utext/themes
+src/utext/themes/bartic/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/bootstrap/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/default/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/github/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/jasonm23-dark/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/jasonm23-foghorn/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/jasonm23-markdown/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/jasonm23-swiss/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/markedapp-byword/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-book/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-bootstrap/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-bootstrap-2col/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-gray/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-page/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/mixu-radar/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/normalice/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/preview-dark/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/roryg-ghostwriter/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/thomasf-solarizedcssdark/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/thomasf-solarizedcsslight/* /usr/share/utext/utext/themes/bartic
+src/utext/themes/witex/* /usr/share/utext/utext/themes/bartic
+
+
+data/utext.desktop /usr/share/applications
+data/icons/utext.svg /usr/share/icons/hicolor/scalable/apps
+data/icons/utext-*.svg /usr/share/icons/hicolor/scalable/actions
+debian/changelog /usr/share/utext

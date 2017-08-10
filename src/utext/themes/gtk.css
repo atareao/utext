@@ -1,0 +1,23 @@
+#markdownContent {
+    font-family: "Ubuntu Mono", monospace;
+    font-size: 14px;
+    background: #fff;
+    color:#000;
+
+}
+#markdownContent:selected,
+#markdownContent:selected:focus {
+    background-color: #333;
+    color: #fff;
+}
+#previewContent {
+    font-family: "Ubuntu";
+    font-size: 14px;
+    background: #ecf0f1;
+}
+#htmlContent {
+	font-family: "Ubuntu Mono", monospace;
+    font-size: 14px;
+    background: #fff;
+    color:#000;
+}

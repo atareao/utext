@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg7384"
+   height="16"
+   width="16"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="view-code.svg">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1650"
+     inkscape:window-height="953"
+     id="namedview10"
+     showgrid="false"
+     inkscape:zoom="14.75"
+     inkscape:cx="-1.1186441"
+     inkscape:cy="2.5762712"
+     inkscape:window-x="57"
+     inkscape:window-y="334"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg7384" />
+  <metadata
+     id="metadata90">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title>Gnome Symbolic Icon Theme</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <title
+     id="title9167">Gnome Symbolic Icon Theme</title>
+  <path
+     inkscape:connector-curvature="0"
+     d="m 6.56347,1.9951712 a 1.0001,1.0001 0 0 0 -0.5937503,0.28125 l -5,5 -0.6875,0.71875 0.6875,0.71875 5,4.9999998 A 1.0165,1.0165 0 1 0 7.40722,12.276421 L 3.1172197,7.9964212 7.39842,3.7152212 a 1.0001,1.0001 0 0 0 -0.84,-1.72 z"
+     style="color:#000000;text-indent:0;text-transform:none;block-progression:tb;fill:#ffffff"
+     id="path8485" />
+  <path
+     id="path4144"
+     style="color:#000000;text-indent:0;text-transform:none;block-progression:tb;fill:#ffffff"
+     d="m 9.43653,1.9951666 a 1.0001,1.0001 0 0 1 0.59375,0.28125 l 5.000001,5 0.6875,0.71875 -0.6875,0.71875 -5.000001,5.0000004 a 1.0165,1.0165 0 1 1 -1.4375,-1.4375 l 4.290001,-4.2800004 -4.281201,-4.2812 a 1.0001,1.0001 0 0 1 0.84,-1.72 z"
+     inkscape:connector-curvature="0" />
+</svg>
