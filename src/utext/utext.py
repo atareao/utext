@@ -57,6 +57,7 @@ from .insert_table_dialog import InsertTableDialog
 from .filename_dialog import FilenameDialog
 from .files_in_cloud_dialog import FilesInCloudDialog
 from .preferences_dialog import PreferencesDialog
+from .table_editor import TableEditorDialog
 from .search_dialog import SearchDialog
 from .search_and_replace_dialog import SearchAndReplaceDialog
 from .mdx_mathjax import MathExtension
@@ -389,6 +390,9 @@ class MainWindow(Gtk.ApplicationWindow):
         insert_table = Gio.SimpleAction.new('insert-table', None)
         insert_table.connect('activate', self.on_toolbar_clicked)
         self.add_action(insert_table)
+        create_table = Gio.SimpleAction.new('create-table', None)
+        create_table.connect('activate', self.on_toolbar_clicked)
+        self.add_action(create_table)
         # Init HeaderBar
         self.init_headerbar()
 
@@ -1184,6 +1188,7 @@ class MainWindow(Gtk.ApplicationWindow):
 
         menu_table = Gio.Menu()
         menu_table.append(_('Insert table'), 'win.insert-table')
+        menu_table.append(_('Insert table with editor'), 'win.create-table')
 
         menu_table_row = Gio.Menu()
 
@@ -2745,6 +2750,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.menu['preview'].get_child().set_from_icon_name(
                     'utext-not-preview',
                     Gtk.IconSize.BUTTON)
+                self.do_it()
             else:
                 self.menus['preview'].set_label(_('Show preview'))
                 self.hpaned.get_child2().set_visible(False)
@@ -3028,6 +3034,14 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             else:
                 itd.destroy()
             self.writer.grab_focus()
+        elif option == 'create-table':
+            tde = TableEditorDialog(self, 2, 2)
+            if tde.run() == Gtk.ResponseType.ACCEPT:
+                self.writer.get_buffer().begin_user_action()
+                self.insert_at_cursor('\n' + tde.get_table())
+                self.writer.get_buffer().end_user_action()
+
+            tde.destroy()
         elif option == 'insert-date':
             self.writer.get_buffer().begin_user_action()
             self.insert_at_cursor(
