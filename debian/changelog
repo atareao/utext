@@ -1,8 +1,8 @@
-utext (0.5.2-0extras16.04.0) xenial; urgency=medium
+utext (0.5.2-0extras16.04.1) xenial; urgency=medium
 
   * Using Timer
 
- -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Wed, 22 Jun 2016 21:14:41 +0200
+ -- Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>  Tue, 22 Aug 2017 15:11:46 +0200
 
 utext (0.5.1-0extras16.04.0) xenial; urgency=medium
 
