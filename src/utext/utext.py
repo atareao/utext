@@ -40,11 +40,11 @@ import os
 import datetime
 import time
 import codecs
-import re
 import webbrowser
 from markdown import Markdown
-from bs4 import BeautifulSoup
-from jinja2 import Environment, FileSystemLoader
+from nltk.tokenize import RegexpTokenizer
+from jinja2 import Environment
+from jinja2 import FileSystemLoader
 import threading
 from . import comun
 from .comun import _
@@ -64,7 +64,7 @@ from .mdx_mathjax import MathExtension
 from .myextension import MyExtension
 from . import pypandoc
 from . import pdfkit
-
+from .keyboard_monitor import KeyboardMonitor
 
 TIME_LAPSE = 0.3
 COUNTER_TIME_LAPSE = 1
@@ -161,6 +161,7 @@ class MainApplication(Gtk.Application):
         Gtk.Application.do_shutdown(self)
 
     def on_quit(self, widget, data):
+        self.keyboardMonitor.stop()
         self.quit()
 
     def do_startup(self):
@@ -370,6 +371,8 @@ class MainWindow(Gtk.ApplicationWindow):
         self.match_end = None
         self.searched_text = ''
         self.replacement_text = ''
+        self.timer = None
+        self.glib_src = None
 
         self.launched = False
         self.is_saving = False
@@ -551,8 +554,9 @@ class MainWindow(Gtk.ApplicationWindow):
         if afile is not None:
             self.load_file(afile)
 
-        self.timer = None
-        self.glib_src = None
+        self.keyboardMonitor = KeyboardMonitor(800)
+        self.keyboardMonitor.connect('key_released', self.do_it)
+        self.keyboardMonitor.start()
 
     def on_file_modified(self, widget):
         print('---- modified ----')
@@ -567,7 +571,7 @@ class MainWindow(Gtk.ApplicationWindow):
     def emit(self, *args):
         GLib.idle_add(GObject.GObject.emit, self, *args)
 
-    def do_it(self):
+    def do_it(self, *args):
         if self.preferences is not None:
             if self.glib_src is not None:
                 GLib.source_remove(self.glib_src)
@@ -582,8 +586,6 @@ class MainWindow(Gtk.ApplicationWindow):
         if self.html_viewer.is_visible():
             html_content = self.md.convert(markdown_content)
             self.html_viewer.get_buffer().set_text(html_content)
-            word_count = len(re.findall(
-                '(\S+)', BeautifulSoup(html_content, 'lxml').get_text('\n')))
         if self.webkit_viewer.is_visible():
             if self.preferences['mathjax']:
                 mathjax = MATHJAX
@@ -591,10 +593,6 @@ class MainWindow(Gtk.ApplicationWindow):
                 mathjax = ''
             if html_content is None:
                 html_content = self.md.convert(markdown_content)
-            if word_count < 0:
-                word_count = len(re.findall('(\S+)', BeautifulSoup(
-                    html_content, 'lxml').get_text('\n')))
-
             html_rendered = self.jt.render(
                 css=self.css_content, content=html_content, mathjax=mathjax)
             if html_rendered is not None:
@@ -602,7 +600,8 @@ class MainWindow(Gtk.ApplicationWindow):
                                                "text/html",
                                                "utf-8", '')
         if word_count < 0:
-            word_count = len(re.findall('(\S+)', markdown_content))
+            tokenizer = RegexpTokenizer(r'\w+')
+            word_count = len(tokenizer.tokenize(markdown_content))
         self.statusbar.push(
             0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
                 self.writer.get_buffer().get_line_count(),
@@ -641,8 +640,14 @@ class MainWindow(Gtk.ApplicationWindow):
             self.preferences['html_viewer.tab_width'])
         self.html_viewer.set_highlight_current_line(
             self.preferences['html_viewer.highlight_current_line'])
+        print('=======')
+        print(os.path.join(
+                comun.THEMESDIR,
+                self.preferences['html_viewer.preview_theme'],
+                'style.css'))
         css = open(
             os.path.join(
+                comun.THEMESDIR,
                 self.preferences['html_viewer.preview_theme'],
                 'style.css'), 'r')
         self.css_content = css.read()
@@ -2504,10 +2509,12 @@ class MainWindow(Gtk.ApplicationWindow):
                 GLib.timeout_add(300 * 1000,
                                  self.save_current_file_deferreaded)
 
+        '''
         if self.timer is not None:
             self.timer.cancel()
         self.timer = threading.Timer(TIME_LAPSE, self.do_it)
         self.timer.start()
+        '''
 
     def save_current_file_deferreaded(self):
         if self.is_saving:
