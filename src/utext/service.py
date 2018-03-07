@@ -49,6 +49,5 @@ class Service(threading.Thread):
         self.window_title = window_title
 
     def handle_event(self, keypress, keysym, raw_key, modifiers):
-        if keypress and self.window_title is not None\
-                and self.window_title.startswith('uText'):
+        if keypress:
             self.interface.emit_event()

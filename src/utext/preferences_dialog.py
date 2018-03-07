@@ -58,7 +58,7 @@ def get_themes():
         for dirname, dirnames, filenames in os.walk(personal_dir):
             for subdirname in dirnames:
                 themes.append([subdirname, os.path.join(dirname, subdirname)])
-    installation_dir = '/opt/extras.ubuntu.com/utext/share/utext/themes'
+    installation_dir = comun.THEMESDIR
     if os.path.exists(installation_dir):
         for dirname, dirnames, filenames in os.walk(installation_dir):
             for subdirname in dirnames:
@@ -70,7 +70,7 @@ class PreferencesDialog(Gtk.Dialog):
     def __init__(self):
         #
         Gtk.Dialog.__init__(
-            self, 'uText | '+_('Preferences'), None,
+            self, 'uText | ' + _('Preferences'), None,
             Gtk.DialogFlags.MODAL | Gtk.DialogFlags.DESTROY_WITH_PARENT,
             (Gtk.STOCK_CANCEL, Gtk.ResponseType.REJECT,
              Gtk.STOCK_OK, Gtk.ResponseType.ACCEPT))
@@ -91,25 +91,25 @@ class PreferencesDialog(Gtk.Dialog):
         vbox2.pack_start(frame2, False, True, 1)
         table2 = Gtk.Table(8, 2, False)
         frame2.add(table2)
-        label21 = Gtk.Label(_('Show line numbers')+':')
+        label21 = Gtk.Label(_('Show line numbers') + ':')
         label21.set_alignment(0, 0.5)
         table2.attach(label21, 0, 1, 0, 1, xpadding=5, ypadding=5)
         self.switch21 = Gtk.Switch()
         table2.attach(self.switch21, 1, 2, 0, 1, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label22 = Gtk.Label(_('Show line marks')+':')
+        label22 = Gtk.Label(_('Show line marks') + ':')
         label22.set_alignment(0, 0.5)
         table2.attach(label22, 0, 1, 1, 2, xpadding=5, ypadding=5)
         self.switch22 = Gtk.Switch()
         table2.attach(self.switch22, 1, 2, 1, 2, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label23 = Gtk.Label(_('Insert spaces instead of tabs')+':')
+        label23 = Gtk.Label(_('Insert spaces instead of tabs') + ':')
         label23.set_alignment(0, 0.5)
         table2.attach(label23, 0, 1, 2, 3, xpadding=5, ypadding=5)
         self.switch23 = Gtk.Switch()
         table2.attach(self.switch23, 1, 2, 2, 3, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label24 = Gtk.Label(_('Set tab width')+':')
+        label24 = Gtk.Label(_('Set tab width') + ':')
         label24.set_alignment(0, 0.5)
         table2.attach(label24, 0, 1, 3, 4, xpadding=5, ypadding=5)
         self.spinbutton24 = Gtk.SpinButton()
@@ -117,13 +117,13 @@ class PreferencesDialog(Gtk.Dialog):
         self.spinbutton24.set_value(4)
         table2.attach(self.spinbutton24, 1, 2, 3, 4, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label25 = Gtk.Label(_('Set auto indent')+':')
+        label25 = Gtk.Label(_('Set auto indent') + ':')
         label25.set_alignment(0, 0.5)
         table2.attach(label25, 0, 1, 4, 5, xpadding=5, ypadding=5)
         self.switch25 = Gtk.Switch()
         table2.attach(self.switch25, 1, 2, 4, 5, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label26 = Gtk.Label(_('Highlight current line')+':')
+        label26 = Gtk.Label(_('Highlight current line') + ':')
         label26.set_alignment(0, 0.5)
         table2.attach(label26, 0, 1, 5, 6, xpadding=5, ypadding=5)
         self.switch26 = Gtk.Switch()
@@ -139,25 +139,25 @@ class PreferencesDialog(Gtk.Dialog):
         vbox3.pack_start(frame3, False, True, 1)
         table3 = Gtk.Table(9, 2, False)
         frame3.add(table3)
-        label31 = Gtk.Label(_('Show line numbers')+':')
+        label31 = Gtk.Label(_('Show line numbers') + ':')
         label31.set_alignment(0, 0.5)
         table3.attach(label31, 0, 1, 0, 1, xpadding=5, ypadding=5)
         self.switch31 = Gtk.Switch()
         table3.attach(self.switch31, 1, 2, 0, 1, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label32 = Gtk.Label(_('Show line marks')+':')
+        label32 = Gtk.Label(_('Show line marks') + ':')
         label32.set_alignment(0, 0.5)
         table3.attach(label32, 0, 1, 1, 2, xpadding=5, ypadding=5)
         self.switch32 = Gtk.Switch()
         table3.attach(self.switch32, 1, 2, 1, 2, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label33 = Gtk.Label(_('Insert spaces instead of tabs')+':')
+        label33 = Gtk.Label(_('Insert spaces instead of tabs') + ':')
         label33.set_alignment(0, 0.5)
         table3.attach(label33, 0, 1, 2, 3, xpadding=5, ypadding=5)
         self.switch33 = Gtk.Switch()
         table3.attach(self.switch33, 1, 2, 2, 3, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label34 = Gtk.Label(_('Set tab width')+':')
+        label34 = Gtk.Label(_('Set tab width') + ':')
         label34.set_alignment(0, 0.5)
         table3.attach(label34, 0, 1, 3, 4, xpadding=5, ypadding=5)
         self.spinbutton34 = Gtk.SpinButton()
@@ -165,19 +165,19 @@ class PreferencesDialog(Gtk.Dialog):
         self.spinbutton34.set_value(4)
         table3.attach(self.spinbutton34, 1, 2, 3, 4, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label35 = Gtk.Label(_('Set auto indent')+':')
+        label35 = Gtk.Label(_('Set auto indent') + ':')
         label35.set_alignment(0, 0.5)
         table3.attach(label35, 0, 1, 4, 5, xpadding=5, ypadding=5)
         self.switch35 = Gtk.Switch()
         table3.attach(self.switch35, 1, 2, 4, 5, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label36 = Gtk.Label(_('Highlight current line')+':')
+        label36 = Gtk.Label(_('Highlight current line') + ':')
         label36.set_alignment(0, 0.5)
         table3.attach(label36, 0, 1, 5, 6, xpadding=5, ypadding=5)
         self.switch36 = Gtk.Switch()
         table3.attach(self.switch36, 1, 2, 5, 6, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label37 = Gtk.Label(_('Preview Theme')+':')
+        label37 = Gtk.Label(_('Preview Theme') + ':')
         label37.set_alignment(0, 0.5)
         table3.attach(label37, 0, 1, 6, 7, xpadding=5, ypadding=5)
 
@@ -199,19 +199,19 @@ class PreferencesDialog(Gtk.Dialog):
         vbox4.pack_start(frame4, False, False, 1)
         table4 = Gtk.Table(3, 2, False)
         frame4.add(table4)
-        label41 = Gtk.Label(_('Autosave')+':')
+        label41 = Gtk.Label(_('Autosave') + ':')
         label41.set_alignment(0, 0.5)
         table4.attach(label41, 0, 1, 0, 1, xpadding=5, ypadding=5)
         self.switch41 = Gtk.Switch()
         table4.attach(self.switch41, 1, 2, 0, 1, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label42 = Gtk.Label(_('Spell check')+':')
+        label42 = Gtk.Label(_('Spell check') + ':')
         label42.set_alignment(0, 0.5)
         table4.attach(label42, 0, 1, 1, 2, xpadding=5, ypadding=5)
         self.switch42 = Gtk.Switch()
         table4.attach(self.switch42, 1, 2, 1, 2, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label43 = Gtk.Label(_('Use MathJax')+':')
+        label43 = Gtk.Label(_('Use MathJax') + ':')
         label43.set_alignment(0, 0.5)
         table4.attach(label43, 0, 1, 2, 3, xpadding=5, ypadding=5)
         self.switch43 = Gtk.Switch()
@@ -225,13 +225,13 @@ class PreferencesDialog(Gtk.Dialog):
         vbox5.pack_start(frame5, False, False, 1)
         table5 = Gtk.Table(2, 2, False)
         frame5.add(table5)
-        label51 = Gtk.Label(_('Dropbox')+':')
+        label51 = Gtk.Label(_('Dropbox') + ':')
         label51.set_alignment(0, 0.5)
         table5.attach(label51, 0, 1, 0, 1, xpadding=5, ypadding=5)
         self.switch51 = Gtk.Switch()
         table5.attach(self.switch51, 1, 2, 0, 1, xpadding=5, ypadding=5,
                       xoptions=Gtk.AttachOptions.SHRINK)
-        label52 = Gtk.Label(_('Google Drive')+':')
+        label52 = Gtk.Label(_('Google Drive') + ':')
         label52.set_alignment(0, 0.5)
         table5.attach(label52, 0, 1, 1, 2, xpadding=5, ypadding=5)
         self.switch52 = Gtk.Switch()
@@ -276,7 +276,6 @@ class PreferencesDialog(Gtk.Dialog):
             ld = LoginDialog(1024, 600, authorize_url, isgoogle=True)
             ld.run()
             temp_oauth_token = ld.code
-            uid = ld.uid
             ld.destroy()
             if temp_oauth_token is not None:
                 print(ds.get_authorization(temp_oauth_token))

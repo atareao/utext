@@ -37,15 +37,14 @@ from gi.repository import Gdk, GtkSource, GtkSpell, GdkPixbuf
 from gi.repository import Pango
 import chardet
 import os
+import re
 import datetime
 import time
 import codecs
 import webbrowser
 from markdown import Markdown
-from nltk.tokenize import RegexpTokenizer
 from jinja2 import Environment
 from jinja2 import FileSystemLoader
-import threading
 from . import comun
 from .comun import _
 from .configurator import Configuration
@@ -294,8 +293,8 @@ crear-un-gif-animado-de-un-video-en-ubuntu-en-un-solo-clic/')))
         ad = Gtk.AboutDialog()
         ad.set_name(comun.APPNAME)
         ad.set_version(comun.VERSION)
-        ad.set_copyright('Copyrignt (c) 2011-2017\nLorenzo Carbonell')
-        ad.set_comments(_('An application to work with markdown'))
+        ad.set_copyright('Copyrignt (c) 2011-2018\nLorenzo Carbonell')
+        ad.set_comments(_('An application to write markdown'))
         ad.set_license('''
 This program is free software: you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
@@ -351,7 +350,6 @@ class MainWindow(Gtk.ApplicationWindow):
         self.connect('delete-event', self.on_close_application)
         self.connect('realize', self.on_activate_preview_or_html)
         self.connect('file-saved', self.on_file_saved)
-        self.connect('file-modified', self.on_file_modified)
         Gtk.IconTheme.get_default().append_search_path(comun.ICONDIR)
         self.clipboard = Gtk.Clipboard.get(Gdk.SELECTION_CLIPBOARD)
         # Vertical box. Contains menu and PaneView
@@ -359,7 +357,6 @@ class MainWindow(Gtk.ApplicationWindow):
         self.add(self.vbox)
 
         self.app = app
-        self.timer = None
         self.preferences = None
         self.current_filepath = None
         self.fileDriveId = None
@@ -371,7 +368,7 @@ class MainWindow(Gtk.ApplicationWindow):
         self.match_end = None
         self.searched_text = ''
         self.replacement_text = ''
-        self.timer = None
+        # self.timer = None
         self.glib_src = None
 
         self.launched = False
@@ -422,13 +419,11 @@ class MainWindow(Gtk.ApplicationWindow):
 
         # Textbuffer
         buffer = GtkSource.Buffer()
-        buffer.connect("changed", self.on_buffer_changed)
+        self.buffer_signal = buffer.connect("changed", self.on_buffer_changed)
         buffer.set_highlight_syntax(True)
 
         # Set textview buffer
         self.writer.set_buffer(buffer)
-        self.writer.connect("key-press-event", self.on_key_press_event)
-        self.writer.connect("key-release-event", self.on_key_release_event)
         # SpellChecker
         if GtkSpell._namespace == "Gtkspell":
             self.spellchecker = GtkSpell.Spell.new()
@@ -558,21 +553,17 @@ class MainWindow(Gtk.ApplicationWindow):
         self.keyboardMonitor.connect('key_released', self.do_it)
         self.keyboardMonitor.start()
 
-    def on_file_modified(self, widget):
-        print('---- modified ----')
-        self.set_win_title(modified=True)
-        self.writer.get_buffer().set_modified(True)
-
     def on_file_saved(self, widget):
-        print('---- saved ----')
-        self.set_win_title(modified=False)
-        self.writer.get_buffer().set_modified(False)
+        if self.writer.get_buffer().get_modified() is True:
+            print('---- saved ----')
+            self.set_win_title(modified=False)
+            self.writer.get_buffer().set_modified(False)
 
     def emit(self, *args):
         GLib.idle_add(GObject.GObject.emit, self, *args)
 
     def do_it(self, *args):
-        if self.preferences is not None:
+        if self.writer.get_buffer().get_modified() is True:
             if self.glib_src is not None:
                 GLib.source_remove(self.glib_src)
                 self.glib_src = None
@@ -580,7 +571,6 @@ class MainWindow(Gtk.ApplicationWindow):
 
     def process_content(self):
         print('aqui %d' % self.contador)
-        word_count = -1
         html_content = None
         markdown_content = self.get_buffer_text()
         if self.html_viewer.is_visible():
@@ -599,17 +589,16 @@ class MainWindow(Gtk.ApplicationWindow):
                 self.webkit_viewer.load_string(html_rendered,
                                                "text/html",
                                                "utf-8", '')
-        if word_count < 0:
-            tokenizer = RegexpTokenizer(r'\w+')
-            word_count = len(tokenizer.tokenize(markdown_content))
         self.statusbar.push(
             0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
-                self.writer.get_buffer().get_line_count(),
-                word_count,
-                self.writer.get_buffer().get_char_count()))
+                len(re.findall('(\n)', markdown_content)),
+                len(re.findall('(\S+)', markdown_content)),
+                len(re.findall('(\w)', markdown_content))))
         self.contador += 1
-        self.timer = None
+        # self.timer = None
         self.glib_src = None
+        self.set_win_title(modified=True)
+        self.writer.get_buffer().set_modified(True)
 
     def apply_preferences(self):
         self.writer.set_show_line_numbers(
@@ -640,11 +629,6 @@ class MainWindow(Gtk.ApplicationWindow):
             self.preferences['html_viewer.tab_width'])
         self.html_viewer.set_highlight_current_line(
             self.preferences['html_viewer.highlight_current_line'])
-        print('=======')
-        print(os.path.join(
-                comun.THEMESDIR,
-                self.preferences['html_viewer.preview_theme'],
-                'style.css'))
         css = open(
             os.path.join(
                 comun.THEMESDIR,
@@ -873,6 +857,8 @@ class MainWindow(Gtk.ApplicationWindow):
             self.writer.get_buffer().set_text(data)
             self.work_with_file(file_path)
             self.writer.grab_focus()
+            self.do_it()
+            self.save_current_file()
 
     def save_as(self):
         dialog = Gtk.FileChooserDialog(
@@ -2481,17 +2467,6 @@ class MainWindow(Gtk.ApplicationWindow):
             Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
         )
 
-    def on_key_press_event(self, widget, evet):
-        pass
-        '''
-        if self.timer is not None:
-            self.timer.cancel()
-            self.timer = None
-        '''
-
-    def on_key_release_event(self, widget, event):
-        pass
-
     def on_buffer_changed(self, widget):
         self.emit('file-modified')
         self.menus['undo'].set_sensitive(self.writer.get_buffer().can_undo)
@@ -2610,9 +2585,11 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
         elif option == 'undo':
             if self.writer.get_buffer().can_undo():
                 self.writer.get_buffer().undo()
+                self.do_it()
         elif option == 'redo':
             if self.writer.get_buffer().can_redo():
                 self.writer.get_buffer().redo()
+                self.do_it()
         elif option == 'open':
             self.load_file_dialog()
         elif option == 'close':
@@ -2806,6 +2783,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.insert_at_start_of_line('>')
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'code':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('\n```\n', '\n```\n')
@@ -2815,37 +2793,48 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title1':
             self.insert_at_start_of_line('#')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title2':
             self.insert_at_start_of_line('##')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title3':
             self.insert_at_start_of_line('###')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title4':
             self.insert_at_start_of_line('####')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title5':
             self.insert_at_start_of_line('#####')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'title6':
             self.insert_at_start_of_line('######')
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'bullet-list':
             self.insert_at_start_of_line('*')
+            self.writer.grab_focus()
+            self.do_it()
         elif option == 'numbered-list':
             data = self.get_first_n_characters_at_previous_line(3)
             if data.find('. ') > -1:
                 number = data[:data.find('. ')]
             else:
                 number = 0
-            self.insert_at_start_of_line('%d.' % (int(number)+1))
+            self.insert_at_start_of_line('%d.' % (int(number) + 1))
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'cut':
             self.writer.get_buffer().cut_clipboard(self.clipboard, True)
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'copy':
             self.writer.get_buffer().copy_clipboard(self.clipboard)
             self.writer.grab_focus()
@@ -2853,12 +2842,14 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().paste_clipboard(
                 self.clipboard, None, True)
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'remove':
             bounds = self.writer.get_buffer().get_selection_bounds()
             if (bounds):
                 iteratwordstart, iteratwordend = bounds
                 self.writer.get_buffer().delete(iteratwordstart, iteratwordend)
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'select_all':
             start_iter = self.writer.get_buffer().get_start_iter()
             end_iter = self.writer.get_buffer().get_end_iter()
@@ -2874,6 +2865,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().insert_at_cursor(text_string.lower())
                 self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'titlecase':
             bounds = self.writer.get_buffer().get_selection_bounds()
             if (bounds):
@@ -2885,6 +2877,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().insert_at_cursor(text_string.title())
                 self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'uppercase':
             bounds = self.writer.get_buffer().get_selection_bounds()
             if (bounds):
@@ -2896,6 +2889,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().insert_at_cursor(text_string.upper())
                 self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'selection_to_html':
             bounds = self.writer.get_buffer().get_selection_bounds()
             if (bounds):
@@ -2932,6 +2926,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'italic':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('*', '*')
@@ -2941,6 +2936,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'strikethrough':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('~~', '~~')
@@ -2950,6 +2946,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'subscript':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('--', '--')
@@ -2959,6 +2956,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'superscript':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('++', '++')
@@ -2968,6 +2966,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'highlight':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('==', '==')
@@ -2977,6 +2976,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'underline':
             self.writer.get_buffer().begin_user_action()
             self.wrap_text('__', '__')
@@ -2986,16 +2986,19 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
             self.writer.get_buffer().place_cursor(aniter)
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'insert-horizontal-line':
             self.writer.get_buffer().begin_user_action()
             self.insert_at_cursor('\n---\n')
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'insert-more':
             self.writer.get_buffer().begin_user_action()
             self.insert_at_cursor('\n<!--more-->\n')
             self.writer.get_buffer().end_user_action()
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'insert-image':
             cm = InsertImageDialog(self)
             if cm.run() == Gtk.ResponseType.ACCEPT:
@@ -3009,6 +3012,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.insert_at_cursor('![%s](%s  "%s")' % (
                     alt_text, url, title))
                 self.writer.get_buffer().end_user_action()
+                self.do_it()
             cm.hide()
             cm.destroy()
             self.writer.grab_focus()
@@ -3023,6 +3027,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().begin_user_action()
                 self.insert_at_cursor('[%s](%s)' % (alt_text, url))
                 self.writer.get_buffer().end_user_action()
+                self.do_it()
             cm.hide()
             cm.destroy()
             self.writer.grab_focus()
@@ -3037,6 +3042,7 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().begin_user_action()
                 self.insert_at_cursor('\n' + str_table)
                 self.writer.get_buffer().end_user_action()
+                self.do_it()
                 itd.destroy()
             else:
                 itd.destroy()
@@ -3047,14 +3053,16 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
                 self.writer.get_buffer().begin_user_action()
                 self.insert_at_cursor('\n' + tde.get_table())
                 self.writer.get_buffer().end_user_action()
-
+                self.do_it()
             tde.destroy()
+            self.writer.grab_focus()
         elif option == 'insert-date':
             self.writer.get_buffer().begin_user_action()
             self.insert_at_cursor(
                 datetime.datetime.fromtimestamp(
                     time.time()).strftime('%A, %d de %B de %Y'))
             self.writer.grab_focus()
+            self.do_it()
         elif option == 'preview':
             if self.preview_or_html.get_label() == _('Html'):
                 self.preview_or_html.set_label(_('Html'))
@@ -3071,7 +3079,6 @@ Lorenzo Carbonell <lorenzo.carbonell.cerezo@gmail.com>\n')
     def get_first_n_characters_at_previous_line(self, n):
         textbuffer = self.writer.get_buffer()
         cursor_mark = textbuffer.get_insert()
-        iterator_cursor = textbuffer.get_iter_at_mark(cursor_mark)
         iterator = textbuffer.get_iter_at_mark(cursor_mark)
         if iterator.get_line() > 0:
             iterator.backward_line()
