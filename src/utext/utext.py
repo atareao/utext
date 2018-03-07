@@ -489,6 +489,7 @@ class MainWindow(Gtk.ApplicationWindow):
         # Add textview, webkit and html
         self.scrolledwindow1.add(self.writer)
         self.scrolledwindow2.add(self.webkit_viewer)
+        # self.webkit_viewer.set_view_source_mode(True)
         self.scrolledwindow3.add(self.html_viewer)
 
         # PaneView, contains markdown editor and html view (webkit)
@@ -501,7 +502,21 @@ class MainWindow(Gtk.ApplicationWindow):
         self.stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT)
 
         self.hpaned.pack2(self.stack, True, True)
-        self.vbox.pack_start(self.hpaned, True, True, 0)
+
+        # Table Of Contents
+        self.table_of_contents = WebKit.WebView()
+        self.table_of_contents.set_name("tableofcontents")
+        self.table_of_contents.connect(
+            "navigation-policy-decision-requested", self.on_navigation2)
+        settings = WebKit.WebSettings()
+        # settings.set_property('enable-file-access-from-file-uris', True)
+        self.table_of_contents.set_settings(settings)
+
+        self.main_paned = Gtk.Paned()
+        self.main_paned.pack1(self.table_of_contents, True, True)
+        self.main_paned.pack2(self.hpaned, True, True)
+
+        self.vbox.pack_start(self.main_paned, True, True, 0)
 
         # StatusBar
         self.statusbar = Gtk.Statusbar()
@@ -573,8 +588,32 @@ class MainWindow(Gtk.ApplicationWindow):
         print('aqui %d' % self.contador)
         html_content = None
         markdown_content = self.get_buffer_text()
+        html_content = self.md.convert(markdown_content)
+        print(self.md.toc)
+        style = '''
+        <style>
+        ul, li{
+            list-style-type: none;
+        }
+        div > ul > li > a{
+            font-weight: bold;
+        }
+        a:link {
+            color: black;
+            text-decoration: none;
+        }
+        li{
+            margin: 10px 0;
+        }
+        </style>
+        '''
+
+        self.table_of_contents.load_string(style + self.md.toc,
+                                           'text/html',
+                                           'utf-8',
+                                           '')
         if self.html_viewer.is_visible():
-            html_content = self.md.convert(markdown_content)
+            # html_content = self.md.convert(markdown_content)
             self.html_viewer.get_buffer().set_text(html_content)
         if self.webkit_viewer.is_visible():
             if self.preferences['mathjax']:
@@ -589,6 +628,10 @@ class MainWindow(Gtk.ApplicationWindow):
                 self.webkit_viewer.load_string(html_rendered,
                                                "text/html",
                                                "utf-8", '')
+
+
+
+
         self.statusbar.push(
             0, (_('Lines: {0}, Words: {1}, Characters: {2}')).format(
                 len(re.findall('(\n)', markdown_content)),
@@ -2516,6 +2559,32 @@ class MainWindow(Gtk.ApplicationWindow):
             pass
         return None
 
+    def on_navigation2(self, web_view, frame, request, nav_action,
+                      policy_decision, data=None):
+        if request.get_uri() != '/':
+            policy_decision.ignore()
+        print(request.get_uri()[1:], request)
+        print(web_view.get_dom_document().get_element_by_id(
+            request.get_uri()[1:]))
+        print(self.md.toc)
+        pattern = r'<a\s*href=\"{0}\">([^<]+)</a>'.format(
+            request.get_uri())
+        matches = re.findall(pattern, self.md.toc)
+        if matches is not None and len(matches) > 0:
+            text_to_search = matches[0]
+            ans = self.writer.get_buffer().get_start_iter().forward_search(
+                text_to_search, 0, self.writer.get_buffer().get_end_iter())
+            if ans is not None:
+                self.writer.scroll_to_iter(ans[0], 0, True, 0, 0)
+        '''
+
+        self.search_and_mark(
+            self.searched_text,
+            self.writer.get_buffer().get_start_iter())
+        self.writer.get_buffer().end_user_action()
+        '''
+
+
     def on_navigation(self, web_view, frame, request, nav_action,
                       policy_decision, data=None):
         if request.get_uri() != '/':
@@ -2526,7 +2595,7 @@ class MainWindow(Gtk.ApplicationWindow):
         ad = Gtk.AboutDialog()
         ad.set_name(comun.APPNAME)
         ad.set_version(comun.VERSION)
-        ad.set_copyright('Copyrignt (c) 2011-2016\nLorenzo Carbonell')
+        ad.set_copyright('Copyrignt (c) 2011-2018\nLorenzo Carbonell')
         ad.set_comments(_('An application to work with markdown'))
         ad.set_license('''
 This program is free software: you can redistribute it and/or modify it under
